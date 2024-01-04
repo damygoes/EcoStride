@@ -1,9 +1,15 @@
-function App() {
+import React, { Suspense } from "react";
+
+const LazyComponent = React.lazy(async () => {
+  return import("./components/test-component");
+});
+
+const App = () => {
   return (
-    <main>
-      <h1 className="text-5xl text-primary">Welcome Home</h1>
-    </main>
+    <Suspense fallback={<div>Loading ... </div>}>
+      <LazyComponent />
+    </Suspense>
   );
-}
+};
 
 export default App;
