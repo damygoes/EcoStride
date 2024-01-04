@@ -1,13 +1,16 @@
-import React, { Suspense } from "react";
+import { ThemeProvider } from "@context/theme-provider/theme-provider";
+import { Suspense, lazy } from "react";
 
-const LazyComponent = React.lazy(async () => {
+const LazyComponent = lazy(async () => {
   return import("./components/test-component");
 });
 
 const App = () => {
   return (
     <Suspense fallback={<div>Loading ... </div>}>
-      <LazyComponent />
+      <ThemeProvider>
+        <LazyComponent />
+      </ThemeProvider>
     </Suspense>
   );
 };

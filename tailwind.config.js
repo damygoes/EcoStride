@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,7 +14,7 @@ export default {
       accent: "rgba(var(--accent))", // sunset orange
       background: "rgba(var(--background))", // light gray
       white: "rgba(var(--white))", // white
-      black: "rgba(var(--black))", // black
+      "text-color": "rgba(var(--text-color))", // black
       transparent: "transparent",
     },
     fontFamily: {

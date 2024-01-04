@@ -1,5 +1,6 @@
 import { ChangeEvent, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import ThemeToggle from "./theme-toggle/theme-toggle";
 
 const TestComponent = () => {
   const { t, i18n } = useTranslation();
@@ -28,13 +29,14 @@ const TestComponent = () => {
   );
 
   return (
-    <div>
+    <div className="w-screen h-screen bg-background">
       <select value={i18n.language} onChange={switchLanguage}>
         {languageOptions}
       </select>
-      <br />
+      <ThemeToggle />
+
       <h2>Minimal React TS App with React-i18next Lazyloading</h2>
-      <p>{t("welcome")}</p>
+      <p className="text-4xl text-text-color">{t("welcome")}</p>
     </div>
   );
 };
