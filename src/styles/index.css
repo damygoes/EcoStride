@@ -29,6 +29,7 @@ h6 {
 
 body {
   font-family: var(--font-roboto);
+  background-color: var(--background);
   overflow-x: hidden;
   overflow-y: auto;
 }

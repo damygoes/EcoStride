@@ -1,17 +1,17 @@
-import NetworkStatusNotifier from "@components/network-status-notifier/network-status-notifier";
+import NetworkStatusNotifier from "@components/common/network-status-notifier/network-status-notifier";
 import { ThemeProvider } from "@context/theme-provider/theme-provider";
-import { Suspense, lazy } from "react";
-
-const LazyComponent = lazy(async () => {
-  return import("./components/test-component");
-});
+import { router } from "@routes/router";
+import { Suspense } from "react";
+import { RouterProvider } from "react-router-dom";
 
 const App = () => {
   return (
     <Suspense fallback={<div>Loading ... </div>}>
       <ThemeProvider>
         <NetworkStatusNotifier />
-        <LazyComponent />
+        <Suspense fallback={<div>Loading...</div>}>
+          <RouterProvider router={router} />
+        </Suspense>
       </ThemeProvider>
     </Suspense>
   );
