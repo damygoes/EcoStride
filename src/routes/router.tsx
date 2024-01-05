@@ -1,6 +1,5 @@
-import { PREstimator } from "@features/index";
 import { BasicPageLayout, RootAppLayout } from "@layouts/index";
-import { AllClimbsPage, HomePage } from "@pages/index";
+import { AllClimbsPage, HomePage, PrEstimatorPage } from "@pages/index";
 import {
   Route,
   createBrowserRouter,
@@ -25,7 +24,7 @@ export const router = createBrowserRouter(
         {/* // TODO: Add an unauthorized path and component for role-based access */}
         {/* //* Protected Routes */}
         <Route element={<RequireAuth />}>
-          <Route path="/pr-estimator" element={<PREstimator />} />,
+          <Route path="/pr-estimator" element={<PrEstimatorPage />} />,
           <Route path="/profile" element={<div>User Profile</div>}>
             {/* <Route
               index
@@ -39,7 +38,7 @@ export const router = createBrowserRouter(
           <Route
             path="*"
             element={
-              <BasicPageLayout>
+              <BasicPageLayout pageTitle="NOT FOUND">
                 <p>Page not found</p>
               </BasicPageLayout>
             }

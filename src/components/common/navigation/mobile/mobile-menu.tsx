@@ -17,7 +17,7 @@ function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
       variants={menuVariants}
       initial="closed"
       animate={isOpen ? "open" : "closed"}
-      className="absolute left-0 right-0 z-50 flex flex-col items-center justify-center h-screen gap-4 p-5 overflow-hidden origin-top shadow-md backdrop-blur-lg top-full bg-gradient-to-br from-primary to-secondary dark:bg-background dark:from-background dark:to-background"
+      className="absolute left-0 right-0 z-50 flex flex-col items-center justify-center h-screen gap-3 p-5 overflow-hidden origin-top shadow-md backdrop-blur-lg top-full bg-gradient-to-br from-primary to-secondary dark:bg-background dark:from-background dark:to-background"
     >
       {navbarRoutes.map((link) => {
         return (

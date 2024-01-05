@@ -3,9 +3,11 @@ import { Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
-    <section className="w-screen h-screen overflow-x-hidden overflow-y-auto bg-background">
+    <section className="relative flex flex-col w-screen h-screen gap-4 overflow-hidden bg-background">
       <MainNavbar />
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
     </section>
   );
 }
