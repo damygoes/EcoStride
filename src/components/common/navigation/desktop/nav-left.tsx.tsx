@@ -16,7 +16,7 @@ function NavLeft({ setIsOpen }: NavLeftProps) {
         className="block text-2xl lg:hidden text-text-color"
         onClick={() => setIsOpen((previousValue) => !previousValue)}
       >
-        <IconMenu2 size={32} />
+        <IconMenu2 size={32} className="text-secondary" />
       </motion.button>
       <Logo />
       <NavigationLinks />
