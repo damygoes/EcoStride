@@ -1,4 +1,5 @@
 import NetworkStatusNotifier from "@components/common/network-status-notifier/network-status-notifier";
+import LocationProvider from "@context/location-provider/location-provider";
 import { ThemeProvider } from "@context/theme-provider/theme-provider";
 import { router } from "@routes/router";
 import { Suspense } from "react";
@@ -8,10 +9,12 @@ const App = () => {
   return (
     <Suspense fallback={<div>Loading ... </div>}>
       <ThemeProvider>
-        <NetworkStatusNotifier />
-        <Suspense fallback={<div>Loading...</div>}>
-          <RouterProvider router={router} />
-        </Suspense>
+        <LocationProvider>
+          <NetworkStatusNotifier />
+          <Suspense fallback={<div>Loading...</div>}>
+            <RouterProvider router={router} />
+          </Suspense>
+        </LocationProvider>
       </ThemeProvider>
     </Suspense>
   );
