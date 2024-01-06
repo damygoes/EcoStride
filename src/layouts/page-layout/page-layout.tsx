@@ -46,7 +46,7 @@ function PageLayout({
         )}
         <main className="flex-1 h-full space-y-3 overflow-x-hidden overflow-y-auto">
           <PageHeader pageTitle={pageTitle} className="md:hidden" />
-          <div className="flex-1 h-full p-4 overflow-x-hidden overflow-y-auto rounded-md shadow-sm bg-accent md:p-6">
+          <div className="flex-1 h-full p-4 overflow-x-hidden overflow-y-auto rounded-md shadow-sm bg-inherit md:p-6">
             {children}
           </div>
         </main>

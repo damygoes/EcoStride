@@ -1,3 +1,7 @@
 {
-  "welcome": "Willkommen bei React und react-i18next"
+  "climb-card": {
+    "distance": "Entfernung",
+    "avg-grade": "Durchschn. Steigung",
+    "elevation": "Höhenunterschied"
+  }
 }

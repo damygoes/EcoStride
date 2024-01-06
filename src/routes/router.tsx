@@ -1,3 +1,4 @@
+import { ClimbDetailsPage } from "@features/index";
 import { BasicPageLayout, RootAppLayout } from "@layouts/index";
 import { AllClimbsPage, HomePage, PrEstimatorPage } from "@pages/index";
 import {
@@ -16,6 +17,8 @@ export const router = createBrowserRouter(
         <Route path="login" element={<div>Login Page</div>} />,
         <Route path="create-account" element={<div>Create Account</div>} />,
         <Route path="/climbs" element={<AllClimbsPage />} />,
+        <Route path="/home/:climbSlug" element={<ClimbDetailsPage />} />,
+        <Route path="/climbs/:climbSlug" element={<ClimbDetailsPage />} />,
         <Route
           path="unauthorized"
           element={<div> You are not authorized to view this page </div>}
@@ -25,6 +28,11 @@ export const router = createBrowserRouter(
         {/* //* Protected Routes */}
         <Route element={<RequireAuth />}>
           <Route path="/pr-estimator" element={<PrEstimatorPage />} />,
+          <Route
+            path="/pr-estimator/:climbSlug"
+            element={<ClimbDetailsPage />}
+          />
+          ,
           <Route path="/profile" element={<div>User Profile</div>}>
             {/* <Route
               index
