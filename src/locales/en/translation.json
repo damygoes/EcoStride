@@ -1,3 +1,19 @@
 {
-  "welcome": "Welcome to React and react-i18next"
+  "climb-card": {
+    "distance": "Distance",
+    "avg-grade": "Avg. Gradient",
+    "elevation": "Elevation"
+  },
+  "hero": {
+    "title": "Ride into a New Adventure",
+    "subtitle": "Embrace the Journey",
+    "description": "Discover breathtaking routes,challenge your limits, and be part of a passionate community. Let's pedal towards new horizons together. Every ride is a story waiting to unfold.",
+    "button": "Discover Routes",
+    "location-found": "Explore climbs near",
+    "location-not-found": "No climbs found nearby"
+  },
+  "page-header": {
+    "nearby-climbs": "Nearby Climbs",
+    "all-climbs": "All Climbs"
+  }
 }

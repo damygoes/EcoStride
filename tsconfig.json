@@ -17,12 +17,13 @@
       "@layouts/*": ["./layouts/*"],
       "@lib/*": ["./lib/*"],
       "@locales/*": ["./locales/*"],
+      "@mock/*": ["./mock/*"],
       "@models/*": ["./models/*"],
       "@pages/*": ["./pages/*"],
       "@routes/*": ["./routes/*"],
       "@services/*": ["./services/*"],
       "@store/*": ["./store/*"],
-      "@types/*": ["./types/*"],
+      "@type-definitions/*": ["./type-definitions/*"],
       "@utils/*": ["./utils/*"]
     },
 

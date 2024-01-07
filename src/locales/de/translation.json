@@ -1,3 +1,19 @@
 {
-  "welcome": "Willkommen bei React und react-i18next"
+  "climb-card": {
+    "distance": "Entfernung",
+    "avg-grade": "Durchschn. Steigung",
+    "elevation": "Höhenunterschied"
+  },
+  "hero": {
+    "title": "Auf zu einem neuen Abenteuer",
+    "subtitle": "Die Reise umarmen",
+    "description": "Entdecke atemberaubende Strecken, fordere deine Grenzen heraus und werde Teil einer leidenschaftlichen Gemeinschaft. Lass uns gemeinsam neuen Horizonten entgegenradeln. Jede Fahrt ist eine Geschichte, die darauf wartet, sich zu entfalten.",
+    "button": "Routen entdecken",
+    "location-found": "Entdecken Sie Anstiege in der Nähe von",
+    "location-not-found": "Keine Anstiege in der Nähe gefunden"
+  },
+  "page-header": {
+    "nearby-climbs": "Anstiege in der Nähe",
+    "all-climbs": "Alle Anstiege"
+  }
 }

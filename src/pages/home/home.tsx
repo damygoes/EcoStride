@@ -1,13 +1,15 @@
-import PageLayout from "@layouts/page-layout/page-layout";
-import { useTranslation } from "react-i18next";
+import { LocationContext } from "@context/location-provider/location-provider";
+import HomePageScreen from "@features/home/screen/homepage-screen";
+import { useContext } from "react";
 
 function Home() {
-  const { t } = useTranslation();
-  return (
-    <PageLayout withFooter withSidebar pageTitle="nearby climbs">
-      <h2 className="text-4xl text-text-color">{t("welcome")}</h2>
-    </PageLayout>
-  );
+  const location = useContext(LocationContext);
+
+  if (!location) {
+    return <div>Location loading...</div>;
+  }
+
+  return <HomePageScreen />;
 }
 
 export default Home;
