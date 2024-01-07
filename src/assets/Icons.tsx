@@ -1,4 +1,5 @@
 import { cn } from "@lib/utils";
+import defaultCardImage from "./default-card-image.svg";
 import distance from "./distance.svg";
 import homepageIcon from "./homepage-icon.svg";
 import elevation from "./mountain-elevation.svg";
@@ -18,6 +19,15 @@ function AverageGradientIcon({ className }: IconProps) {
   );
 }
 
+function DefaultClimbCardImage({ className }: IconProps) {
+  return (
+    <img
+      src={defaultCardImage}
+      alt="mountain-icon"
+      className={cn((className = "w-4 h-4 text-accent"), className)}
+    />
+  );
+}
 function DistanceIcon({ className }: IconProps) {
   return (
     <img
@@ -41,4 +51,10 @@ function HomepageHeaderIcon() {
   return <img src={homepageIcon} alt="homepage-icon" />;
 }
 
-export { AverageGradientIcon, DistanceIcon, ElevationIcon, HomepageHeaderIcon };
+export {
+  AverageGradientIcon,
+  DefaultClimbCardImage,
+  DistanceIcon,
+  ElevationIcon,
+  HomepageHeaderIcon,
+};

@@ -3,6 +3,7 @@ import {
   DistanceIcon,
   ElevationIcon,
 } from "@assets/Icons";
+import defaultImage from "@assets/mountain-elevation.svg";
 import type { Climb } from "@type-definitions/Climb";
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
@@ -18,7 +19,7 @@ const ClimbDetail = ({
   value: string;
 }) => {
   return (
-    <div className="inline-flex items-center w-1/2 gap-2 md:w-24 shrink-0">
+    <div className="inline-flex items-center gap-2 shrink-0">
       {icon}
 
       <div className="w-1/2 mt-1.5 md:mt-0 flex-1">
@@ -50,11 +51,16 @@ function ClimbCard({
   return (
     <Link
       to={`/${basePath}/${climb.slug}`}
-      className="block max-w-sm p-4 overflow-hidden rounded-lg shadow-sm shadow-accent/30"
+      className="block max-w-sm p-4 overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
     >
       <img
         alt="climb photo"
         src={climb.photos[0]}
+        onError={(e) => {
+          const target = e.target as HTMLImageElement; // assert the target as an HTMLImageElement
+          target.onerror = null; // prevents looping
+          target.src = defaultImage; // set the default image
+        }}
         className="object-cover w-full h-56 rounded-md"
       />
 
@@ -82,7 +88,7 @@ function ClimbCard({
           </div>
         </dl>
 
-        <div className="flex items-center gap-8 mt-6 text-xs">
+        <div className="flex flex-wrap items-center gap-4 mt-6 text-xs">
           <ClimbDetail
             icon={<DistanceIcon />}
             name={t("climb-card.distance")}

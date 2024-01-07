@@ -5,6 +5,7 @@ type PageLayoutProps = {
   children: ReactNode;
   pageTitle: string;
   withSidebar?: boolean;
+  sidebarContent?: ReactNode;
   withFooter?: boolean;
   headerImage?: string | ReactNode;
 };
@@ -18,7 +19,7 @@ const PageHeader = ({ pageTitle, className }: PageHeaderProps) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center w-full rounded-md p-2 shadow-md h-1/5 md:h-1/6 bg-gradient-to-br from-primary to-secondary",
+        "flex items-center rounded-md justify-center w-full h-full bg-gradient-to-br from-primary to-secondary md:h-1/6",
         className,
       )}
     >
@@ -34,28 +35,32 @@ function PageLayout({
   pageTitle,
   withFooter,
   withSidebar,
+  sidebarContent,
 }: PageLayoutProps) {
+  if (withSidebar && !sidebarContent) {
+    throw new Error(
+      "You must provide sidebarContent when withSidebar is true.",
+    );
+  }
+
   return (
-    <section className="flex flex-col w-full h-full gap-4 p-4 overflow-hidden bg-inherit md:px-6 md:py-1">
-      <div className="flex-1 h-full md:flex md:justify-start md:items-start md:gap-4">
+    <section className="flex flex-col items-start justify-between w-full h-full gap-2 p-3 overflow-hidden bg-inherit md:flex-row md:px-4 md:py-3">
+      <section className="w-full h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:w-1/6">
+        <PageHeader pageTitle={pageTitle} />
         {withSidebar && (
-          <div className="hidden rounded-md shadow-sm md:flex md:flex-col md:gap-4 md:p-3 md:w-[12%] md:h-full dark:border dark:border-solid dark:border-white">
-            <PageHeader pageTitle={pageTitle} />
-            <div>Sidebar Content</div>
+          <div className="hidden shadow-sm md:flex md:flex-1 md:w-full">
+            {sidebarContent}
           </div>
         )}
-        <main className="flex-1 h-full space-y-3 overflow-x-hidden overflow-y-auto">
-          <PageHeader pageTitle={pageTitle} className="md:hidden" />
-          <div className="flex-1 h-full p-4 overflow-x-hidden overflow-y-auto rounded-md shadow-sm bg-inherit md:p-6">
-            {children}
+        {withFooter && (
+          <div className="hidden w-full text-text-color md:flex md:h-[5%]">
+            Footer
           </div>
-        </main>
-      </div>
-      {withFooter && (
-        <div className="hidden p-3 rounded-sm text-text-color md:flex md:items-center md:w-full md:h-[3%] bg-gradient-to-br from-primary to-secondary">
-          Footer
-        </div>
-      )}
+        )}
+      </section>
+      <main className="flex-1 w-full p-2 overflow-hidden bg-inherit md:h-full">
+        {children}
+      </main>
     </section>
   );
 }

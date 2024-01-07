@@ -16,6 +16,7 @@ function ClimbDetails() {
     <PageLayout
       pageTitle={selectedClimb?.name.toLocaleUpperCase() || ""}
       withSidebar
+      sidebarContent={<p>sidebar content</p>}
     >
       <BreadCrumbsComponent />
       <p>Climb Details Page</p>
