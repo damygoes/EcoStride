@@ -7,6 +7,7 @@ export type LocationState = {
   city: string | null;
   state: string | null;
   country: string | null;
+  loading: boolean;
   error: string | null;
 };
 
@@ -22,11 +23,13 @@ const useLocation = (): LocationState => {
     state: string;
     country: string;
   } | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     // Check if Geolocation API is available
     if (!navigator.geolocation) {
       setError("Geolocation is not supported by your browser");
+      setLoading(false); // Set loading to false if geolocation is not supported
       return;
     }
 
@@ -48,8 +51,10 @@ const useLocation = (): LocationState => {
           state: data.address?.state || "",
           country: data.address?.country || "",
         });
+        setLoading(false); // Set loading to false once data is fetched
       } catch (error) {
         setError("Failed to fetch address information");
+        setLoading(false); // Set loading to false on error
       }
     };
 
@@ -69,6 +74,7 @@ const useLocation = (): LocationState => {
           setError("An unknown error occurred.");
           break;
       }
+      setLoading(false); // Set loading to false on error
     };
 
     // Request the user's location
@@ -82,6 +88,7 @@ const useLocation = (): LocationState => {
     city: address ? address.city : null,
     state: address ? address.state : null,
     country: address ? address.country : null,
+    loading,
     error,
   };
 };

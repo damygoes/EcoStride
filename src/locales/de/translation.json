@@ -9,11 +9,15 @@
     "subtitle": "Die Reise umarmen",
     "description": "Entdecke atemberaubende Strecken, fordere deine Grenzen heraus und werde Teil einer leidenschaftlichen Gemeinschaft. Lass uns gemeinsam neuen Horizonten entgegenradeln. Jede Fahrt ist eine Geschichte, die darauf wartet, sich zu entfalten.",
     "button": "Routen entdecken",
-    "location-found": "Entdecken Sie Anstiege in der Nähe von",
-    "location-not-found": "Keine Anstiege in der Nähe gefunden"
+    "location-loading": "Standort wird geladen...",
+    "location-found": "Entdecken Sie Anstiege in die Nähe von",
+    "location-not-found": "Keine Anstiege in der Nähe gefunden. Stattdessen werden alle Anstiege angezeigt.",
+    "location-denied": "Sie haben den Zugriff auf Ihren Standort verweigert. Stattdessen werden alle Anstiege angezeigt."
   },
   "page-header": {
     "nearby-climbs": "Anstiege in der Nähe",
-    "all-climbs": "Alle Anstiege"
-  }
+    "all-climbs": "Alle Anstiege",
+    "home": "Startseite"
+  },
+  "footer": "Entwickelt von"
 }
