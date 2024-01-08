@@ -9,11 +9,15 @@
     "subtitle": "Omarm de Reis",
     "description": "Ontdek adembenemende routes, daag je grenzen uit en word deel van een gepassioneerde gemeenschap. Laten we samen naar nieuwe horizonten fietsen. Elke rit is een verhaal dat wacht om zich te ontvouwen.",
     "button": "Ontdek Routes",
+    "location-loading": "Locatie wordt geladen...",
     "location-found": "Ontdek beklimmingen in de buurt",
-    "location-not-found": "Geen beklimmingen in de buurt gevonden"
+    "location-not-found": "Geen beklimmingen in de buurt gevonden. In plaats daarvan worden alle beklimmingen weergegeven.",
+    "location-denied": "Je hebt geen toestemming gegeven om je locatie te gebruiken. In plaats daarvan worden alle beklimmingen weergegeven."
   },
   "page-header": {
     "nearby-climbs": "Beklimmingen in de buurt",
-    "all-climbs": "Alle beklimmingen"
-  }
+    "all-climbs": "Alle beklimmingen",
+    "home": "Startpagina"
+  },
+  "footer": "Ontwikkeld door"
 }

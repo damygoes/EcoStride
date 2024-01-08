@@ -1,3 +1,4 @@
+import Footer from "@components/common/footer/footer";
 import { cn } from "@lib/utils";
 import { ReactNode } from "react";
 
@@ -53,8 +54,8 @@ function PageLayout({
           </div>
         )}
         {withFooter && (
-          <div className="hidden w-full text-text-color md:flex md:h-[5%]">
-            Footer
+          <div className="hidden w-full text-text-color md:flex md:h-[2%]">
+            <Footer />
           </div>
         )}
       </section>

@@ -9,11 +9,15 @@
     "subtitle": "Embrassez le Voyage",
     "description": "Découvrez des itinéraires à couper le souffle, dépassez vos limites et faites partie d'une communauté passionnée. Pédalons ensemble vers de nouveaux horizons. Chaque balade est une histoire en attente de se dérouler.",
     "button": "Découvrir les Itinéraires",
+    "location-loading": "Chargement de votre position...",
     "location-found": "Explorez les ascensions à proximité",
-    "location-not-found": "Aucune ascension trouvée à proximité"
+    "location-not-found": "Aucune ascension trouvée à proximité. Afficher toutes les ascensions à la place.",
+    "location-denied": "Vous avez refusé l'accès à votre position. Afficher toutes les ascensions à la place."
   },
   "page-header": {
     "nearby-climbs": "Ascensions à proximité",
-    "all-climbs": "Toutes les ascensions"
-  }
+    "all-climbs": "Toutes les ascensions",
+    "home": "Page d'accueil"
+  },
+  "footer": "Site créé par"
 }

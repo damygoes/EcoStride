@@ -9,11 +9,15 @@
     "subtitle": "Embrace the Journey",
     "description": "Discover breathtaking routes,challenge your limits, and be part of a passionate community. Let's pedal towards new horizons together. Every ride is a story waiting to unfold.",
     "button": "Discover Routes",
+    "location-loading": "Finding your location...",
     "location-found": "Explore climbs near",
-    "location-not-found": "No climbs found nearby"
+    "location-not-found": "No climbs found nearby, Showing all climbs instead.",
+    "location-denied": "Location access denied, Showing all climbs instead."
   },
   "page-header": {
     "nearby-climbs": "Nearby Climbs",
-    "all-climbs": "All Climbs"
-  }
+    "all-climbs": "All Climbs",
+    "home": "Homepage"
+  },
+  "footer": "Developed by"
 }

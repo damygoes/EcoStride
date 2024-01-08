@@ -2,8 +2,10 @@ import FiltersScreen from "@features/filters/screen/filters-screen";
 import PageLayout from "@layouts/page-layout/page-layout";
 import { useTranslation } from "react-i18next";
 import ClimbsList from "../components/climbs-list";
+import { useClimbStore } from "../utils/climb-store";
 
 function ClimbsScreen() {
+  const { climbs } = useClimbStore();
   const { t } = useTranslation();
   return (
     <PageLayout
@@ -17,7 +19,7 @@ function ClimbsScreen() {
           Tags and Sort Section
         </header>
         <section className="w-full h-full px-5 py-3 overflow-x-hidden overflow-y-auto md:flex-1">
-          <ClimbsList />
+          <ClimbsList climbs={climbs} />
         </section>
       </section>
     </PageLayout>
