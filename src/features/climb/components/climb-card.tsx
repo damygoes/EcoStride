@@ -80,10 +80,10 @@ function ClimbCard({
             <dd className="text-xl font-semibold">{climb.name}</dd>
           </div>
           <div>
-            <dt className="sr-only">Description</dt>
+            <dt className="sr-only">Summary</dt>
 
             <dd className="text-sm font-normal truncate text-pretty">
-              {climb.description}
+              {climb.summary}
             </dd>
           </div>
         </dl>

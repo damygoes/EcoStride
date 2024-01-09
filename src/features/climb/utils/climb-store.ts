@@ -1,9 +1,8 @@
 import { climbs } from "@mock/climbs";
 import type { Climb } from "@type-definitions/Climb";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
-type climbStore = {
+type ClimbStore = {
   climbs: Climb[];
   nearbyClimbs: Climb[];
   addClimb: (climb: Climb) => void;
@@ -13,52 +12,37 @@ type climbStore = {
   setNearbyClimbs: (climbs: Climb[]) => void;
 };
 
-export const useClimbStore = create<climbStore>()(
-  persist(
-    (set, get) => ({
-      climbs: climbs,
-      // climbs: [],
-      addClimb: (climb) => {
-        set((state) => {
-          const climbToAdd = state.climbs.find((c) => c.id === climb.id);
+export const useClimbStore = create<ClimbStore>((set, get) => ({
+  climbs: climbs,
+  nearbyClimbs: [],
 
-          // Check if the climb is already in climbs
-          if (!climbToAdd) {
-            return { climbs: [...state.climbs, climb] };
-          }
+  addClimb: (climb) => {
+    set((state) => {
+      const climbToAdd = state.climbs.find((c) => c.id === climb.id);
+      if (!climbToAdd) {
+        return { climbs: [...state.climbs, climb] };
+      }
+      return state;
+    });
+  },
 
-          return state;
-        });
-      },
-      removeClimb: (climb) =>
-        set((state) => ({
-          climbs: state.climbs.filter((c) => c.id !== climb.id),
-        })),
-      updateClimb: (climb) =>
-        set((state) => ({
-          climbs: state.climbs.map((c) => {
-            if (c.id === climb.id) {
-              return climb;
-            }
-            return c;
-          }),
-        })),
-      findClimb: (climbId) => {
-        const climb = get().climbs.find((c) => c.id === climbId);
-        return climb;
-      },
-      nearbyClimbs: [],
-      setNearbyClimbs: (climbs) => set({ nearbyClimbs: climbs }),
-    }),
+  removeClimb: (climb) => {
+    set((state) => ({
+      climbs: state.climbs.filter((c) => c.id !== climb.id),
+    }));
+  },
 
-    {
-      name: "climbs-store", // The name of the store
-      version: 1, // Versioning the store is useful for migrations and helps keeps the cache fresh i.e. Increment version to reset state
-      partialize: (state) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { nearbyClimbs, ...rest } = state;
-        return rest as Omit<typeof state, "nearbyClimbs">; // Ensures type safety
-      }, // Persist everything except the nearbyClimbs
-    },
-  ),
-);
+  updateClimb: (climb) => {
+    set((state) => ({
+      climbs: state.climbs.map((c) => (c.id === climb.id ? climb : c)),
+    }));
+  },
+
+  findClimb: (climbId) => {
+    return get().climbs.find((c) => c.id === climbId);
+  },
+
+  setNearbyClimbs: (climbs) => {
+    set({ nearbyClimbs: climbs });
+  },
+}));
