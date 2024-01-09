@@ -10,7 +10,13 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   children: React.ReactNode;
   type?: "button" | "submit" | "reset";
-  kind?: "primary" | "secondary" | "outline" | "tertiary" | "error";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "error"
+    | "outline"
+    | "gradient"
+    | "ghost";
   size?: "sm" | "md" | "lg" | "icon";
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
