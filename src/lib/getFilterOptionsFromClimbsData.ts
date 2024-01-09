@@ -1,11 +1,23 @@
-import type { Climb } from "@type-definitions/Climb";
+import type { Climb, ClimbCategory } from "@type-definitions/Climb";
 
 export const getFilterOptionsFromClimbsData = (climbs: Climb[]) => {
   const cities = climbs.map((climb) => climb.city);
-  const state = climbs.map((climb) => climb.state);
-  const country = climbs.map((climb) => climb.country);
+  const states = climbs.map((climb) => climb.state);
+  const countries = climbs.map((climb) => climb.country);
   const uniqueCities = [...new Set(cities)];
-  const uniqueStates = [...new Set(state)];
-  const uniqueCountries = [...new Set(country)];
-  return { uniqueCities, uniqueStates, uniqueCountries };
+  const uniqueStates = [...new Set(states)];
+  const uniqueCountries = [...new Set(countries)];
+
+  const categoryOrder: ClimbCategory[] = [
+    "one",
+    "two",
+    "three",
+    "four",
+    "Hors Catégorie (HC)",
+  ];
+  const uniqueCategories = [
+    ...new Set(climbs.map((climb) => climb.category)),
+  ].sort((a, b) => categoryOrder.indexOf(a) - categoryOrder.indexOf(b));
+
+  return { uniqueCities, uniqueStates, uniqueCountries, uniqueCategories };
 };

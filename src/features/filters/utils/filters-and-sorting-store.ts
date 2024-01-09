@@ -5,7 +5,7 @@ type FiltersAndSortingStore = {
   // Existing filter states
   country: string;
   state: string;
-  city: string;
+  category: string;
 
   // Sorting states
   sortKey: string;
@@ -14,7 +14,7 @@ type FiltersAndSortingStore = {
   // Existing filter actions
   setCountry: (country: string) => void;
   setState: (state: string) => void;
-  setCity: (city: string) => void;
+  setCategory: (category: string) => void;
 
   // Sorting actions
   setSortKey: (sortKey: string) => void;
@@ -29,19 +29,19 @@ export const useFilterAndSortingStore = create<FiltersAndSortingStore>()(
     (set) => ({
       country: "",
       state: "",
-      city: "",
+      category: "",
       sortKey: "",
       sortOrder: "asc",
       setCountry: (country) => set({ country }),
       setState: (state) => set({ state }),
-      setCity: (city) => set({ city }),
+      setCategory: (category) => set({ category }),
       setSortKey: (sortKey) => set({ sortKey }),
       setSortOrder: (sortOrder) => set({ sortOrder }),
       resetFiltersAndSorting: () =>
         set({
           country: "",
           state: "",
-          city: "",
+          category: "",
           sortKey: "",
           sortOrder: "asc",
         }),

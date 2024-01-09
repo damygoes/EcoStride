@@ -1,4 +1,5 @@
 import { Listbox, Transition } from "@headlessui/react";
+import { cn } from "@lib/utils";
 import { IconCheck, IconSelector } from "@tabler/icons-react";
 import { Fragment, ReactNode } from "react";
 
@@ -9,6 +10,7 @@ interface SelectComponentProps<T extends { toString(): string }> {
   onChange: (value: T) => void;
   labelFunction?: (item: T) => ReactNode; // Return a ReactNode to avoid JSX errors
   placeholder?: ReactNode;
+  className?: string;
 }
 
 export default function SelectComponent<T extends { toString(): string }>({
@@ -17,10 +19,11 @@ export default function SelectComponent<T extends { toString(): string }>({
   onChange,
   labelFunction = (item) => item.toString(), // Default function just converts item to string
   placeholder,
+  className,
 }: SelectComponentProps<T>) {
   return (
     <Listbox value={selected} onChange={onChange}>
-      <div className="relative mt-1">
+      <div className={cn("relative mt-1", className)}>
         <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-sm cursor-default focus:outline-none focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-accent sm:text-sm">
           <span className="block truncate">
             {selected

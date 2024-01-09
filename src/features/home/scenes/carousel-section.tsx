@@ -91,7 +91,7 @@ const CardCarousel = () => {
   );
 };
 
-const Card = ({ photos, city, name, description, slug }: Climb) => {
+const Card = ({ photos, city, name, summary, slug }: Climb) => {
   const [backgroundImage, setBackgroundImage] = useState(photos[0]);
 
   useEffect(() => {
@@ -122,7 +122,7 @@ const Card = ({ photos, city, name, description, slug }: Climb) => {
           {city}
         </span>
         <p className="my-2 text-3xl font-bold">{name}</p>
-        <p className="text-lg">{description}</p>
+        <p className="text-lg">{summary}</p>
       </div>
     </Link>
   );

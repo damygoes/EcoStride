@@ -1,53 +1,33 @@
 import SelectComponent from "@components/common/select-component/select-component";
 import { Button } from "@components/ui/button/button";
+import { useClimbStore } from "@features/climb/utils/climb-store";
+import { getFilterOptionsFromClimbsData } from "@lib/getFilterOptionsFromClimbsData";
+import { useMemo } from "react";
 import { useFilterAndSortingStore } from "../utils/filters-and-sorting-store";
+import SortingComponent from "./sort-component";
 
-const ClimbFilter = () => {
+const ClimbFiltersAndSort = () => {
   const {
     country,
     state,
-    city,
+    category,
     setCountry,
     setState,
-    setCity,
+    setCategory,
     resetFiltersAndSorting,
   } = useFilterAndSortingStore();
+  const { climbs } = useClimbStore();
 
   // Dynamic Filter Options
-  // const { uniqueCities, uniqueStates, uniqueCountries } = useMemo(() => {
-  //   return getFilterOptionsFromClimbsData(climbs);
-  // }, [climbs]);
-
-  const cities = [
-    "Mountainville",
-    "Riverstown",
-    "Chamonix",
-    "Cortina d'Ampezzo",
-    "Granada",
-    "Garmisch-Partenkirchen",
-    "Freiburg",
-    "Bad Schandau",
-    "Reutlingen",
-    "Heidelberg",
-    "Freudenstadt",
-    "Offenburg",
-  ];
-  const states = [
-    "Colorado",
-    "Oregon",
-    "Auvergne-Rhône-Alpes",
-    "Veneto",
-    "Andalusia",
-    "Bavaria",
-    "Baden-Württemberg",
-    "Saxony",
-  ];
-  const countries = ["USA", "France", "Italy", "Spain", "Germany"];
+  const { uniqueCategories, uniqueStates, uniqueCountries } = useMemo(() => {
+    return getFilterOptionsFromClimbsData(climbs);
+  }, [climbs]);
 
   // Handlers for each filter
   const handleCountryChange = (newCountry: string) => setCountry(newCountry);
   const handleStateChange = (newState: string) => setState(newState);
-  const handleCityChange = (newCity: string) => setCity(newCity);
+  const handleCategoryChange = (newCategory: string) =>
+    setCategory(newCategory);
 
   // Handler for reset button
   const handleResetFilters = () => {
@@ -59,23 +39,28 @@ const ClimbFilter = () => {
       <h4 className="my-3 text-sm uppercase text-text-color">Filters</h4>
       <>
         <SelectComponent
-          items={cities}
-          selected={city}
-          onChange={handleCityChange}
-          placeholder="City"
+          items={uniqueCategories}
+          selected={category}
+          onChange={handleCategoryChange}
+          placeholder="Category"
+          className="w-11/12"
         />
         <SelectComponent
-          items={states}
+          items={uniqueStates}
           selected={state}
           onChange={handleStateChange}
           placeholder="State"
+          className="w-11/12"
         />
         <SelectComponent
-          items={countries}
+          items={uniqueCountries}
           selected={country}
           onChange={handleCountryChange}
           placeholder="Country"
+          className="w-11/12"
         />
+        <br />
+        <SortingComponent />
         <br />
         <Button variant="error" onClick={handleResetFilters}>
           Reset Filters
@@ -85,4 +70,4 @@ const ClimbFilter = () => {
   );
 };
 
-export default ClimbFilter;
+export default ClimbFiltersAndSort;

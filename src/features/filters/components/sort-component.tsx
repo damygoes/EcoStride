@@ -1,50 +1,61 @@
-import { useClimbStore } from "@features/climb/utils/climb-store";
-import type { Climb } from "@type-definitions/Climb";
-import React, { useState } from "react";
-
-// Define a type for the sort key that matches the keys in your Climb type
-type SortKey = keyof Climb; // Replace '...' with actual keys as needed
+import SelectComponent from "@components/common/select-component/select-component";
+import { useFilterAndSortingStore } from "../utils/filters-and-sorting-store";
 
 const SortingComponent: React.FC = () => {
-  const sortClimbs = useClimbStore((state) => state.sortClimbs);
+  const { sortKey, sortOrder, setSortKey, setSortOrder } =
+    useFilterAndSortingStore();
 
-  const [sortKey, setSortKey] = useState<SortKey>("name"); // Assuming 'name' is a valid key
-  const [order, setOrder] = useState<"asc" | "desc" | null>(null); // Initially null
+  // Define optionMap with an explicit index signature
+  const optionMap: { [key: string]: string } = {
+    name: "Name",
+    distance: "Distance",
+    elevationGain: "Elevation",
+    averageGrade: "Avg. Grade",
+  };
 
-  const handleSort = () => {
-    if (order) {
-      // Only call sortClimbs if order is not null
-      sortClimbs(sortKey, order);
-    }
+  // The getLabelForSortOption function
+  const getLabelForSortOption = (value: string) => {
+    return optionMap[value] || value;
+  };
+
+  // Function to handle sortOrder change
+  const handleSortOrderChange = (order: "asc" | "desc") => {
+    setSortOrder(order);
   };
 
   return (
-    <div>
-      {/* Sort Key Selection */}
-      <select
-        value={sortKey}
-        onChange={(e) => setSortKey(e.target.value as SortKey)}
-      >
-        {/* Add options for each sort key */}
-        <option value="name">Name</option> {/* Repeat for other valid keys */}
-        {/* ... other options */}
-      </select>
+    <>
+      <h4 className="my-3 text-sm uppercase text-text-color">Sort By</h4>
+      <div className="flex items-center justify-start w-full gap-3">
+        <SelectComponent
+          items={Object.keys(optionMap)} // Use the keys of optionMap
+          selected={sortKey}
+          onChange={setSortKey}
+          labelFunction={getLabelForSortOption}
+          placeholder="Select"
+          className="flex-1"
+        />
 
-      {/* Order Selection */}
-      <select
-        value={order ?? undefined} // Use undefined to allow the default option to show
-        onChange={(e) => setOrder(e.target.value as "asc" | "desc" | null)}
-      >
-        <option value="" disabled>
-          Select Order
-        </option>{" "}
-        {/* Default option */}
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
-
-      <button onClick={handleSort}>Apply Sorting</button>
-    </div>
+        <div className="flex mr-3 space-x-2 text-sm text-text-color/60">
+          <span
+            className={`cursor-pointer ${
+              sortOrder === "asc" ? "text-accent" : ""
+            }`}
+            onClick={() => handleSortOrderChange("asc")}
+          >
+            Asc
+          </span>
+          <span
+            className={`cursor-pointer ${
+              sortOrder === "desc" ? "text-accent" : ""
+            }`}
+            onClick={() => handleSortOrderChange("desc")}
+          >
+            Desc
+          </span>
+        </div>
+      </div>
+    </>
   );
 };
 

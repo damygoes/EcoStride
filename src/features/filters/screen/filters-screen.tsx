@@ -1,11 +1,9 @@
-import FiltersScene from "../scene/filters-scene";
-import SortingScene from "../scene/sorting-scene";
+import ClimbFiltersAndSort from "../components/climb-filters-and-sort";
 
 function FiltersScreen() {
   return (
     <div className="w-full h-full text-text-color">
-      <FiltersScene />
-      <SortingScene />
+      <ClimbFiltersAndSort />
     </div>
   );
 }
