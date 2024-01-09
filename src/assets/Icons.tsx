@@ -1,4 +1,6 @@
 import { cn } from "@lib/utils";
+import maximumGradient from "./chart-maximum.svg";
+import minimumGradient from "./chart-minimum.svg";
 import defaultCardImage from "./default-card-image.svg";
 import distance from "./distance.svg";
 import homepageIcon from "./homepage-icon.svg";
@@ -50,6 +52,24 @@ function ElevationIcon({ className }: IconProps) {
 function HomepageHeaderIcon() {
   return <img src={homepageIcon} alt="homepage-icon" />;
 }
+function MaximumGradientIcon({ className }: IconProps) {
+  return (
+    <img
+      src={maximumGradient}
+      alt="maximum-gradient-icon"
+      className={cn((className = "w-4 h-4 text-accent"), className)}
+    />
+  );
+}
+function MinimumGradientIcon({ className }: IconProps) {
+  return (
+    <img
+      src={minimumGradient}
+      alt="minimum-gradient-icon"
+      className={cn((className = "w-4 h-4 text-accent"), className)}
+    />
+  );
+}
 
 export {
   AverageGradientIcon,
@@ -57,4 +77,6 @@ export {
   DistanceIcon,
   ElevationIcon,
   HomepageHeaderIcon,
+  MaximumGradientIcon,
+  MinimumGradientIcon,
 };

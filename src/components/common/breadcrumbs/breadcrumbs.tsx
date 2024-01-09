@@ -1,6 +1,11 @@
+import { cn } from "@lib/utils";
 import { Link, useLocation } from "react-router-dom";
 
-function BreadCrumbsComponent() {
+type BreadCrumbsComponentProps = {
+  className?: string;
+};
+
+function BreadCrumbsComponent({ className }: BreadCrumbsComponentProps) {
   const location = useLocation();
   const { pathname } = location;
   const segments = pathname.split("/").filter((path) => path !== "");
@@ -42,7 +47,11 @@ function BreadCrumbsComponent() {
     );
   });
 
-  return <nav aria-label="breadcrumb">{crumbs}</nav>;
+  return (
+    <nav aria-label="breadcrumb" className={cn(className)}>
+      {crumbs}
+    </nav>
+  );
 }
 
 export default BreadCrumbsComponent;
