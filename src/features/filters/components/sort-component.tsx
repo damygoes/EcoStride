@@ -25,18 +25,9 @@ const SortingComponent: React.FC = () => {
 
   return (
     <>
-      <h4 className="my-3 text-sm uppercase text-text-color">Sort By</h4>
-      <div className="flex items-center justify-start w-full gap-3">
-        <SelectComponent
-          items={Object.keys(optionMap)} // Use the keys of optionMap
-          selected={sortKey}
-          onChange={setSortKey}
-          labelFunction={getLabelForSortOption}
-          placeholder="Select"
-          className="flex-1"
-        />
-
-        <div className="flex mr-3 space-x-2 text-sm text-text-color/60">
+      <div className="flex items-center justify-between gap-4">
+        <h4 className="my-3 text-sm uppercase text-text-color">Sort By</h4>{" "}
+        <div className="flex space-x-2 text-sm text-text-color/60">
           <span
             className={`cursor-pointer ${
               sortOrder === "asc" ? "text-accent" : ""
@@ -54,6 +45,16 @@ const SortingComponent: React.FC = () => {
             Desc
           </span>
         </div>
+      </div>
+      <div className="flex items-center justify-start w-full gap-3">
+        <SelectComponent
+          items={Object.keys(optionMap)} // Use the keys of optionMap
+          selected={sortKey}
+          onChange={setSortKey}
+          labelFunction={getLabelForSortOption}
+          placeholder="Select"
+          className="flex-1"
+        />
       </div>
     </>
   );

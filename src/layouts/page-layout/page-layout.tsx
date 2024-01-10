@@ -20,7 +20,7 @@ const PageHeader = ({ pageTitle, className }: PageHeaderProps) => {
   return (
     <div
       className={cn(
-        "flex items-center rounded-md justify-center w-full h-full bg-gradient-to-br from-primary to-secondary md:h-1/6",
+        "flex items-center rounded-md text-center shrink-0 justify-center w-full h-full bg-gradient-to-br from-primary to-secondary md:h-1/6",
         className,
       )}
     >
@@ -45,8 +45,12 @@ function PageLayout({
   }
 
   return (
-    <section className="flex flex-col items-start justify-between w-full h-full gap-2 p-3 overflow-hidden bg-inherit md:flex-row md:px-4 md:py-3">
-      <section className="w-full h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:w-1/6">
+    <section
+      className={cn(
+        "flex flex-col items-start justify-between w-full h-full gap-2 p-3 overflow-hidden bg-inherit md:flex-row md:px-4 md:py-3",
+      )}
+    >
+      <section className="w-full h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:w-1/5">
         <PageHeader pageTitle={pageTitle} />
         {withSidebar && (
           <div className="hidden shadow-sm md:flex md:flex-1 md:w-full">
