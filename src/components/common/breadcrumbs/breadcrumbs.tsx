@@ -42,7 +42,9 @@ function BreadCrumbsComponent({ className }: BreadCrumbsComponentProps) {
             {displayName}
           </span>
         )}
-        {index < segments.length - 1 && <span className="mx-2">→</span>}
+        {index < segments.length - 1 && (
+          <span className="mx-2 text-text-color">→</span>
+        )}
       </span>
     );
   });

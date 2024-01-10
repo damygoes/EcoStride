@@ -1,8 +1,8 @@
 // import { climbs } from "@mock/climbs";
 import { cn } from "@lib/utils";
 import type { Climb } from "@type-definitions/Climb";
-import ClimbCard from "./climb-card";
-import ClimbCardSkeleton from "./climb-card-skeleton";
+import ClimbCard from "../card/climb-card";
+import ClimbCardSkeleton from "../card/climb-card-skeleton";
 
 type listState = "loading" | "error" | null;
 

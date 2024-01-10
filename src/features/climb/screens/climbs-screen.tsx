@@ -6,7 +6,7 @@ import PageLayout from "@layouts/page-layout/page-layout";
 import { cn } from "@lib/utils";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import ClimbsList from "../components/climbs-list";
+import ClimbsList from "../components/list/climbs-list";
 import { useClimbStore } from "../utils/climb-store";
 
 function ClimbsScreen() {
@@ -106,7 +106,7 @@ function ClimbsScreen() {
       <section className="flex flex-col items-start justify-start h-full gap-4 overflow-hidden">
         <header
           className={cn(
-            "flex flex-col-reverse w-full rounded-md justify-start items-start p-2 gap-4 md:flex-row md:justify-between md:items-center md:h-[10%] bg-gradient-to-r from-white via-white to-primary",
+            "flex flex-col-reverse w-full rounded-md justify-start items-start p-2 gap-4 md:flex-row md:justify-between md:items-center md:h-[10%] bg-gradient-to-r from-white via-white to-primary dark:from-secondary dark:via-primary dark:to-white",
             {
               "md:justify-end": !category || !state || !country,
             },

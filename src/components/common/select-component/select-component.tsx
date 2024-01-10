@@ -24,7 +24,7 @@ export default function SelectComponent<T extends { toString(): string }>({
   return (
     <Listbox value={selected} onChange={onChange}>
       <div className={cn("relative mt-1", className)}>
-        <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-sm cursor-default focus:outline-none focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-accent sm:text-sm">
+        <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left rounded-lg shadow-sm cursor-default bg-background focus:outline-none focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-accent sm:text-sm">
           <span className="block truncate">
             {selected
               ? labelFunction(selected)
@@ -44,7 +44,7 @@ export default function SelectComponent<T extends { toString(): string }>({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Listbox.Options className="absolute z-20 w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-text-color/5 focus:outline-none sm:text-sm">
+          <Listbox.Options className="absolute z-20 w-full py-1 mt-1 overflow-auto text-base rounded-md shadow-lg bg-background max-h-60 ring-1 ring-text-color/5 focus:outline-none sm:text-sm">
             {items.map((item, index) => (
               <Listbox.Option
                 key={index}

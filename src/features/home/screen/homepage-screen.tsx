@@ -1,5 +1,5 @@
 import { LocationContext } from "@context/location-provider/location-provider";
-import ClimbsList from "@features/climb/components/climbs-list";
+import ClimbsList from "@features/climb/components/list/climbs-list";
 import { useClimbStore } from "@features/climb/utils/climb-store";
 import FiltersScreen from "@features/filters/screen/filters-screen";
 import { useUserStore } from "@features/user/utils/user-store";

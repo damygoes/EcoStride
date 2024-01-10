@@ -20,7 +20,7 @@ function SearchInput({ value, onChange, className }: SearchInputProps) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search for..."
-        className="w-full rounded-md border-none py-2.5 pe-10 pl-2.5 text-text-color/50 shadow-sm sm:text-sm"
+        className="w-full rounded-md border-none py-2.5 pe-10 pl-2.5 text-text-color/50 shadow-sm sm:text-sm dark:text-text-color dark:bg-background"
       />
 
       <span className="absolute inset-y-0 grid w-10 end-0 place-content-center">
