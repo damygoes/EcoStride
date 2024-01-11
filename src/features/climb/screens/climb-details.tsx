@@ -4,7 +4,7 @@ import CommentList from "@features/comments/components/comment-list";
 import CommentTextArea from "@features/comments/components/comment-text-area";
 import PageLayout from "@layouts/page-layout/page-layout";
 import { climbs } from "@mock/climbs";
-import { MOCK_COMMENTS } from "@mock/comments";
+import { ALL_CLIMB_COMMENTS } from "@mock/comments";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -15,10 +15,17 @@ import RelatedClimbsList from "../components/related-climbs/related-climbs-list"
 function ClimbDetails() {
   const { t } = useTranslation();
   const { climbSlug } = useParams();
+
   const selectedClimb = useMemo(
     () => climbs.find((climb) => climb.slug === climbSlug),
     [climbSlug],
   );
+
+  const climbComments = useMemo(() => {
+    return ALL_CLIMB_COMMENTS.filter(
+      (comment) => comment.climbId === selectedClimb?.id,
+    );
+  }, [selectedClimb?.id]);
 
   if (!selectedClimb) {
     return null;
@@ -43,7 +50,7 @@ function ClimbDetails() {
           content={
             <>
               <CommentTextArea />
-              <CommentList comments={MOCK_COMMENTS} />
+              <CommentList comments={climbComments} />
             </>
           }
         />

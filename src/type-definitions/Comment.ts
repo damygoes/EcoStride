@@ -1,6 +1,7 @@
 export type Comment = {
   userId: string;
-  id: string;
+  commentId: string;
+  climbId: string;
   text: string;
   subComments: Comment[];
   createdAt: string;

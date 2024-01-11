@@ -1,0 +1,1150 @@
+[
+  {
+    "userId": "984f7165-0d34-492b-80e7-b09b9e59a1db",
+    "commentId": "e5c5b9b0-268b-476c-9dae-9acbcb1234c6",
+    "climbId": "climb3",
+    "text": "Quite slippery in wet conditions",
+    "subComments": [],
+    "createdAt": "2023-11-09 16:15:58"
+  },
+  {
+    "userId": "a7a67b4a-a3b6-4f8c-9521-f6b88e898ef3",
+    "commentId": "6cfea729-be0f-4a26-9b80-a843d2c2f838",
+    "climbId": "climb9",
+    "text": "Great climb!",
+    "subComments": [
+      {
+        "userId": "b6b6b6b6-b6b6-b6b6-b6b6-b6b6b6b6b6b6",
+        "commentId": "3bdfgtsh-hztv-5y6u-7i8o-9o0p0o9i8u7y",
+        "climbId": "6cfea729-be0f-4a26-9b80-a843d2c2f838",
+        "text": "I would recommend this climb to anyone",
+        "subComments": [
+          {
+            "userId": "t5rf5gh-65g6-jj8j-lli8-8j8j8j8j8j8j",
+            "commentId": "5r57ehgju-6h6h-6h6h-6h6h-6h6h6h6h6h6h",
+            "climbId": "6cfea729-be0f-4a26-9b80-a843d2c2f838",
+            "text": "I would recommend this climb to anyone",
+            "subComments": [],
+            "createdAt": "2023-11-09 16:15:58"
+          }
+        ],
+        "createdAt": "2023-11-09 16:15:58"
+      }
+    ],
+    "createdAt": "2023-11-13 16:35:31"
+  },
+  {
+    "userId": "af2ce289-c30d-4260-a223-b8a8a19fc2af",
+    "commentId": "d5f34937-e4b8-4972-8188-d6c193c683d1",
+    "climbId": "climb8",
+    "text": "Great climb!",
+    "subComments": [
+      {
+        "userId": "b09b1ffc-a0ef-479c-8ad1-5957b3067c9f",
+        "commentId": "23b9184d-2caa-4b40-a93c-0f78f828c937",
+        "climbId": "d5f34937-e4b8-4972-8188-d6c193c683d1",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-12-19 02:00:40"
+      },
+      {
+        "userId": "b06ea79f-a5a1-405e-85e3-ca850db6a75d",
+        "commentId": "297334d8-07ef-4f58-b6b2-a65abd71aaac",
+        "climbId": "d5f34937-e4b8-4972-8188-d6c193c683d1",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-11-08 16:51:22"
+      }
+    ],
+    "createdAt": "2023-11-01 18:12:19"
+  },
+  {
+    "userId": "b4eed80d-76ca-4be8-af80-a70a74cf14a2",
+    "commentId": "9a2f85e5-aabe-4afa-973f-fa2d32c6b8e5",
+    "climbId": "climb4",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "efdc41c8-2604-4d1f-9d73-d1c38816098b",
+        "commentId": "2c6b1b03-7706-4815-a0db-03c66321ab75",
+        "climbId": "9a2f85e5-aabe-4afa-973f-fa2d32c6b8e5",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2024-01-07 15:13:09"
+      },
+      {
+        "userId": "ad10e1a0-fe9b-40f8-a29d-00e4e48bcf09",
+        "commentId": "73b22634-e940-4e75-af9f-a66cdadb5e07",
+        "climbId": "9a2f85e5-aabe-4afa-973f-fa2d32c6b8e5",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-11-10 02:06:06"
+      }
+    ],
+    "createdAt": "2023-12-01 14:02:54"
+  },
+  {
+    "userId": "2ceef1a2-5606-4074-8e41-ed5beea8c9a5",
+    "commentId": "80936f64-ad9f-4c53-b661-cb5dbbf53243",
+    "climbId": "climb6",
+    "text": "Would definitely recommend",
+    "subComments": [
+      {
+        "userId": "dbf5b52a-f243-4ddc-a8d5-6c3b4cfd57cc",
+        "commentId": "77a70a18-6e31-4222-9473-47d8461ce706",
+        "climbId": "80936f64-ad9f-4c53-b661-cb5dbbf53243",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-12-18 19:13:24"
+      },
+      {
+        "userId": "3d5c4841-b303-4f56-b889-a292d9671b92",
+        "commentId": "c9a8ca0d-5e4e-41bc-94e9-f5ba5a292704",
+        "climbId": "80936f64-ad9f-4c53-b661-cb5dbbf53243",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-12-17 14:23:52"
+      }
+    ],
+    "createdAt": "2023-12-28 14:45:08"
+  },
+  {
+    "userId": "f0cc6853-11c2-49f4-b43a-45209c6ce13a",
+    "commentId": "c68a6f60-e0ca-4f1b-8fcd-c53d847499f2",
+    "climbId": "climb10",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "5173a286-45a3-410e-ba4b-5b0b779faa22",
+        "commentId": "98406b5c-c439-495d-acdc-2caa43399095",
+        "climbId": "c68a6f60-e0ca-4f1b-8fcd-c53d847499f2",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-11-12 14:15:18"
+      },
+      {
+        "userId": "21c52c22-c237-49b8-ba19-9ef7910b4d15",
+        "commentId": "1ee8e1c0-9ef8-4b5b-a66e-a1b285e299e1",
+        "climbId": "c68a6f60-e0ca-4f1b-8fcd-c53d847499f2",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-11-26 02:58:02"
+      },
+      {
+        "userId": "45a39b6b-c910-4858-9e0e-11d9a7e9885a",
+        "commentId": "5240bc34-cd3c-4dc5-9c03-4b08780f5a3e",
+        "climbId": "c68a6f60-e0ca-4f1b-8fcd-c53d847499f2",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-11-02 09:14:40"
+      }
+    ],
+    "createdAt": "2023-11-21 18:34:32"
+  },
+  {
+    "userId": "7517f518-90d1-4781-b502-12215b135e2f",
+    "commentId": "9e880d32-67ec-426e-b419-80e739dec866",
+    "climbId": "climb2",
+    "text": "Not as tough as I expected",
+    "subComments": [
+      {
+        "userId": "5f667989-b195-4df9-81e5-d1270fa9a925",
+        "commentId": "c370b0b7-564f-4267-afad-9706f0735441",
+        "climbId": "9e880d32-67ec-426e-b419-80e739dec866",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-12-08 00:34:14"
+      },
+      {
+        "userId": "8f03741d-5754-4fca-9539-9ca909c987dc",
+        "commentId": "2a02d4d8-43c4-4493-ab43-c533d0488bbc",
+        "climbId": "9e880d32-67ec-426e-b419-80e739dec866",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2023-12-20 03:38:40"
+      }
+    ],
+    "createdAt": "2023-12-31 00:10:55"
+  },
+  {
+    "userId": "7ab57288-2fc1-4fc5-92a4-5ff0881bc662",
+    "commentId": "3cf7172f-252c-45ce-b3d3-9ceb0c6ddb77",
+    "climbId": "climb7",
+    "text": "Challenging but rewarding",
+    "subComments": [
+      {
+        "userId": "4b0a3001-62b1-4909-b24f-c71d812b51ef",
+        "commentId": "b7af6e6f-2fa8-4758-92ce-6c7d44519e2e",
+        "climbId": "3cf7172f-252c-45ce-b3d3-9ceb0c6ddb77",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-11-28 12:32:19"
+      },
+      {
+        "userId": "9a57ca48-b90c-4be4-a881-c282ee2861c2",
+        "commentId": "cf29d216-13c1-4aaf-9cd4-e5fb0e206b0e",
+        "climbId": "3cf7172f-252c-45ce-b3d3-9ceb0c6ddb77",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2023-11-07 07:22:08"
+      }
+    ],
+    "createdAt": "2023-11-10 05:12:17"
+  },
+  {
+    "userId": "9b232c2a-a432-4e35-9290-9f0589e9868f",
+    "commentId": "0ad0050f-6907-413c-b545-d76a445d118a",
+    "climbId": "climb14",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "9cf636b0-323f-4783-a511-ee32de28646b",
+        "commentId": "4c34ffa2-250c-4b4a-abc8-b233be46d1ac",
+        "climbId": "0ad0050f-6907-413c-b545-d76a445d118a",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2023-11-08 07:22:42"
+      },
+      {
+        "userId": "89dd6a68-7c18-4e09-9571-10b4ae09c6c2",
+        "commentId": "4747926a-e601-44a9-9917-583955a3f714",
+        "climbId": "0ad0050f-6907-413c-b545-d76a445d118a",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-12-27 21:37:24"
+      }
+    ],
+    "createdAt": "2023-11-20 13:20:38"
+  },
+  {
+    "userId": "bc24042f-59ad-48ae-9567-1fc414c8f513",
+    "commentId": "198536ff-77ee-4ee1-81df-d373558715be",
+    "climbId": "climb8",
+    "text": "Beautiful view at the top",
+    "subComments": [
+      {
+        "userId": "b2659757-dda4-4d34-afd2-6baa40cabbb8",
+        "commentId": "0e0daad8-32ca-488d-b581-7e51a50a28a0",
+        "climbId": "198536ff-77ee-4ee1-81df-d373558715be",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-12-24 07:57:57"
+      }
+    ],
+    "createdAt": "2023-12-28 01:21:12"
+  },
+  {
+    "userId": "e094f01f-8507-463d-949a-13ee937129bb",
+    "commentId": "2f300588-d1bc-4f60-b01b-fc59bb554331",
+    "climbId": "climb8",
+    "text": "Needs better signage",
+    "subComments": [
+      {
+        "userId": "09b890cb-fd36-40fa-88a9-be6beac1a7c7",
+        "commentId": "c13ce266-9b3a-49b6-9008-cf29f9843b82",
+        "climbId": "2f300588-d1bc-4f60-b01b-fc59bb554331",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-11-27 03:00:17"
+      },
+      {
+        "userId": "10335bfd-ce54-4836-9058-8f2c03c5ca79",
+        "commentId": "fd70ed43-7ca5-41ea-91b3-87ef5ef38e98",
+        "climbId": "2f300588-d1bc-4f60-b01b-fc59bb554331",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2024-01-06 02:20:29"
+      },
+      {
+        "userId": "0ccb004f-4c77-420e-8505-c37a51418787",
+        "commentId": "e8687a4c-e8d9-4cad-b4ba-d8117bc8a84b",
+        "climbId": "2f300588-d1bc-4f60-b01b-fc59bb554331",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2024-01-04 02:33:47"
+      }
+    ],
+    "createdAt": "2023-12-17 13:28:19"
+  },
+  {
+    "userId": "096d3f53-474f-4c28-8fba-2a19a10a3afc",
+    "commentId": "ab0b14cf-15e7-4836-b387-1c44b7097d2e",
+    "climbId": "climb10",
+    "text": "Challenging but rewarding",
+    "subComments": [
+      {
+        "userId": "b8b165af-3c2d-400b-8447-c0362cdfa72d",
+        "commentId": "172b0fd3-aec8-46c0-90b7-d5f746725919",
+        "climbId": "ab0b14cf-15e7-4836-b387-1c44b7097d2e",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2024-01-03 16:41:34"
+      }
+    ],
+    "createdAt": "2023-12-17 10:03:17"
+  },
+  {
+    "userId": "58c3092f-f3d0-457a-8fe8-3c4e654ec021",
+    "commentId": "87f89960-2b32-445b-9d2b-a64ea63615d8",
+    "climbId": "climb11",
+    "text": "Beautiful view at the top",
+    "subComments": [
+      {
+        "userId": "77f05c39-1c5d-4f6b-ad98-3684cdbd37b3",
+        "commentId": "fad655a2-c7c7-455e-ab5a-02e35515acf7",
+        "climbId": "87f89960-2b32-445b-9d2b-a64ea63615d8",
+        "text": "Great climb!",
+        "subComments": [],
+        "createdAt": "2023-11-04 17:18:25"
+      },
+      {
+        "userId": "b3207b7f-8620-4d07-87f2-2812a97dd622",
+        "commentId": "57c67939-8a4f-416b-a5df-7dc989dce965",
+        "climbId": "87f89960-2b32-445b-9d2b-a64ea63615d8",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-12-07 12:29:23"
+      },
+      {
+        "userId": "2f596f80-6d59-49e9-b0d9-68f7b5c1c5f8",
+        "commentId": "6ad6b3b6-f323-4a4c-91b0-54c80034f401",
+        "climbId": "87f89960-2b32-445b-9d2b-a64ea63615d8",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2024-01-08 03:26:12"
+      }
+    ],
+    "createdAt": "2023-12-10 03:46:53"
+  },
+  {
+    "userId": "2efd08a4-298f-480e-8549-355e91300eb6",
+    "commentId": "d7cec247-a23f-416c-a776-bbdbe639d197",
+    "climbId": "climb3",
+    "text": "Beautiful view at the top",
+    "subComments": [
+      {
+        "userId": "12bf8168-4194-4bf5-80c6-e489cff17c8d",
+        "commentId": "cdd3e4a1-abcc-4695-ace6-e3be7ad12308",
+        "climbId": "d7cec247-a23f-416c-a776-bbdbe639d197",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-11-20 02:57:55"
+      }
+    ],
+    "createdAt": "2024-01-01 10:01:43"
+  },
+  {
+    "userId": "e2cab151-e3b6-4227-8edd-1b8bb4b4fe22",
+    "commentId": "08af05f6-9699-4d62-8446-e780c2154da1",
+    "climbId": "climb5",
+    "text": "Challenging but rewarding",
+    "subComments": [
+      {
+        "userId": "539606cd-0534-4207-9ef3-fbe968f3d8e9",
+        "commentId": "7e1a9e7d-7917-49ce-b220-6b48e755023a",
+        "climbId": "08af05f6-9699-4d62-8446-e780c2154da1",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-12-22 19:03:29"
+      },
+      {
+        "userId": "1213af29-1ea2-439c-aed0-caf767ff1443",
+        "commentId": "7a889d0a-dceb-4aef-97b6-a7019a1264e4",
+        "climbId": "08af05f6-9699-4d62-8446-e780c2154da1",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-11-20 13:44:31"
+      }
+    ],
+    "createdAt": "2024-01-02 10:25:04"
+  },
+  {
+    "userId": "d17c2a0e-2296-41a8-b2b9-2b4c504f399e",
+    "commentId": "f6ce4e65-7cbb-499a-b069-af981631d028",
+    "climbId": "climb4",
+    "text": "Beautiful view at the top",
+    "subComments": [
+      {
+        "userId": "56989713-3e68-4af4-bebe-689faeaaf646",
+        "commentId": "2b605db5-0b83-4366-bb3f-c385c8a26d6a",
+        "climbId": "f6ce4e65-7cbb-499a-b069-af981631d028",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-11-24 12:43:15"
+      },
+      {
+        "userId": "47284ae1-d3c4-41e6-885c-6f3940d0b92d",
+        "commentId": "69f78698-0340-4cba-b5b5-85eb930ef699",
+        "climbId": "f6ce4e65-7cbb-499a-b069-af981631d028",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2023-11-23 07:01:47"
+      },
+      {
+        "userId": "db2c5aa0-76ee-456c-b427-3c992eded0c9",
+        "commentId": "2793e289-26e9-405a-a4f3-8e08da05c16d",
+        "climbId": "f6ce4e65-7cbb-499a-b069-af981631d028",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2024-01-08 15:23:03"
+      }
+    ],
+    "createdAt": "2023-12-02 03:11:55"
+  },
+  {
+    "userId": "f97b2ae9-2aab-4324-b631-2b6a7e0360fc",
+    "commentId": "5eedf97c-e517-42a0-ba85-4ede1a87bbea",
+    "climbId": "climb1",
+    "text": "Would definitely recommend",
+    "subComments": [
+      {
+        "userId": "a97fb289-00cf-4219-82bc-3873a8cf5741",
+        "commentId": "65c41f2e-349e-4f53-94c2-f9223ee1d9ec",
+        "climbId": "5eedf97c-e517-42a0-ba85-4ede1a87bbea",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-12-05 20:41:02"
+      }
+    ],
+    "createdAt": "2023-12-31 07:30:03"
+  },
+  {
+    "userId": "abdc3b65-d1b0-4b1c-9bc0-00f288ac9f52",
+    "commentId": "9d393d79-e921-4786-afe8-2d7909681e90",
+    "climbId": "climb8",
+    "text": "Beautiful view at the top",
+    "subComments": [
+      {
+        "userId": "23f2f1dc-34de-4cc1-9630-2b2a131b8778",
+        "commentId": "797c53d6-8623-46b8-9ce6-b0e6d866218b",
+        "climbId": "9d393d79-e921-4786-afe8-2d7909681e90",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2023-11-21 07:26:50"
+      },
+      {
+        "userId": "d8dedd5a-eb63-491c-8938-50c178e63711",
+        "commentId": "029d3563-316d-4f80-b603-68c1c4b2d9a0",
+        "climbId": "9d393d79-e921-4786-afe8-2d7909681e90",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-11-14 18:35:22"
+      }
+    ],
+    "createdAt": "2023-11-22 22:03:21"
+  },
+  {
+    "userId": "a648feb9-a327-4143-ac29-12f64b1624ed",
+    "commentId": "e853655f-0529-4819-baf6-bfbdd9e44f27",
+    "climbId": "climb4",
+    "text": "Great climb!",
+    "subComments": [
+      {
+        "userId": "cc07a702-2df3-4f17-9e42-4cb833fc19c5",
+        "commentId": "29aa1c7e-9a83-44aa-90d1-ce7d7e39be03",
+        "climbId": "e853655f-0529-4819-baf6-bfbdd9e44f27",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-12-12 15:51:58"
+      },
+      {
+        "userId": "f7b629a9-b41d-4624-bba7-790b7c15ab8b",
+        "commentId": "fdc0b797-13f2-402e-855b-1ad5e10c8df6",
+        "climbId": "e853655f-0529-4819-baf6-bfbdd9e44f27",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-11-08 21:25:53"
+      }
+    ],
+    "createdAt": "2023-12-29 18:17:16"
+  },
+  {
+    "userId": "910c72f7-6d06-409d-be15-af3918d87229",
+    "commentId": "043ca388-f4a9-4011-acb6-31f53d080629",
+    "climbId": "climb3",
+    "text": "Needs better signage",
+    "subComments": [
+      {
+        "userId": "01337f85-84c8-4960-9e8c-b9d7c1042ba4",
+        "commentId": "bf6cc14f-e054-404c-b54b-8c0ef7a2246f",
+        "climbId": "043ca388-f4a9-4011-acb6-31f53d080629",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-12-12 01:35:41"
+      },
+      {
+        "userId": "a5bf2b6a-00c3-4c7e-be2e-a09ff5699c16",
+        "commentId": "f2a78a2c-4ab2-4497-9e4c-16828abb36ff",
+        "climbId": "043ca388-f4a9-4011-acb6-31f53d080629",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-12-07 16:12:36"
+      }
+    ],
+    "createdAt": "2023-12-24 10:23:38"
+  },
+  {
+    "userId": "fc7af208-93ca-430c-bfe7-4992368d0f5b",
+    "commentId": "f7d9ad86-0f32-410b-a405-6d756d843b14",
+    "climbId": "climb4",
+    "text": "Challenging but rewarding",
+    "subComments": [
+      {
+        "userId": "1141e83a-a4e8-40fa-ba5d-b02439b659c7",
+        "commentId": "7da9ffe5-a43c-488d-ba3f-9a8672aca7e9",
+        "climbId": "f7d9ad86-0f32-410b-a405-6d756d843b14",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-12-07 21:56:11"
+      },
+      {
+        "userId": "ec61d8b9-3bb6-4c15-adf5-10d033b1cc38",
+        "commentId": "dd7332b5-a651-4039-ac4a-7dacd208b888",
+        "climbId": "f7d9ad86-0f32-410b-a405-6d756d843b14",
+        "text": "Great climb!",
+        "subComments": [],
+        "createdAt": "2023-12-22 16:15:52"
+      },
+      {
+        "userId": "05eb6382-b6db-4b32-85ce-a0b853e09bad",
+        "commentId": "22dd2d42-5f0d-4545-a374-8ed54c0810c5",
+        "climbId": "f7d9ad86-0f32-410b-a405-6d756d843b14",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-11-09 10:40:41"
+      }
+    ],
+    "createdAt": "2023-12-29 08:35:06"
+  },
+  {
+    "userId": "af69a2f3-58a7-46c2-8e12-e03eae906b95",
+    "commentId": "1b176d28-33ac-4bcb-9d85-9ed56e0f366f",
+    "climbId": "climb10",
+    "text": "Needs better signage",
+    "subComments": [],
+    "createdAt": "2023-11-18 21:16:33"
+  },
+  {
+    "userId": "765e0386-d608-4631-bd64-80e217a80f46",
+    "commentId": "e014b1f0-e84a-49e5-8a47-08011d3597e2",
+    "climbId": "climb17",
+    "text": "Needs better signage",
+    "subComments": [
+      {
+        "userId": "7e2b3589-f81d-4f5b-a6a8-f908fed83e9e",
+        "commentId": "e0c3ea98-ec4e-4fe2-aebc-9710f1e02df8",
+        "climbId": "e014b1f0-e84a-49e5-8a47-08011d3597e2",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-12-27 21:25:00"
+      },
+      {
+        "userId": "c3e8d6a4-d786-4d2b-a790-4b849c49f5b3",
+        "commentId": "028ef721-5292-47fe-85df-f7be952a2ab6",
+        "climbId": "e014b1f0-e84a-49e5-8a47-08011d3597e2",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-11-09 22:24:17"
+      }
+    ],
+    "createdAt": "2023-11-19 05:11:37"
+  },
+  {
+    "userId": "b9318b57-d304-4d5f-b6c6-a4550804274e",
+    "commentId": "54537959-825d-4bd3-8d6d-e0bd0e3d3966",
+    "climbId": "climb5",
+    "text": "Quite slippery in wet conditions",
+    "subComments": [
+      {
+        "userId": "1e17cd9c-f44d-4fb2-8d6d-379eb5058f83",
+        "commentId": "f55d0731-fd73-49b8-8658-3feb2e4be4cb",
+        "climbId": "54537959-825d-4bd3-8d6d-e0bd0e3d3966",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-11-17 09:45:46"
+      },
+      {
+        "userId": "ef1afd31-ba7a-4fa6-a8fc-031050ec4995",
+        "commentId": "79956622-7ae1-4051-ae7a-e0f1a2edbd81",
+        "climbId": "54537959-825d-4bd3-8d6d-e0bd0e3d3966",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-12-06 11:58:15"
+      }
+    ],
+    "createdAt": "2024-01-07 05:37:19"
+  },
+  {
+    "userId": "bc3b3b9b-7c83-487a-99e2-c26a0c81e34b",
+    "commentId": "5d210141-e8ad-4f11-a7c9-4d301b3d17d7",
+    "climbId": "climb10",
+    "text": "Needs better signage",
+    "subComments": [],
+    "createdAt": "2023-11-28 09:29:00"
+  },
+  {
+    "userId": "b1ec3505-dfc5-46d5-9392-847ba144d537",
+    "commentId": "2d62f411-d5f7-4138-8745-e0824244db78",
+    "climbId": "climb7",
+    "text": "Well maintained paths",
+    "subComments": [],
+    "createdAt": "2023-12-05 22:53:46"
+  },
+  {
+    "userId": "8e99f32f-f6e2-4f23-bda1-c8934b2fb467",
+    "commentId": "31ca0d6a-a0c2-462f-baaf-1a307caea84f",
+    "climbId": "climb6",
+    "text": "Crowded but worth it",
+    "subComments": [
+      {
+        "userId": "eb11acc3-94ac-43de-a77d-9bcc567347a4",
+        "commentId": "34fc4ee5-d9ec-4f49-97aa-52e7b0b35361",
+        "climbId": "31ca0d6a-a0c2-462f-baaf-1a307caea84f",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-11-26 16:20:09"
+      },
+      {
+        "userId": "56a17622-c7ec-4447-b53d-2927cfbd3624",
+        "commentId": "947ac564-bbee-4a86-bc90-0c41d94689db",
+        "climbId": "31ca0d6a-a0c2-462f-baaf-1a307caea84f",
+        "text": "Great climb!",
+        "subComments": [],
+        "createdAt": "2023-11-13 18:20:45"
+      },
+      {
+        "userId": "cc62a246-8402-4bb0-b2d2-7dbc04648a3c",
+        "commentId": "aa392487-84e4-444c-b6fa-bea701f1c483",
+        "climbId": "31ca0d6a-a0c2-462f-baaf-1a307caea84f",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-12-16 09:26:05"
+      }
+    ],
+    "createdAt": "2023-11-30 06:33:29"
+  },
+  {
+    "userId": "1c411a2b-7739-4c61-85fc-86f856029688",
+    "commentId": "01bf4ecd-4b1f-4fcb-84db-b098b34d673d",
+    "climbId": "climb17",
+    "text": "Quite slippery in wet conditions",
+    "subComments": [
+      {
+        "userId": "9d212e2f-ef65-42c9-8d74-e726ae1f9d39",
+        "commentId": "2d1eaf39-1407-4804-bcab-aa9f5052c09c",
+        "climbId": "01bf4ecd-4b1f-4fcb-84db-b098b34d673d",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-12-29 16:29:22"
+      }
+    ],
+    "createdAt": "2023-11-30 05:25:44"
+  },
+  {
+    "userId": "2097d2b8-61f8-454f-ac74-cfcce0ec5145",
+    "commentId": "5d714add-95d2-49e2-8589-3ee4586d76d0",
+    "climbId": "climb12",
+    "text": "Beautiful view at the top",
+    "subComments": [],
+    "createdAt": "2024-01-07 08:25:04"
+  },
+  {
+    "userId": "5ed25f59-ba64-4227-a2ed-45f3a5c70c3f",
+    "commentId": "9e656bd8-9ed2-4953-b583-d19515d4551f",
+    "climbId": "climb14",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "0c2c881e-b041-448e-ade1-10b70fc3f4d7",
+        "commentId": "fbf30d40-8867-4d13-88ef-2cd9971d8c91",
+        "climbId": "9e656bd8-9ed2-4953-b583-d19515d4551f",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-11-10 23:12:53"
+      },
+      {
+        "userId": "c8f20ab8-4049-48c0-b591-bb138ac22ad1",
+        "commentId": "e420bf3d-b1ef-4a5f-947d-0472fd72ddf9",
+        "climbId": "9e656bd8-9ed2-4953-b583-d19515d4551f",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-11-12 00:04:17"
+      }
+    ],
+    "createdAt": "2023-12-24 21:42:31"
+  },
+  {
+    "userId": "61c1941d-c690-41ef-bc2d-ba4bfea651e0",
+    "commentId": "be951f63-fc78-4590-b115-88c725507f42",
+    "climbId": "climb1",
+    "text": "Beautiful view at the top",
+    "subComments": [
+      {
+        "userId": "286d7198-bb1d-42c0-ae12-8f86a2476d6e",
+        "commentId": "83fd6cdd-cd85-48c4-a175-4ce56232b830",
+        "climbId": "be951f63-fc78-4590-b115-88c725507f42",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-12-19 04:30:48"
+      },
+      {
+        "userId": "f99db4c1-45fa-408c-8702-d2dd874cf599",
+        "commentId": "173cad71-43f9-4c80-91da-6a708a69fb0a",
+        "climbId": "be951f63-fc78-4590-b115-88c725507f42",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-11-07 21:51:56"
+      },
+      {
+        "userId": "0965d975-3c99-4145-acb0-78e73da17820",
+        "commentId": "adf37bf7-3b79-4a19-a07d-8c1620d815ce",
+        "climbId": "be951f63-fc78-4590-b115-88c725507f42",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-12-07 00:48:45"
+      }
+    ],
+    "createdAt": "2023-12-22 11:22:56"
+  },
+  {
+    "userId": "3d2ec969-b596-4672-b34f-a2160af26bb9",
+    "commentId": "1483c0e5-e7a6-47fa-944c-e7d6be17de27",
+    "climbId": "climb10",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "4e78e4b8-8337-4389-944e-8dae61c6a6dd",
+        "commentId": "f9f71ecb-6740-49b2-9c3b-5d64997299db",
+        "climbId": "1483c0e5-e7a6-47fa-944c-e7d6be17de27",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2023-12-28 19:00:33"
+      }
+    ],
+    "createdAt": "2023-11-08 10:36:09"
+  },
+  {
+    "userId": "1c0b0dc6-a922-4787-9b72-5d57f0c99704",
+    "commentId": "d7371c6b-5a33-4174-bf8d-9c74830a3cf5",
+    "climbId": "climb10",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "73bfde28-e8e0-407d-a352-1c38c2dd2e18",
+        "commentId": "20a00604-6e9b-4b69-afa6-167ad3107cb6",
+        "climbId": "d7371c6b-5a33-4174-bf8d-9c74830a3cf5",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-11-21 04:41:08"
+      },
+      {
+        "userId": "4fb70f89-4e28-4cd2-aefc-a1be6107808d",
+        "commentId": "4713319d-4fde-4399-aef2-2ff07b88c3c5",
+        "climbId": "d7371c6b-5a33-4174-bf8d-9c74830a3cf5",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2023-11-15 09:44:55"
+      },
+      {
+        "userId": "ccec5bb1-ad8d-430a-a166-459f31ada638",
+        "commentId": "54bc6a8e-bf03-4e87-b739-11e3e7d0ba51",
+        "climbId": "d7371c6b-5a33-4174-bf8d-9c74830a3cf5",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2024-01-07 03:36:46"
+      }
+    ],
+    "createdAt": "2023-12-28 00:05:27"
+  },
+  {
+    "userId": "45fb4347-49db-421b-86e0-ef0ef9aa4112",
+    "commentId": "417f2be1-b09b-49ba-9a1e-f3472fbbb851",
+    "climbId": "climb10",
+    "text": "Challenging but rewarding",
+    "subComments": [
+      {
+        "userId": "ac52aac8-1436-4ac0-8d5b-f21969ac4575",
+        "commentId": "0d33b51a-772e-4493-be0c-dbd7b0dc9286",
+        "climbId": "417f2be1-b09b-49ba-9a1e-f3472fbbb851",
+        "text": "Great climb!",
+        "subComments": [],
+        "createdAt": "2023-12-15 01:16:35"
+      },
+      {
+        "userId": "09716004-a21f-4333-9a7d-d66b10f722f4",
+        "commentId": "bd1e14c0-1385-4f5c-b10d-ed767617fee2",
+        "climbId": "417f2be1-b09b-49ba-9a1e-f3472fbbb851",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-11-07 06:40:36"
+      }
+    ],
+    "createdAt": "2023-11-11 04:48:58"
+  },
+  {
+    "userId": "ada63783-fd1f-47cd-90d1-bbc956dcca77",
+    "commentId": "e4b8b431-f5b3-443a-8856-54c88ec27db2",
+    "climbId": "climb3",
+    "text": "Crowded but worth it",
+    "subComments": [
+      {
+        "userId": "9ae9c109-1c09-4bd7-9bea-dd2099a52dbe",
+        "commentId": "a4b4cda4-8900-4048-ac75-b5462e5a61c1",
+        "climbId": "e4b8b431-f5b3-443a-8856-54c88ec27db2",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-12-23 16:24:57"
+      }
+    ],
+    "createdAt": "2023-11-02 00:56:08"
+  },
+  {
+    "userId": "b7f1b435-4567-4d6f-8dd5-eb3f0b85ec8d",
+    "commentId": "dcdb8147-f949-4aef-ab53-dcc18800dc13",
+    "climbId": "climb5",
+    "text": "Perfect for beginners",
+    "subComments": [
+      {
+        "userId": "4e147df3-634c-433b-a1d6-c65fbfca1c9d",
+        "commentId": "5dfa10c5-b965-403e-bf40-ea0dff5dab00",
+        "climbId": "dcdb8147-f949-4aef-ab53-dcc18800dc13",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-11-19 09:27:10"
+      },
+      {
+        "userId": "620e41d4-af89-4cfb-91a5-f5dbb2d0e99c",
+        "commentId": "40a0ad71-c7a9-4d2e-a382-560c59861a20",
+        "climbId": "dcdb8147-f949-4aef-ab53-dcc18800dc13",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2024-01-06 05:20:19"
+      },
+      {
+        "userId": "fde75da7-dcec-4360-8231-9b8b8f1ad43e",
+        "commentId": "df3a762b-78a7-43a8-8245-49a232efff9f",
+        "climbId": "dcdb8147-f949-4aef-ab53-dcc18800dc13",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2023-12-19 01:35:01"
+      }
+    ],
+    "createdAt": "2024-01-03 03:09:35"
+  },
+  {
+    "userId": "04e81a85-a752-4b54-b9b1-5f94465c9d27",
+    "commentId": "8079c9b8-ec6b-40d6-8094-9e6f95676f89",
+    "climbId": "climb3",
+    "text": "Would definitely recommend",
+    "subComments": [
+      {
+        "userId": "fd76ea7d-6e40-44eb-9ff1-57f0fa0d43c2",
+        "commentId": "e57c2f88-fe2f-448a-9893-2a463025398a",
+        "climbId": "8079c9b8-ec6b-40d6-8094-9e6f95676f89",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-12-24 16:47:45"
+      },
+      {
+        "userId": "3870a25b-0259-406e-a4d9-f8f817ec4b07",
+        "commentId": "50430caf-c69f-44dd-9358-d1fd21d5a5f7",
+        "climbId": "8079c9b8-ec6b-40d6-8094-9e6f95676f89",
+        "text": "Needs better signage",
+        "subComments": [],
+        "createdAt": "2023-11-01 21:24:14"
+      }
+    ],
+    "createdAt": "2023-12-22 23:29:32"
+  },
+  {
+    "userId": "6484ee5f-0bd6-4f64-bbcc-239ba88d6d51",
+    "commentId": "0cd70f94-3733-4af5-8cb3-413279e91b41",
+    "climbId": "climb13",
+    "text": "Needs better signage",
+    "subComments": [
+      {
+        "userId": "4b1ba34e-1d39-425d-b52c-cca0001645f9",
+        "commentId": "429a1253-4570-48f5-83a0-80d296b76772",
+        "climbId": "0cd70f94-3733-4af5-8cb3-413279e91b41",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-11-25 12:38:24"
+      },
+      {
+        "userId": "946e2921-cf56-47b8-a7ed-2d6952084b23",
+        "commentId": "4d088238-c92b-42b1-a1fe-5ce0f594548d",
+        "climbId": "0cd70f94-3733-4af5-8cb3-413279e91b41",
+        "text": "Not as tough as I expected",
+        "subComments": [],
+        "createdAt": "2024-01-08 06:47:56"
+      }
+    ],
+    "createdAt": "2023-12-08 03:17:10"
+  },
+  {
+    "userId": "57419ebc-1731-42de-a778-a91bc8127043",
+    "commentId": "274169a7-94b1-4588-876a-656a070bd564",
+    "climbId": "climb3",
+    "text": "Crowded but worth it",
+    "subComments": [
+      {
+        "userId": "7edb2fab-e5ce-4e2a-822b-0f8d25e0653f",
+        "commentId": "7b213112-0659-4c58-9b4c-7f3f1b4b7607",
+        "climbId": "274169a7-94b1-4588-876a-656a070bd564",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-11-10 06:07:51"
+      }
+    ],
+    "createdAt": "2023-11-29 21:35:19"
+  },
+  {
+    "userId": "f32e3eab-5558-474d-9015-d8754345ff1e",
+    "commentId": "46fb3a68-2065-4bb5-b62d-5b990b2faeda",
+    "climbId": "climb8",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "35683806-1026-478c-bbf2-da19afb95671",
+        "commentId": "c2375eb7-a935-48f9-99b0-74ff7eea22a4",
+        "climbId": "46fb3a68-2065-4bb5-b62d-5b990b2faeda",
+        "text": "Great climb!",
+        "subComments": [],
+        "createdAt": "2024-01-02 13:38:05"
+      }
+    ],
+    "createdAt": "2023-11-13 23:38:56"
+  },
+  {
+    "userId": "c67f8e0d-bbb5-4b67-b0e0-f2301162f596",
+    "commentId": "c0c5c893-bfde-44c4-9cb3-ad074a17967e",
+    "climbId": "climb3",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "25b76cd1-b1cc-415c-b630-764b6496987a",
+        "commentId": "0560f7a6-3ad9-4927-84d4-2ef9d7751ea3",
+        "climbId": "c0c5c893-bfde-44c4-9cb3-ad074a17967e",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-12-31 16:36:48"
+      },
+      {
+        "userId": "a043b60c-3f77-481c-a7ae-c466a0c1de90",
+        "commentId": "2bcfd0ac-cf5c-441c-be83-c1d77ee89a7a",
+        "climbId": "c0c5c893-bfde-44c4-9cb3-ad074a17967e",
+        "text": "Perfect for beginners",
+        "subComments": [],
+        "createdAt": "2023-11-21 18:32:31"
+      }
+    ],
+    "createdAt": "2023-12-12 09:28:00"
+  },
+  {
+    "userId": "6ff20c50-5014-4df3-9bd9-490ff4e014bb",
+    "commentId": "a4c665ff-a20f-40d4-9cc5-d124402765f8",
+    "climbId": "climb9",
+    "text": "Needs better signage",
+    "subComments": [],
+    "createdAt": "2023-11-25 18:31:00"
+  },
+  {
+    "userId": "36b51f4a-3daa-48b1-926c-99e8dd3b4bae",
+    "commentId": "e2f59129-03c0-43bc-a498-5ec5d719fdbf",
+    "climbId": "climb12",
+    "text": "Needs better signage",
+    "subComments": [
+      {
+        "userId": "dc898016-1367-45fa-9a4f-8736132f49bd",
+        "commentId": "08f53db2-f2e5-4c2f-bf82-bc39c5bd5dc2",
+        "climbId": "e2f59129-03c0-43bc-a498-5ec5d719fdbf",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-11-05 05:19:12"
+      },
+      {
+        "userId": "ec8444e1-3836-4c71-911b-c310b8178d77",
+        "commentId": "28fac38a-6d2a-44e2-b092-cd5ccced7e18",
+        "climbId": "e2f59129-03c0-43bc-a498-5ec5d719fdbf",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-12-18 06:33:19"
+      }
+    ],
+    "createdAt": "2023-12-21 06:45:47"
+  },
+  {
+    "userId": "92c80ada-d8db-4be6-99ed-0a7087b9b766",
+    "commentId": "9ee27bb9-751a-4e0b-93eb-14cf7d3b8571",
+    "climbId": "climb11",
+    "text": "Well maintained paths",
+    "subComments": [
+      {
+        "userId": "0b0364ca-77c6-4ae3-adca-96e6161cb9f1",
+        "commentId": "9319270a-29f4-4343-9a5f-c8e93fd5dde0",
+        "climbId": "9ee27bb9-751a-4e0b-93eb-14cf7d3b8571",
+        "text": "Great climb!",
+        "subComments": [],
+        "createdAt": "2023-12-04 06:22:34"
+      },
+      {
+        "userId": "9e67eb85-a8e3-41a7-97ed-9865ba263c78",
+        "commentId": "a19b629a-90a2-4215-b632-5d50a997c301",
+        "climbId": "9ee27bb9-751a-4e0b-93eb-14cf7d3b8571",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-11-03 16:47:02"
+      }
+    ],
+    "createdAt": "2023-12-13 21:24:28"
+  },
+  {
+    "userId": "9e6ff33c-e321-4c67-9605-07ded9f47fad",
+    "commentId": "3da412fd-aa06-4965-b97d-c33ec48ab597",
+    "climbId": "climb16",
+    "text": "Perfect for beginners",
+    "subComments": [
+      {
+        "userId": "67d38769-cac5-450d-bd75-9d0c57b54fb0",
+        "commentId": "4484115b-44f7-4ab4-a483-291203bb7fc8",
+        "climbId": "3da412fd-aa06-4965-b97d-c33ec48ab597",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-12-23 00:51:38"
+      },
+      {
+        "userId": "7348e49b-aa3f-4e8c-a950-e86b9fcea769",
+        "commentId": "d67ff425-055f-4c9d-990f-27028a300ff7",
+        "climbId": "3da412fd-aa06-4965-b97d-c33ec48ab597",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2024-01-04 17:04:37"
+      }
+    ],
+    "createdAt": "2023-11-05 06:04:08"
+  },
+  {
+    "userId": "2da5e6c7-1906-49c2-ba63-a6841dc0f0ad",
+    "commentId": "84fff0b6-5c10-443a-932d-781a9e9503e5",
+    "climbId": "climb14",
+    "text": "Not as tough as I expected",
+    "subComments": [
+      {
+        "userId": "6089f528-0efb-4170-aeba-611212fc8708",
+        "commentId": "bd404c25-58f3-4497-806c-1cd4ae13a813",
+        "climbId": "84fff0b6-5c10-443a-932d-781a9e9503e5",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-11-30 03:22:01"
+      },
+      {
+        "userId": "6530a188-d8ff-43f1-8280-6c158120b0b0",
+        "commentId": "329f01b1-4f3b-416e-a01c-ee11c5bc075d",
+        "climbId": "84fff0b6-5c10-443a-932d-781a9e9503e5",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2024-01-07 07:03:51"
+      }
+    ],
+    "createdAt": "2023-11-27 06:43:45"
+  },
+  {
+    "userId": "1cff69d1-036d-4683-842a-17f659887900",
+    "commentId": "243d1554-40f4-4ee2-be02-a402f52a315e",
+    "climbId": "climb9",
+    "text": "Not as tough as I expected",
+    "subComments": [
+      {
+        "userId": "1b0dd10e-e250-43b0-b80d-bb8f20153533",
+        "commentId": "e89312f8-edc7-4084-a6e9-7ac5d8a327d5",
+        "climbId": "243d1554-40f4-4ee2-be02-a402f52a315e",
+        "text": "Would definitely recommend",
+        "subComments": [],
+        "createdAt": "2023-11-05 01:22:24"
+      },
+      {
+        "userId": "53135b76-5aa9-47c6-891a-f85bcf4e8db7",
+        "commentId": "161fe68c-8df5-4d6e-a81e-3706975e1259",
+        "climbId": "243d1554-40f4-4ee2-be02-a402f52a315e",
+        "text": "Well maintained paths",
+        "subComments": [],
+        "createdAt": "2023-11-01 03:35:02"
+      }
+    ],
+    "createdAt": "2023-12-02 12:58:59"
+  },
+  {
+    "userId": "cb7416ff-584b-4d74-a675-21a1e32c6db2",
+    "commentId": "d06beff2-bd1d-4526-bf3e-1d274a71f55b",
+    "climbId": "climb9",
+    "text": "Perfect for beginners",
+    "subComments": [
+      {
+        "userId": "3c02c503-ca96-443e-98cc-41d23dfcd3c5",
+        "commentId": "8d03cc4b-5a66-45b7-9cc1-0b802c392a9a",
+        "climbId": "d06beff2-bd1d-4526-bf3e-1d274a71f55b",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-11-29 17:11:02"
+      },
+      {
+        "userId": "dc3ce7e5-b035-492e-bb4e-8bc59efd9710",
+        "commentId": "b8e657da-4e75-4291-a0bf-9f7015ee56d6",
+        "climbId": "d06beff2-bd1d-4526-bf3e-1d274a71f55b",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2024-01-02 10:06:50"
+      },
+      {
+        "userId": "8ed83e7e-99a5-4cda-b171-20e8c4529162",
+        "commentId": "59851bb0-e010-49b2-a230-f17ff65cdcfe",
+        "climbId": "d06beff2-bd1d-4526-bf3e-1d274a71f55b",
+        "text": "Challenging but rewarding",
+        "subComments": [],
+        "createdAt": "2023-11-05 08:26:22"
+      }
+    ],
+    "createdAt": "2023-11-26 07:07:27"
+  },
+  {
+    "userId": "d2a71541-ea8b-4fb3-b474-d6af2eaa9fd5",
+    "commentId": "4fb206b2-0d32-4af7-a888-50d8f0cfc100",
+    "climbId": "climb16",
+    "text": "Challenging but rewarding",
+    "subComments": [
+      {
+        "userId": "acf5b60e-b3a8-4458-bdc7-f648c9bdb39c",
+        "commentId": "7c90c161-aa25-49d4-88b5-0bf601d02b2b",
+        "climbId": "4fb206b2-0d32-4af7-a888-50d8f0cfc100",
+        "text": "Beautiful view at the top",
+        "subComments": [],
+        "createdAt": "2023-11-04 13:16:18"
+      },
+      {
+        "userId": "8dbbb206-fb47-4e22-b903-1289b586b377",
+        "commentId": "436483b9-280d-4b9d-aeea-a8220d1c6b00",
+        "climbId": "4fb206b2-0d32-4af7-a888-50d8f0cfc100",
+        "text": "Quite slippery in wet conditions",
+        "subComments": [],
+        "createdAt": "2023-11-02 07:27:01"
+      },
+      {
+        "userId": "89fbf425-07d3-4ee9-a7db-ab9302e505fb",
+        "commentId": "f42dff48-04a9-4969-a9c9-e71298391e09",
+        "climbId": "4fb206b2-0d32-4af7-a888-50d8f0cfc100",
+        "text": "Crowded but worth it",
+        "subComments": [],
+        "createdAt": "2023-11-27 09:32:57"
+      }
+    ],
+    "createdAt": "2023-12-01 20:40:45"
+  },
+  {
+    "userId": "ce176677-f0c5-469d-82c1-22fc30aa38a9",
+    "commentId": "c8c0ad93-a9f7-41ad-8fc3-dff5fc24e43d",
+    "climbId": "climb9",
+    "text": "Quite slippery in wet conditions",
+    "subComments": [],
+    "createdAt": "2023-11-20 16:37:37"
+  }
+]
