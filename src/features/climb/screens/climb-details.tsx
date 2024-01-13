@@ -44,7 +44,7 @@ function ClimbDetails() {
           title="About"
           content={selectedClimb.description}
         />
-        <PhotoCarousel images={selectedClimb.photos} />
+        <PhotoCarousel images={selectedClimb.photos || []} />
         <ClimbDetailsSection
           title="Comments"
           content={

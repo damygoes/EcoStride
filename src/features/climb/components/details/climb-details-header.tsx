@@ -27,7 +27,7 @@ function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
             {selectedClimb.name.toLocaleUpperCase() || "Climb Name"}
           </h3>
           <p className="text-sm font-light">
-            {`Located in ${selectedClimb.city}, ${selectedClimb.state}, ${selectedClimb.country}`}
+            {`Located in ${selectedClimb.location.city}, ${selectedClimb.location.state}, ${selectedClimb.location.country}`}
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center w-full gap-3">
@@ -50,17 +50,17 @@ function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
           <ClimbDetail
             icon={<MinimumGradientIcon />}
             name={"Min. Gradient"}
-            value={`${selectedClimb.minGrade}%`}
+            value={`${selectedClimb.gradient.minGrade}%`}
           />
           <ClimbDetail
             icon={<AverageGradientIcon />}
             name={t("climb-card.avg-grade")}
-            value={`${selectedClimb.averageGrade}%`}
+            value={`${selectedClimb.gradient.averageGrade}%`}
           />
           <ClimbDetail
             icon={<MaximumGradientIcon />}
             name={"Max. Gradient"}
-            value={`${selectedClimb.maxGrade}%`}
+            value={`${selectedClimb.gradient.maxGrade}%`}
           />
 
           <ClimbDetail

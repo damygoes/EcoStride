@@ -22,6 +22,11 @@ const ClimbFiltersAndSort = () => {
   const { uniqueCategories, uniqueStates, uniqueCountries } = useMemo(() => {
     return getFilterOptionsFromClimbsData(climbs);
   }, [climbs]);
+  // Ensure that uniqueStates is an array of strings only
+  const filteredUniqueStates = useMemo(
+    () => uniqueStates.filter((s) => s !== undefined) as string[],
+    [uniqueStates],
+  );
 
   // Handlers for each filter
   const handleCountryChange = (newCountry: string) => setCountry(newCountry);
@@ -44,7 +49,7 @@ const ClimbFiltersAndSort = () => {
         placeholder="Category"
       />
       <SelectComponent
-        items={uniqueStates}
+        items={filteredUniqueStates}
         selected={state}
         onChange={handleStateChange}
         placeholder="State"

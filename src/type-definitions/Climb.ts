@@ -11,15 +11,15 @@ export type Climb = {
   name: string;
   summary: string;
   description?: string;
-  minGrade: number;
-  maxGrade: number;
-  averageGrade?: number;
+  gradient: {
+    minGrade: number;
+    maxGrade: number;
+    averageGrade?: number;
+  };
   elevationGain: number;
   distance: number;
   category: ClimbCategory;
-  city?: string;
-  state?: string;
-  country: string;
+  location: { city?: string; state?: string; country: string };
   tags?: string[];
   photos?: string[];
   createdAt: string;

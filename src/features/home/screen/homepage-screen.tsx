@@ -19,7 +19,8 @@ function HomePageScreen() {
       setUserLocation(`${location.city}, ${location.state}`);
       const matchingClimbs = climbs.filter(
         (climb) =>
-          climb.city === location.city && climb.state === location.state,
+          climb.location.city === location.city &&
+          climb.location.state === location.state,
       );
       // Update nearbyClimbs in climb store with the filtered climbs
       setNearbyClimbs(matchingClimbs);

@@ -51,11 +51,15 @@ function ClimbCard({
   return (
     <Link
       to={`/${basePath}/${climb.slug}`}
-      className="block max-w-sm p-4 overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
+      className="block h-[28rem] max-w-sm p-4 overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
     >
       <img
         alt="climb photo"
-        src={climb.photos[0]}
+        src={
+          climb.photos && climb.photos?.length > 1
+            ? climb.photos[0]
+            : defaultImage
+        }
         onError={(e) => {
           const target = e.target as HTMLImageElement; // assert the target as an HTMLImageElement
           target.onerror = null; // prevents looping
@@ -70,7 +74,7 @@ function ClimbCard({
             <dt className="sr-only">Address</dt>
 
             <dd className="text-xs font-light text-text-color">
-              {`${climb.city}, ${climb.state}, ${climb.country}`}
+              {`${climb.location.city}, ${climb.location.state}, ${climb.location.country}`}
             </dd>
           </div>
 
@@ -98,7 +102,7 @@ function ClimbCard({
           <ClimbDetail
             icon={<AverageGradientIcon />}
             name={t("climb-card.avg-grade")}
-            value={`${climb.averageGrade}%`}
+            value={`${climb.gradient.averageGrade}%`}
           />
 
           <ClimbDetail

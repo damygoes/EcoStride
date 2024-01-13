@@ -32,12 +32,13 @@ function ClimbsScreen() {
     // Apply filters
     if (country) {
       result = result.filter(
-        (climb) => climb.country.toLowerCase() === country.toLowerCase(),
+        (climb) =>
+          climb.location.country.toLowerCase() === country.toLowerCase(),
       );
     }
     if (state) {
       result = result.filter(
-        (climb) => climb.state.toLowerCase() === state.toLowerCase(),
+        (climb) => climb.location.state?.toLowerCase() === state.toLowerCase(),
       );
     }
     if (category) {
@@ -52,16 +53,24 @@ function ClimbsScreen() {
         (climb) =>
           climb.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           climb.summary.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          climb.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          climb.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          climb.state.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          climb.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          climb.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          climb.location.city
+            ?.toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          climb.location.state
+            ?.toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
+          climb.location.country
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()) ||
           climb.category.toLowerCase().includes(searchTerm.toLowerCase()),
       );
     }
 
     // Apply sorting
     result.sort((a, b) => {
+      const aAvgGrade = a.gradient.averageGrade || 0; // Provide default value if undefined
+      const bAvgGrade = b.gradient.averageGrade || 0; // Provide default value if undefined
       switch (sortKey) {
         case "name":
           return sortOrder === "asc"
@@ -69,16 +78,18 @@ function ClimbsScreen() {
             : b.name.localeCompare(a.name);
         case "minGrade":
           return sortOrder === "asc"
-            ? a.minGrade - b.minGrade
-            : b.minGrade - a.minGrade;
+            ? a.gradient.minGrade - b.gradient.minGrade
+            : b.gradient.minGrade - a.gradient.minGrade;
         case "maxGrade":
           return sortOrder === "asc"
-            ? a.maxGrade - b.maxGrade
-            : b.maxGrade - a.maxGrade;
+            ? a.gradient.maxGrade - b.gradient.maxGrade
+            : b.gradient.maxGrade - a.gradient.maxGrade;
         case "averageGrade":
-          return sortOrder === "asc"
-            ? a.averageGrade - b.averageGrade
-            : b.averageGrade - a.averageGrade;
+          if (sortOrder === "asc") {
+            return aAvgGrade - bAvgGrade;
+          } else {
+            return bAvgGrade - aAvgGrade;
+          }
         case "elevationGain":
           return sortOrder === "asc"
             ? a.elevationGain - b.elevationGain
