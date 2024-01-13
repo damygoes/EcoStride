@@ -91,17 +91,20 @@ const CardCarousel = () => {
   );
 };
 
-const Card = ({ photos, city, name, summary, slug }: Climb) => {
-  const [backgroundImage, setBackgroundImage] = useState(photos[0]);
+const Card = ({ photos, location: { city }, name, summary, slug }: Climb) => {
+  const [backgroundImage, setBackgroundImage] = useState(
+    photos && photos.length > 1 ? photos[0] : "",
+  );
 
   useEffect(() => {
     const img = new Image();
-    img.onload = () => setBackgroundImage(photos[0]);
+    img.onload = () =>
+      setBackgroundImage(photos && photos.length > 1 ? photos[0] : "");
     img.onerror = () =>
       setBackgroundImage(
         "https://images.unsplash.com/photo-1523357585206-175e971f2ad9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGN5Y2xpbmclMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww",
       ); // Set the SVG as the fallback
-    img.src = photos[0];
+    img.src = photos && photos.length > 1 ? photos[0] : "";
   }, [photos]);
 
   return (
