@@ -1,12 +1,14 @@
 export type User = {
-  id: string | null;
-  email: string | null;
-  firstName: string | null;
-  lastName: string | null;
-  avatarUrl: string | null;
-  location: string | null;
-  createdAt: string | null;
-  updatedAt: string | null;
+  id: string | null | undefined;
+  firstName: string | null | undefined;
+  lastName: string | null | undefined;
+  email: string | null | undefined;
+  image: string | null | undefined;
+  token: string | null | undefined;
+  tokenExpiration: number | null | undefined;
+  location?: UserLocation;
+  createdAt?: string | null | undefined;
+  updatedAt?: string | null | undefined;
 };
 
-export type UserLocation = string | null;
+export type UserLocation = string | null | undefined;

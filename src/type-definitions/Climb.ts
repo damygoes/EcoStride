@@ -7,28 +7,28 @@ export type ClimbCategory =
 
 export type Climb = {
   id: string;
-  name: string;
   slug: string;
+  name: string;
   summary: string;
-  description: string;
+  description?: string;
   minGrade: number;
   maxGrade: number;
-  averageGrade: number;
+  averageGrade?: number;
   elevationGain: number;
   distance: number;
   category: ClimbCategory;
-  city: string;
-  state: string;
+  city?: string;
+  state?: string;
   country: string;
-  tags: string[];
-  photos: string[];
+  tags?: string[];
+  photos?: string[];
   createdAt: string;
   updatedAt: string;
-  startLocation: {
+  startLocation?: {
     latitude: number;
     longitude: number;
   };
-  endLocation: {
+  endLocation?: {
     latitude: number;
     longitude: number;
   };

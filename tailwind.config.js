@@ -26,5 +26,5 @@ export default {
   variants: {
     backgroundColor: ["responsive", "hover", "focus", "active"],
   },
-  plugins: ["prettier-plugin-tailwindcss"],
+  plugins: ["prettier-plugin-tailwindcss", "@tailwindcss/forms"],
 };

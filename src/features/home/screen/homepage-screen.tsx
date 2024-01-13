@@ -1,7 +1,6 @@
 import { LocationContext } from "@context/location-provider/location-provider";
 import ClimbsList from "@features/climb/components/list/climbs-list";
 import { useClimbStore } from "@features/climb/utils/climb-store";
-import FiltersScreen from "@features/filters/screen/filters-screen";
 import { useUserStore } from "@features/user/utils/user-store";
 import PageLayout from "@layouts/page-layout/page-layout";
 import { useContext, useEffect } from "react";
@@ -59,7 +58,9 @@ function HomePageScreen() {
           ? t("page-header.home")
           : t("page-header.nearby-climbs")
       }
-      sidebarContent={<FiltersScreen />}
+      sidebarContent={
+        <div className="w-full p-4 space-y-4">Content Coming Soon</div>
+      }
     >
       <section className="w-full h-full overflow-x-hidden overflow-y-auto">
         <HeroSection />
