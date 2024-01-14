@@ -7,9 +7,11 @@ import {
 } from "@assets/Icons";
 import Badge from "@components/common/badge/badge";
 import { Button } from "@components/ui/button/button";
+import { useUserStore } from "@features/user/utils/user-store";
 import { IconChecks, IconPlus } from "@tabler/icons-react";
 import { Climb } from "@type-definitions/Climb";
 import i18next from "i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ClimbDetail } from "../card/climb-card";
 
 type ClimbDetailsHeaderProps = {
@@ -18,6 +20,25 @@ type ClimbDetailsHeaderProps = {
 };
 
 function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
+  const navigate = useNavigate();
+  const currentURL = useLocation();
+  const { user } = useUserStore();
+  const handleAddToBucketList = () => {
+    if (user === null) {
+      navigate("/login", { state: { from: currentURL }, replace: true });
+    } else {
+      console.log("Add to bucket list");
+    }
+  };
+
+  const handleMarkAsRidden = () => {
+    if (user === null) {
+      navigate("/login", { state: { from: currentURL }, replace: true });
+    } else {
+      console.log("Mark as ridden");
+    }
+  };
+
   return (
     <div className="flex flex-col items-start justify-between flex-1 w-full gap-4 md:flex-row md:items-center md:flex-none">
       {/* Left */}
@@ -70,10 +91,20 @@ function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
           />
         </div>
         <div className="flex flex-wrap items-center justify-center w-full gap-4">
-          <Button iconLeft={<IconPlus />} variant="primary" size="sm">
+          <Button
+            iconLeft={<IconPlus />}
+            variant="primary"
+            size="sm"
+            onClick={handleAddToBucketList}
+          >
             Add to my Bucket List
           </Button>
-          <Button iconLeft={<IconChecks />} variant="secondary" size="sm">
+          <Button
+            iconLeft={<IconChecks />}
+            variant="secondary"
+            size="sm"
+            onClick={handleMarkAsRidden}
+          >
             Already ridden
           </Button>
         </div>
