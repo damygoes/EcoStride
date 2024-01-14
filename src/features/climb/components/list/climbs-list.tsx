@@ -3,6 +3,7 @@ import { cn } from "@lib/utils";
 import type { Climb } from "@type-definitions/Climb";
 import ClimbCard from "../card/climb-card";
 import ClimbCardSkeleton from "../card/climb-card-skeleton";
+import ClimbNotFound from "./climb-not-found";
 
 type listState = "loading" | "error" | null;
 
@@ -20,6 +21,7 @@ export default function ClimbsList({
   if (!climbs) {
     return;
   }
+
   return (
     <div
       className={cn(
@@ -27,6 +29,7 @@ export default function ClimbsList({
         className,
       )}
     >
+      {climbs.length === 0 && <ClimbNotFound />}
       {climbs.map((climb: Climb) => {
         return listState === "loading" ? (
           <ClimbCardSkeleton key={climb.id} />

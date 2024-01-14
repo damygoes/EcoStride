@@ -1,4 +1,6 @@
+import CountrySelect from "@components/common/country-select/country-select";
 import SelectComponent from "@components/common/select-component/select-component";
+import StateSelect from "@components/common/state-select/state-select";
 import { Button } from "@components/ui/button/button";
 import { useClimbStore } from "@features/climb/utils/climb-store";
 import { getFilterOptionsFromClimbsData } from "@lib/getFilterOptionsFromClimbsData";
@@ -19,14 +21,9 @@ const ClimbFiltersAndSort = () => {
   const { climbs } = useClimbStore();
 
   // Dynamic Filter Options
-  const { uniqueCategories, uniqueStates, uniqueCountries } = useMemo(() => {
+  const { uniqueCategories } = useMemo(() => {
     return getFilterOptionsFromClimbsData(climbs);
   }, [climbs]);
-  // Ensure that uniqueStates is an array of strings only
-  const filteredUniqueStates = useMemo(
-    () => uniqueStates.filter((s) => s !== undefined) as string[],
-    [uniqueStates],
-  );
 
   // Handlers for each filter
   const handleCountryChange = (newCountry: string) => setCountry(newCountry);
@@ -48,17 +45,11 @@ const ClimbFiltersAndSort = () => {
         onChange={handleCategoryChange}
         placeholder="Category"
       />
-      <SelectComponent
-        items={filteredUniqueStates}
-        selected={state}
+      <CountrySelect selectedCountry={country} onChange={handleCountryChange} />
+      <StateSelect
+        selectedCountry={country}
+        selectedState={state}
         onChange={handleStateChange}
-        placeholder="State"
-      />
-      <SelectComponent
-        items={uniqueCountries}
-        selected={country}
-        onChange={handleCountryChange}
-        placeholder="Country"
       />
       <br />
       <SortingComponent />

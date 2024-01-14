@@ -1,4 +1,6 @@
-import SelectComponent from "@components/common/select-component/select-component";
+import CitySelect from "@components/common/city-select/city-select";
+import CountrySelect from "@components/common/country-select/country-select";
+import StateSelect from "@components/common/state-select/state-select";
 import { Button } from "@components/ui/button/button";
 import {
   Form,
@@ -13,11 +15,6 @@ import { Textarea } from "@components/ui/text-area/text-area";
 import { useClimbRequestModalStore } from "@features/climb/utils/climb-request-modal-store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ClimbFormSchema, ClimbFormType } from "@models/climb-form-schema";
-import {
-  getCities,
-  getCountries,
-  getStates,
-} from "@services/axios/countries-api";
 import { IconPhoto } from "@tabler/icons-react";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
@@ -116,11 +113,8 @@ const ClimbRequestForm = () => {
     setIsClimbRequestModalOpen(false);
   };
 
-  const [countries, setCountries] = useState<string[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string>("");
-  const [states, setStates] = useState<string[]>([]);
   const [selectedState, setSelectedState] = useState<string>("");
-  const [cities, setCities] = useState<string[]>([]);
 
   // Use the `watch` function from react-hook-form to observe changes in climbName
   const climbName = form.watch("climbName");
@@ -133,50 +127,6 @@ const ClimbRequestForm = () => {
 
     form.setValue("slug", slug, { shouldDirty: true, shouldValidate: true });
   }, [climbName, form]);
-
-  useEffect(() => {
-    getCountries().then((res) => {
-      const countries = res.data.map(
-        (country: { iso2: string; lat: number; long: number; name: string }) =>
-          country.name,
-      );
-      setCountries(countries);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (selectedCountry) {
-      getStates(selectedCountry)
-        .then((res) => {
-          const statesArray = res.data.states.map(
-            (state: { name: string }) => state.name,
-          );
-          setStates(statesArray);
-        })
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        .catch((_error) => {
-          setStates([]); // Set to empty or a default value
-        });
-    } else {
-      setStates([]); // Reset or set to default when country changes
-    }
-  }, [selectedCountry]);
-
-  useEffect(() => {
-    if (selectedState) {
-      getCities(selectedCountry, selectedState)
-        .then((res) => {
-          const result = res.data;
-          setCities(result);
-        })
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        .catch((_error) => {
-          setCities([]); // Set to empty or a default value
-        });
-    } else {
-      setCities([]); // Reset or set to default when state changes
-    }
-  }, [selectedCountry, selectedState]);
 
   return (
     <Form {...form}>
@@ -254,14 +204,12 @@ const ClimbRequestForm = () => {
                 <FormItem>
                   <FormLabel required>Country</FormLabel>
                   <FormControl>
-                    <SelectComponent
-                      items={countries}
-                      selected={field.value}
+                    <CountrySelect
+                      selectedCountry={selectedCountry}
                       onChange={(value) => {
                         field.onChange(value);
                         setSelectedCountry(value);
                       }}
-                      placeholder="Country"
                       isErrored={
                         form.formState.errors.location?.country ? true : false
                       }
@@ -270,53 +218,48 @@ const ClimbRequestForm = () => {
                 </FormItem>
               )}
             />
-            {selectedCountry && states.length > 0 && (
-              <FormField
-                control={form.control}
-                name="location.state"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>State/Province</FormLabel>
-                    <FormControl>
-                      <SelectComponent
-                        items={states}
-                        selected={field.value as string}
-                        onChange={(value) => {
-                          field.onChange(value);
-                          setSelectedState(value);
-                        }}
-                        placeholder="State"
-                        isErrored={
-                          form.formState.errors.location?.state ? true : false
-                        }
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-            )}
-            {selectedState && cities.length > 0 && (
-              <FormField
-                control={form.control}
-                name="location.city"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>City</FormLabel>
-                    <FormControl>
-                      <SelectComponent
-                        items={cities}
-                        selected={field.value as string}
-                        onChange={(value) => field.onChange(value)}
-                        placeholder="City"
-                        isErrored={
-                          form.formState.errors.location?.city ? true : false
-                        }
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-            )}
+            <FormField
+              control={form.control}
+              name="location.state"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>State/Province</FormLabel>
+                  <FormControl>
+                    <StateSelect
+                      selectedCountry={selectedCountry}
+                      selectedState={selectedState}
+                      onChange={(value) => {
+                        field.onChange(value);
+                        setSelectedState(value);
+                      }}
+                      isErrored={
+                        form.formState.errors.location?.state ? true : false
+                      }
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="location.city"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>City</FormLabel>
+                  <FormControl>
+                    <CitySelect
+                      selectedCountry={selectedCountry}
+                      selectedState={selectedState}
+                      selectedCity={field.value as string}
+                      onChange={(value) => field.onChange(value)}
+                      isErrored={
+                        form.formState.errors.location?.city ? true : false
+                      }
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
           </FormGroup>
         </FormSection>
         {/* Media Section */}

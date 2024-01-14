@@ -12,6 +12,7 @@ interface SelectComponentProps<T extends { toString(): string }> {
   placeholder?: ReactNode;
   className?: string;
   isErrored?: boolean;
+  disabled?: boolean;
 }
 
 export default function SelectComponent<T extends { toString(): string }>({
@@ -22,19 +23,25 @@ export default function SelectComponent<T extends { toString(): string }>({
   placeholder,
   className,
   isErrored = false,
+  disabled = false,
 }: SelectComponentProps<T>) {
   return (
-    <Listbox value={selected} onChange={onChange}>
+    <Listbox value={selected} onChange={onChange} disabled={disabled}>
       <div className={cn("relative mt-1", className)}>
         <Listbox.Button
           className={cn(
             "relative w-full py-2 pl-3 pr-10 text-left rounded-lg shadow-sm cursor-default bg-background focus:outline-none focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-accent md:text-sm",
             {
               "ring-1 ring-accent": isErrored,
+              "opacity-50 cursor-not-allowed": disabled,
             },
           )}
         >
-          <span className="block truncate text-text-color">
+          <span
+            className={cn("block truncate text-text-color", {
+              "text-accent": disabled,
+            })}
+          >
             {selected
               ? labelFunction(selected)
               : placeholder || "Please choose an option"}
