@@ -1,4 +1,4 @@
-import { useUserStore } from "@features/user/utils/user-store";
+import { useUserStore } from "@utils/user/user-store";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const RequireAuth = () => {

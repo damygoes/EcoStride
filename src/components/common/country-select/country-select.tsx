@@ -1,4 +1,4 @@
-import { getCountries } from "@services/axios/countries-api";
+import { getCountries } from "@services/api/countries-api";
 import { useEffect, useState } from "react";
 import SelectComponent from "../select-component/select-component";
 

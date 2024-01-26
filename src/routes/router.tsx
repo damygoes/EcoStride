@@ -1,7 +1,7 @@
-import { ClimbDetailsPage } from "@features/index";
 import { BasicPageLayout, RootAppLayout } from "@layouts/index";
 import {
   AllClimbsPage,
+  ClimbDetailsPage,
   HomePage,
   LoginPage,
   PrEstimatorPage,

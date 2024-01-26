@@ -2,8 +2,8 @@ import Avatar from "@components/common/avatar/avatar";
 import LocaleSwitch from "@components/common/locale-switch/locale-switch";
 import ThemeToggle from "@components/common/theme-toggle/theme-toggle";
 import { Button } from "@components/ui/button/button";
-import { useLogout } from "@features/login/utils/use-logout";
-import { useUserStore } from "@features/user/utils/user-store";
+import { useLogout } from "@utils/auth/use-logout";
+import { useUserStore } from "@utils/user/user-store";
 import { Link } from "react-router-dom";
 
 function NavRight() {
