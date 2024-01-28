@@ -20,8 +20,6 @@ function HomePageScreen() {
     queryFn: fetchClimbs,
   });
 
-  console.log("data", data);
-
   const climbs: Climb[] = useMemo(() => data ?? [], [data]);
 
   useEffect(() => {

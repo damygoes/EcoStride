@@ -6,6 +6,7 @@ import {
   MinimumGradientIcon,
 } from "@assets/Icons";
 import Badge from "@components/common/badge/badge";
+import SummitSeekersMap from "@components/common/map/Map";
 import { Button } from "@components/ui/button/button";
 import { IconChecks, IconPlus } from "@tabler/icons-react";
 import { Climb } from "@type-definitions/Climb";
@@ -37,6 +38,29 @@ function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
     } else {
       console.log("Mark as ridden");
     }
+  };
+
+  // Extract the coordinates from the selected climb
+  const startCoordinates = {
+    longitude:
+      selectedClimb.startLocation && selectedClimb.startLocation.longitude
+        ? selectedClimb.startLocation.longitude
+        : null,
+    latitude:
+      selectedClimb.startLocation && selectedClimb.startLocation.latitude
+        ? selectedClimb.startLocation.latitude
+        : null,
+  };
+
+  const endCoordinates = {
+    longitude:
+      selectedClimb.endLocation && selectedClimb.endLocation.longitude
+        ? selectedClimb.endLocation.longitude
+        : null,
+    latitude:
+      selectedClimb.endLocation && selectedClimb.endLocation.latitude
+        ? selectedClimb.endLocation.latitude
+        : null,
   };
 
   return (
@@ -111,11 +135,15 @@ function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
       </div>
       {/* Right (MAP) */}
       <div className="w-full rounded-md bg-inherit md:w-2/5 md:h-full">
-        <img
+        <SummitSeekersMap
+          startCoordinates={startCoordinates}
+          endCoordinates={endCoordinates}
+        />
+        {/* <img
           src="https://images.unsplash.com/photo-1476973422084-e0fa66ff9456?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWFwfGVufDB8fDB8fHww"
           alt="map"
           className="object-cover w-full h-full rounded-md"
-        />
+        /> */}
       </div>
     </div>
   );
