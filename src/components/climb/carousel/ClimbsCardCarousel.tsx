@@ -1,6 +1,5 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import type { Climb } from "@type-definitions/Climb";
-import { useClimb } from "@utils/climb/climb-store";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -16,10 +15,13 @@ const BREAKPOINTS = {
   lg: 976,
 };
 
-const ClimbsCardCarousel = () => {
+type ClimbsCardCarouselProps = {
+  climbs: Climb[];
+};
+
+const ClimbsCardCarousel = ({ climbs }: ClimbsCardCarouselProps) => {
   const [ref, { width }] = useMeasure();
   const [offset, setOffset] = useState(0);
-  const { nearbyClimbs } = useClimb();
 
   const CARD_BUFFER =
     width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
@@ -27,7 +29,7 @@ const ClimbsCardCarousel = () => {
   const CAN_SHIFT_LEFT = offset < 0;
 
   const CAN_SHIFT_RIGHT =
-    Math.abs(offset) < CARD_SIZE * (nearbyClimbs.length - CARD_BUFFER);
+    Math.abs(offset) < CARD_SIZE * (climbs.length - CARD_BUFFER);
 
   const shiftLeft = () => {
     if (!CAN_SHIFT_LEFT) {
@@ -57,7 +59,7 @@ const ClimbsCardCarousel = () => {
             }}
             className="flex"
           >
-            {nearbyClimbs.map((climb) => {
+            {climbs.map((climb) => {
               return <Card key={climb.id} {...climb} />;
             })}
           </motion.div>

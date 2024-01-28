@@ -1,93 +1,57 @@
-import { climbs } from "@mock/climbs";
 import { axiosClient } from "@services/axios/axios-client";
+import { useQuery } from "@tanstack/react-query";
 import type { Climb } from "@type-definitions/Climb";
-import { useEffect } from "react";
 import { create } from "zustand";
 
 export type CLIMBS_VIEW_MODE = "grid" | "list";
 
 type ClimbStore = {
-  climbs: Climb[];
-  nearbyClimbs: Climb[];
   climbsViewMode: CLIMBS_VIEW_MODE;
-  addClimb: (climb: Climb) => void;
-  removeClimb: (climb: Climb) => void;
-  updateClimb: (climb: Climb) => void;
-  findClimb: (climbId: string) => Climb | undefined;
-  setNearbyClimbs: (climbs: Climb[]) => void;
   setClimbsViewMode: (view: "grid" | "list") => void;
 };
 
-const useClimbStore = create<ClimbStore>((set, get) => ({
-  climbs: climbs,
-  nearbyClimbs: [],
+const useClimbStore = create<ClimbStore>((set) => ({
   climbsViewMode: "grid",
-  addClimb: (climb) => {
-    set((state) => {
-      const climbToAdd = state.climbs.find((c) => c.id === climb.id);
-      if (!climbToAdd) {
-        return { climbs: [...state.climbs, climb] };
-      }
-      return state;
-    });
-  },
-
-  removeClimb: (climb) => {
-    set((state) => ({
-      climbs: state.climbs.filter((c) => c.id !== climb.id),
-    }));
-  },
-
-  updateClimb: (climb) => {
-    set((state) => ({
-      climbs: state.climbs.map((c) => (c.id === climb.id ? climb : c)),
-    }));
-  },
-
-  findClimb: (climbId) => {
-    return get().climbs.find((c) => c.id === climbId);
-  },
-
-  setNearbyClimbs: (climbs) => {
-    set({ nearbyClimbs: climbs });
-  },
   setClimbsViewMode: (view) => {
     set({ climbsViewMode: view });
   },
 }));
 
-export const useClimb = () => {
-  const {
-    climbs,
-    nearbyClimbs,
-    climbsViewMode,
-    addClimb,
-    removeClimb,
-    updateClimb,
-    findClimb,
-    setNearbyClimbs,
-    setClimbsViewMode,
-  } = useClimbStore();
-
-  const fetchClimbs = async () => {
-    const response = await axiosClient.get("/climbs");
-    return response.data as Climb[];
+type UseClimbProps = {
+  query?: {
+    city?: string;
+    slug?: string;
   };
+};
 
-  useEffect(() => {
-    fetchClimbs();
-  }, []);
+export const useClimb = ({ query }: UseClimbProps = { query: {} }) => {
+  const { climbsViewMode, setClimbsViewMode } = useClimbStore();
+
+  const cityQuery = query?.city;
+  const climbSlug = query?.slug;
+
+  const fetchClimbs = useQuery({
+    queryKey: ["climbs", cityQuery],
+    queryFn: async () => {
+      // Conditionally create the URL based on the presence of query
+      const url = cityQuery ? `/climbs?city=${cityQuery}` : "/climbs";
+      const response = await axiosClient.get(url);
+      return response.data as Climb[];
+    },
+  });
+
+  const fetchClimb = useQuery({
+    queryKey: ["climb", climbSlug],
+    queryFn: async () => {
+      const response = await axiosClient.get(`/climbs/${climbSlug}`);
+      return response.data as Climb;
+    },
+  });
 
   return {
-    climbs,
-    nearbyClimbs,
     climbsViewMode,
-    addClimb,
-    removeClimb,
-    updateClimb,
-    findClimb,
-    setNearbyClimbs,
     setClimbsViewMode,
     fetchClimbs,
+    fetchClimb,
   };
 };

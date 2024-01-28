@@ -1,7 +1,7 @@
-import { useUserStore } from "@utils/user/user-store";
+import { useUser } from "@utils/user/user-store";
 
 export const useLogout = () => {
-  const { setUser } = useUserStore();
+  const { setUser } = useUser();
 
   const logout = () => {
     setUser(null);

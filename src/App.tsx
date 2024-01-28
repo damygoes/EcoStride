@@ -1,6 +1,6 @@
 import NetworkStatusNotifier from "@components/common/network-status-notifier/network-status-notifier";
-import LocationProvider from "@context/location-provider/location-provider";
 import { ThemeProvider } from "@context/theme-provider/theme-provider";
+import LocationProvider from "@context/user-location-provider/UserLocationProvider";
 import { router } from "@routes/router";
 import { Suspense } from "react";
 import { RouterProvider } from "react-router-dom";

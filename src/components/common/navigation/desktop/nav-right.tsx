@@ -3,11 +3,11 @@ import LocaleSwitch from "@components/common/locale-switch/locale-switch";
 import ThemeToggle from "@components/common/theme-toggle/theme-toggle";
 import { Button } from "@components/ui/button/button";
 import { useLogout } from "@utils/auth/use-logout";
-import { useUserStore } from "@utils/user/user-store";
+import { useUser } from "@utils/user/user-store";
 import { Link } from "react-router-dom";
 
 function NavRight() {
-  const { user } = useUserStore();
+  const { user } = useUser();
   const logout = useLogout();
   return (
     <div className="flex items-center justify-end gap-2">

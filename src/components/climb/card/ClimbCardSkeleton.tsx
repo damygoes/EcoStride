@@ -5,12 +5,12 @@ function ClimbCardSkeleton() {
 
   if (climbsViewMode === "list") {
     return (
-      <div className="flex items-center justify-start w-full h-24 gap-4 p-3 overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 animate-pulse" />
+      <div className="w-full h-24 p-3 overflow-hidden rounded-lg bg-text-color/10 animate-pulse" />
     );
   }
 
   return (
-    <div className="block max-w-sm p-4 overflow-hidden rounded-lg shadow-sm animate-pulse text-text-color shadow-accent/30 md:max-w-xs">
+    <div className="block p-4 overflow-hidden rounded-lg shadow-sm w-80 animate-pulse text-text-color shadow-accent/30">
       <div className="w-full h-56 rounded-md bg-text-color/20" />
 
       <div className="mt-2">

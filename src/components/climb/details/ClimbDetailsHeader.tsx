@@ -10,7 +10,7 @@ import SummitSeekersMap from "@components/common/map/Map";
 import { Button } from "@components/ui/button/button";
 import { IconChecks, IconPlus } from "@tabler/icons-react";
 import { Climb } from "@type-definitions/Climb";
-import { useUserStore } from "@utils/user/user-store";
+import { useUser } from "@utils/user/user-store";
 import i18next from "i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import ClimbCardDetail from "../card/ClimbCardDetail";
@@ -23,7 +23,7 @@ type ClimbDetailsHeaderProps = {
 function ClimbDetailsHeader({ selectedClimb, t }: ClimbDetailsHeaderProps) {
   const navigate = useNavigate();
   const currentURL = useLocation();
-  const { user } = useUserStore();
+  const { user } = useUser();
   const handleAddToBucketList = () => {
     if (user === null) {
       navigate("/login", { state: { from: currentURL }, replace: true });

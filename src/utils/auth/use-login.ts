@@ -1,5 +1,5 @@
 import { CredentialResponse } from "@react-oauth/google";
-import { useUserStore } from "@utils/user/user-store";
+import { useUser } from "@utils/user/user-store";
 import { jwtDecode } from "jwt-decode";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ type DecodedGoogleToken = {
 };
 
 export const useLogin = () => {
-  const { setUser } = useUserStore();
+  const { setUser } = useUser();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";

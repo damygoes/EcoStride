@@ -1,13 +1,13 @@
 import LoginModal from "@components/climb/request/ClimbRequestModal";
 import { Button } from "@components/ui/button/button";
 import { useClimbRequestModalStore } from "@utils/climb/climb-request-modal-store";
-import { useUserStore } from "@utils/user/user-store";
+import { useUser } from "@utils/user/user-store";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function ClimbRequestCTA() {
   const navigate = useNavigate();
   const currentURL = useLocation();
-  const { user } = useUserStore();
+  const { user } = useUser();
   const { isClimbRequestModalOpen, setIsClimbRequestModalOpen } =
     useClimbRequestModalStore();
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // Define a type for the hook's return value
-export type LocationState = {
+export type UserLocationState = {
   latitude: number | null;
   longitude: number | null;
   city: string | null;
@@ -12,7 +12,7 @@ export type LocationState = {
 };
 
 // The hook itself
-const useLocation = (): LocationState => {
+const useUserLocation = (): UserLocationState => {
   const [location, setLocation] = useState<{
     latitude: number;
     longitude: number;
@@ -93,4 +93,4 @@ const useLocation = (): LocationState => {
   };
 };
 
-export default useLocation;
+export default useUserLocation;

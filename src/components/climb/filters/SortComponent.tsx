@@ -1,5 +1,5 @@
 import SelectComponent from "@components/common/select-component/select-component";
-import { useFilterAndSortingStore } from "../../../utils/filters/filters-and-sorting-store";
+import { useFilterAndSortingStore } from "@utils/filters/filters-and-sorting-store";
 
 const SortingComponent: React.FC = () => {
   const { sortKey, sortOrder, setSortKey, setSortOrder } =

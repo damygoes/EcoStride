@@ -11,7 +11,7 @@
     "button": "Ontdek Routes",
     "location-loading": "Locatie wordt geladen...",
     "location-found": "Ontdek beklimmingen in de buurt",
-    "location-not-found": "Geen beklimmingen in de buurt gevonden. In plaats daarvan worden alle beklimmingen weergegeven.",
+    "location-not-found": "Locatie niet gevonden. In plaats daarvan worden alle beklimmingen weergegeven.",
     "location-denied": "Je hebt geen toestemming gegeven om je locatie te gebruiken. In plaats daarvan worden alle beklimmingen weergegeven."
   },
   "page-header": {

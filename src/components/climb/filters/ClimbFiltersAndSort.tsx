@@ -3,12 +3,16 @@ import SelectComponent from "@components/common/select-component/select-componen
 import StateSelect from "@components/common/state-select/state-select";
 import { Button } from "@components/ui/button/button";
 import { getFilterOptionsFromClimbsData } from "@lib/getFilterOptionsFromClimbsData";
-import { useClimb } from "@utils/climb/climb-store";
+import { Climb } from "@type-definitions/Climb";
 import { useMemo } from "react";
 import { useFilterAndSortingStore } from "../../../utils/filters/filters-and-sorting-store";
 import SortingComponent from "./SortComponent";
 
-const ClimbFiltersAndSort = () => {
+type ClimbFiltersAndSortProps = {
+  climbs: Climb[];
+};
+
+const ClimbFiltersAndSort = ({ climbs }: ClimbFiltersAndSortProps) => {
   const {
     country,
     state,
@@ -18,12 +22,13 @@ const ClimbFiltersAndSort = () => {
     setCategory,
     resetFiltersAndSorting,
   } = useFilterAndSortingStore();
-  const { climbs } = useClimb();
 
   // Dynamic Filter Options
-  const { uniqueCategories } = useMemo(() => {
+  const result = useMemo(() => {
     return getFilterOptionsFromClimbsData(climbs);
   }, [climbs]);
+
+  const climbCategories = result?.uniqueCategories ?? [];
 
   // Handlers for each filter
   const handleCountryChange = (newCountry: string) => setCountry(newCountry);
@@ -40,7 +45,7 @@ const ClimbFiltersAndSort = () => {
     <div className="space-y-3">
       <h4 className="my-3 text-sm uppercase text-text-color">Filters</h4>
       <SelectComponent
-        items={uniqueCategories}
+        items={climbCategories}
         selected={category}
         onChange={handleCategoryChange}
         placeholder="Category"

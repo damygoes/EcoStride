@@ -2,7 +2,7 @@ import { cn } from "@lib/utils";
 import type { Climb } from "@type-definitions/Climb";
 import { useClimb } from "@utils/climb/climb-store";
 import ClimbCard from "../card/ClimbCard";
-import ClimbListViewCard from "../card/ClimbCardHorizontalFormat";
+import ClimbCardHorizontalFormat from "../card/ClimbCardHorizontalFormat";
 import ClimbCardSkeleton from "../card/ClimbCardSkeleton";
 import ClimbNotFound from "./ClimbNotFound";
 
@@ -14,7 +14,7 @@ type ClimbsListProps = {
 
 export default function ClimbsList({
   climbs,
-  isLoading = false,
+  isLoading,
   className,
 }: ClimbsListProps) {
   const { climbsViewMode } = useClimb();
@@ -30,19 +30,16 @@ export default function ClimbsList({
       )}
     >
       {climbs.length === 0 && <ClimbNotFound />}
+      {isLoading &&
+        Array.from({ length: 9 }).map((_, index) => (
+          <ClimbCardSkeleton key={index} />
+        ))}
       {climbs.map((climb: Climb) => {
-        if (isLoading) {
-          {
-            Array.from({ length: 3 }).map((_, index) => (
-              <ClimbCardSkeleton key={index} />
-            ));
-          }
-        }
         if (climbsViewMode === "grid") {
           return <ClimbCard key={climb.id} climb={climb} />;
         }
         if (climbsViewMode === "list") {
-          return <ClimbListViewCard key={climb.id} climb={climb} />;
+          return <ClimbCardHorizontalFormat key={climb.id} climb={climb} />;
         }
       })}
     </div>
