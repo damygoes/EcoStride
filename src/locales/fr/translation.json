@@ -11,7 +11,7 @@
     "button": "Découvrir les Itinéraires",
     "location-loading": "Chargement de votre position...",
     "location-found": "Explorez les ascensions à proximité",
-    "location-not-found": "Aucune ascension trouvée à proximité. Afficher toutes les ascensions à la place.",
+    "location-not-found": "Emplacement introuvable, affichant toutes les ascensions à la place.",
     "location-denied": "Vous avez refusé l'accès à votre position. Afficher toutes les ascensions à la place."
   },
   "page-header": {

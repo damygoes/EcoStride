@@ -1,9 +1,10 @@
 import type { Climb, ClimbCategory } from "@type-definitions/Climb";
 
 export const getFilterOptionsFromClimbsData = (climbs: Climb[]) => {
-  const cities = climbs.map((climb) => climb.city);
-  const states = climbs.map((climb) => climb.state);
-  const countries = climbs.map((climb) => climb.country);
+  if (!climbs) return null;
+  const cities = climbs.map((climb) => climb.location.city);
+  const states = climbs.map((climb) => climb.location.state);
+  const countries = climbs.map((climb) => climb.location.country);
   const uniqueCities = [...new Set(cities)];
   const uniqueStates = [...new Set(states)];
   const uniqueCountries = [...new Set(countries)];

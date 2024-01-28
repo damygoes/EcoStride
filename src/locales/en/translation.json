@@ -11,7 +11,7 @@
     "button": "Discover Routes",
     "location-loading": "Finding your location...",
     "location-found": "Explore climbs near",
-    "location-not-found": "No climbs found nearby, Showing all climbs instead.",
+    "location-not-found": "Location not found, Showing all climbs instead.",
     "location-denied": "Location access denied, Showing all climbs instead."
   },
   "page-header": {

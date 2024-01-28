@@ -1,11 +1,8 @@
+import { useUser } from "@utils/user/user-store";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const RequireAuth = () => {
-  const user = {
-    name: "John Doe",
-    email: "johndoe@gmail.com",
-  };
-  // const user = null;
+  const { user } = useUser();
   const location = useLocation();
   return (
     <>

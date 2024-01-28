@@ -11,7 +11,7 @@
     "button": "Routen entdecken",
     "location-loading": "Standort wird geladen...",
     "location-found": "Entdecken Sie Anstiege in die Nähe von",
-    "location-not-found": "Keine Anstiege in der Nähe gefunden. Stattdessen werden alle Anstiege angezeigt.",
+    "location-not-found": "Standort nicht gefunden. Stattdessen werden alle Anstiege angezeigt.",
     "location-denied": "Sie haben den Zugriff auf Ihren Standort verweigert. Stattdessen werden alle Anstiege angezeigt."
   },
   "page-header": {

@@ -1,6 +1,11 @@
-import { ClimbDetailsPage } from "@features/index";
 import { BasicPageLayout, RootAppLayout } from "@layouts/index";
-import { AllClimbsPage, HomePage, PrEstimatorPage } from "@pages/index";
+import {
+  AllClimbsPage,
+  ClimbDetailsPage,
+  HomePage,
+  LoginPage,
+  PrEstimatorPage,
+} from "@pages/index";
 import {
   Route,
   createBrowserRouter,
@@ -14,7 +19,7 @@ export const router = createBrowserRouter(
       <Route element={<RootAppLayout />}>
         {/* //* Public Routes */}
         <Route path="/" element={<HomePage />} />,
-        <Route path="login" element={<div>Login Page</div>} />,
+        <Route path="login" element={<LoginPage />} />,
         <Route path="create-account" element={<div>Create Account</div>} />,
         <Route path="/climbs" element={<AllClimbsPage />} />,
         <Route path="/home/:climbSlug" element={<ClimbDetailsPage />} />,
