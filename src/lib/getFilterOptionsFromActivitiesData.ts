@@ -10,11 +10,11 @@ export const getFilterOptionsFromActivitiesData = (activities: Activity[]) => {
   const uniqueCountries = [...new Set(countries)];
 
   const categoryOrder: ClimbCategory[] = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "hors-categorie",
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Hors Categorie",
   ];
   const uniqueCategories = [
     ...new Set(
