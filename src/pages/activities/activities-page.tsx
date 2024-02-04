@@ -41,7 +41,7 @@ function ActivitiesPage() {
       withFooter
       withSidebar
       pageTitle={t("page-header.all-activities")}
-      sidebarContent={<Filters activities={activities ?? []} />}
+      sidebarContent={<Filters />}
     >
       <section className="flex flex-col items-start justify-start h-full gap-4 overflow-hidden">
         <header
