@@ -1,3 +1,4 @@
+import { cn } from "@lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 type SpringModalProps = {
@@ -5,9 +6,15 @@ type SpringModalProps = {
   setIsOpen: () => void;
   // setIsOpen: Dispatch<SetStateAction<boolean>>;
   children?: React.ReactNode;
+  className?: string;
 };
 
-function SpringModal({ isOpen, setIsOpen, children }: SpringModalProps) {
+function SpringModal({
+  isOpen,
+  setIsOpen,
+  children,
+  className,
+}: SpringModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -23,7 +30,10 @@ function SpringModal({ isOpen, setIsOpen, children }: SpringModalProps) {
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full h-full max-w-2xl p-4 overflow-x-hidden overflow-y-auto text-white rounded-lg shadow-xl cursor-default bg-gradient-to-br from-primary via-secondary/90 to-white"
+            className={cn(
+              "relative w-full h-full max-w-2xl p-4 overflow-x-hidden overflow-y-auto text-white rounded-lg shadow-xl cursor-default bg-gradient-to-br from-primary via-secondary/90 to-white",
+              className,
+            )}
           >
             <div className="relative z-10 ">{children}</div>
           </motion.div>

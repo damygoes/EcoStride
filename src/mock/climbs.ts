@@ -1,4 +1,4 @@
-import type { Climb } from "@type-definitions/Climb";
+import type { Climb } from "@type-definitions/Activity";
 
 export const climbs: Climb[] = [
   {

@@ -1,7 +1,7 @@
 import { BasicPageLayout, RootAppLayout } from "@layouts/index";
 import {
-  AllClimbsPage,
-  ClimbDetailsPage,
+  ActivitiesPage,
+  ActivityDetailsPage,
   HomePage,
   LoginPage,
   PrEstimatorPage,
@@ -21,9 +21,13 @@ export const router = createBrowserRouter(
         <Route path="/" element={<HomePage />} />,
         <Route path="login" element={<LoginPage />} />,
         <Route path="create-account" element={<div>Create Account</div>} />,
-        <Route path="/climbs" element={<AllClimbsPage />} />,
-        <Route path="/home/:climbSlug" element={<ClimbDetailsPage />} />,
-        <Route path="/climbs/:climbSlug" element={<ClimbDetailsPage />} />,
+        <Route path="/activities" element={<ActivitiesPage />} />,
+        <Route path="/home/:activitySlug" element={<ActivityDetailsPage />} />,
+        <Route
+          path="/activities/:activitySlug"
+          element={<ActivityDetailsPage />}
+        />
+        ,
         <Route
           path="unauthorized"
           element={<div> You are not authorized to view this page </div>}
@@ -34,8 +38,8 @@ export const router = createBrowserRouter(
         <Route element={<RequireAuth />}>
           <Route path="/pr-estimator" element={<PrEstimatorPage />} />,
           <Route
-            path="/pr-estimator/:climbSlug"
-            element={<ClimbDetailsPage />}
+            path="/pr-estimator/:activitySlug"
+            element={<ActivityDetailsPage />}
           />
           ,
           <Route path="/profile" element={<div>User Profile</div>}>

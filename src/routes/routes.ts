@@ -9,8 +9,8 @@ export const navbarRoutes: NavbarLink[] = [
     path: "/",
   },
   {
-    name: "All Climbs",
-    path: "/climbs",
+    name: "All Activities",
+    path: "/activities",
   },
   {
     name: "PR Estimator",
