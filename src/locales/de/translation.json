@@ -1,5 +1,5 @@
 {
-  "climb-card": {
+  "activity-card": {
     "distance": "Entfernung",
     "avg-grade": "Durchschn. Steigung",
     "elevation": "Höhenunterschied"
@@ -15,8 +15,8 @@
     "location-denied": "Sie haben den Zugriff auf Ihren Standort verweigert. Stattdessen werden alle Anstiege angezeigt."
   },
   "page-header": {
-    "nearby-climbs": "Anstiege in der Nähe",
-    "all-climbs": "Alle Anstiege",
+    "nearby-activities": "Anstiege in der Nähe",
+    "all-activities": "Alle Anstiege",
     "home": "Startseite"
   },
   "footer": "Entwickelt von"

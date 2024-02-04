@@ -1,5 +1,5 @@
 {
-  "climb-card": {
+  "activity-card": {
     "distance": "Distance",
     "avg-grade": "Pente Moy.",
     "elevation": "Élévation"
@@ -15,8 +15,8 @@
     "location-denied": "Vous avez refusé l'accès à votre position. Afficher toutes les ascensions à la place."
   },
   "page-header": {
-    "nearby-climbs": "Ascensions à proximité",
-    "all-climbs": "Toutes les ascensions",
+    "nearby-activities": "Ascensions à proximité",
+    "all-activities": "Toutes les ascensions",
     "home": "Page d'accueil"
   },
   "footer": "Site créé par"

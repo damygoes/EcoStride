@@ -1,5 +1,5 @@
 {
-  "climb-card": {
+  "activity-card": {
     "distance": "Distance",
     "avg-grade": "Avg. Gradient",
     "elevation": "Elevation"
@@ -10,13 +10,15 @@
     "description": "Discover breathtaking routes,challenge your limits, and be part of a passionate community. Let's pedal towards new horizons together. Every ride is a story waiting to unfold.",
     "button": "Discover Routes",
     "location-loading": "Finding your location...",
-    "location-found": "Explore climbs near",
-    "location-not-found": "Location not found, Showing all climbs instead.",
-    "location-denied": "Location access denied, Showing all climbs instead."
+    "location-found-nearby": "Explore activities near",
+    "activity-not-found-near-location": "No activities found near",
+    "location-not-found": "Location not found. ",
+    "location-denied": "Location access denied.",
+    "location-all": "Showing all activities"
   },
   "page-header": {
-    "nearby-climbs": "Nearby Climbs",
-    "all-climbs": "All Climbs",
+    "nearby-activities": "Nearby Activities",
+    "all-activities": "All Activities",
     "home": "Homepage"
   },
   "footer": "Developed by"

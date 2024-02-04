@@ -1,5 +1,5 @@
 {
-  "climb-card": {
+  "activity-card": {
     "distance": "Afstand",
     "avg-grade": "Gem. Hellingsgraad",
     "elevation": "Hoogteverschil"
@@ -15,8 +15,8 @@
     "location-denied": "Je hebt geen toestemming gegeven om je locatie te gebruiken. In plaats daarvan worden alle beklimmingen weergegeven."
   },
   "page-header": {
-    "nearby-climbs": "Beklimmingen in de buurt",
-    "all-climbs": "Alle beklimmingen",
+    "nearby-activities": "Beklimmingen in de buurt",
+    "all-activities": "Alle beklimmingen",
     "home": "Startpagina"
   },
   "footer": "Ontwikkeld door"

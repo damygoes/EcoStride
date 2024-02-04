@@ -2,4 +2,5 @@ export const ENV_VARIABLES = {
   GOOGLE_CLIENT_ID: `${import.meta.env.VITE_GOOGLE_CLIENT_ID}`,
   GOOGLE_CLIENT_SECRET: `${import.meta.env.VITE_GOOGLE_CLIENT_SECRET}`,
   MAPBOX_ACCESS_TOKEN: `${import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}`,
+  FILESTACK_API_KEY: `${import.meta.env.VITE_FILESTACK_API_KEY}`,
 };
