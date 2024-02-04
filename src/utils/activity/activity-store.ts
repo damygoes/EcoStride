@@ -29,11 +29,40 @@ export const useActivity = () => {
     const response = await axiosClient.get(`/activities/${activitySlug}`);
     return response.data as Activity;
   };
+  const fetchRelatedActivitiesByCity = async (city: string) => {
+    const response = await axiosClient.get(`/activities/related/city/${city}`);
+    return response.data as Activity[];
+  };
+
+  const fetchRelatedActivitiesByState = async (state: string) => {
+    const response = await axiosClient.get(
+      `/activities/related/state/${state}`,
+    );
+    return response.data as Activity[];
+  };
+
+  const fetchRelatedActivitiesByCountry = async (country: string) => {
+    const response = await axiosClient.get(
+      `/activities/related/country/${country}`,
+    );
+    return response.data as Activity[];
+  };
+
+  const fetchRelatedActivitiesByCategory = async (category: string) => {
+    const response = await axiosClient.get(
+      `/activities/related/category/${category}`,
+    );
+    return response.data as Activity[];
+  };
 
   return {
     activitiesViewMode,
     setActivitiesViewMode,
     fetchActivities,
+    fetchRelatedActivitiesByCity,
+    fetchRelatedActivitiesByState,
+    fetchRelatedActivitiesByCountry,
+    fetchRelatedActivitiesByCategory,
     fetchActivity,
   };
 };
