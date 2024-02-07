@@ -1,17 +1,7 @@
 import { CredentialResponse } from "@react-oauth/google";
+import { axiosClient } from "@services/axios/axios-client";
 import { useUser } from "@utils/user/user-store";
-import { jwtDecode } from "jwt-decode";
 import { useLocation, useNavigate } from "react-router-dom";
-
-type DecodedGoogleToken = {
-  sub?: string;
-  given_name?: string;
-  family_name?: string;
-  email?: string;
-  picture?: string;
-  jti?: string;
-  exp?: number;
-};
 
 export const useLogin = () => {
   const { setUser } = useUser();
@@ -19,20 +9,16 @@ export const useLogin = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const handleLoginSuccess = (credentialResponse: CredentialResponse) => {
-    const decodedCredential: DecodedGoogleToken = jwtDecode(
-      credentialResponse.credential ?? "",
-    );
-    setUser({
-      id: decodedCredential.sub,
-      firstName: decodedCredential.given_name,
-      lastName: decodedCredential.family_name,
-      email: decodedCredential.email,
-      image: decodedCredential.picture,
-      token: decodedCredential.jti,
-      tokenExpiration: decodedCredential.exp,
-    });
-    navigate(from);
+  const handleLoginSuccess = async (credentialResponse: CredentialResponse) => {
+    const token = credentialResponse.credential;
+
+    try {
+      const response = await axiosClient.post("/auth/google", { token: token });
+      setUser(response.data);
+      navigate(from);
+    } catch (error) {
+      console.error("Error creating user document", error);
+    }
   };
 
   const handleLoginFailure = () => {

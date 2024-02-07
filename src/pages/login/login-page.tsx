@@ -28,11 +28,22 @@ const RightContent = () => {
           Let's Ride
         </motion.h1>
 
-        <motion.div variants={primaryVariants} className="w-full mb-2">
-          <GoogleLogin
-            onSuccess={handleLoginSuccess}
-            onError={handleLoginFailure}
-          />
+        <motion.div
+          variants={primaryVariants}
+          className="flex flex-col items-center justify-start w-full gap-12 p-6 mb-2 shadow-md min-w-72 rounded-xl bg-background min-h-48"
+        >
+          <div className="flex flex-col items-start justify-center w-full gap-1 mx-auto">
+            <h4 className="text-xl font-normal text-text-color">Sign in</h4>
+            <p className="text-sm font-light text-text-color/60">
+              to continue to Summit Seekers
+            </p>
+          </div>
+          <div className="flex items-center justify-start w-full mx-auto">
+            <GoogleLogin
+              onSuccess={handleLoginSuccess}
+              onError={handleLoginFailure}
+            />
+          </div>
         </motion.div>
       </div>
     </motion.div>
