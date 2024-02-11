@@ -27,6 +27,7 @@ function HomePageScreen() {
     queryKey: ["nearby-activities", usersCity],
     queryFn: () => fetchActivities(usersCity),
     enabled: !!usersCity,
+    refetchInterval: 1000 * 60 * 1, // 1 minute
   });
 
   useEffect(() => {
@@ -46,6 +47,7 @@ function HomePageScreen() {
     queryKey: ["activities"],
     queryFn: () => fetchActivities(),
     enabled: shoudFetchAllActivities,
+    refetchInterval: 1000 * 60 * 1, // 1 minute
   });
 
   useEffect(() => {
@@ -103,16 +105,11 @@ function HomePageScreen() {
           {(isErrorAllActivities || isErrorNearbyActivities) && (
             <ErrorFallback />
           )}
-          {(nearbyActivities && nearbyActivities.length > 0) ||
-            (allActivities && allActivities.length > 0 && (
-              <ActivitiesList
-                activities={
-                  nearbyActivities && nearbyActivities?.length > 0
-                    ? nearbyActivities
-                    : allActivities
-                }
-              />
-            ))}
+          {nearbyActivities && nearbyActivities.length > 0 ? (
+            <ActivitiesList activities={nearbyActivities} />
+          ) : allActivities && allActivities.length > 0 ? (
+            <ActivitiesList activities={allActivities} />
+          ) : null}
         </div>
       </section>
     </PageLayout>

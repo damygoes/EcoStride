@@ -85,7 +85,7 @@ function ActivityDetailsHeader({
             {selectedActivity.name.toLocaleUpperCase() || "Climb Name"}
           </h3>
           <p className="text-sm font-light">
-            {`Located in ${selectedActivity.address.city}, ${selectedActivity.address.state}, ${selectedActivity.address.country}`}
+            {`Located in ${selectedActivity.addressDetails.city}, ${selectedActivity.addressDetails.state}, ${selectedActivity.addressDetails.country}`}
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center w-full gap-3">

@@ -20,13 +20,14 @@ export const useSortedFilteredActivities = (activities: Activity[]) => {
     if (country) {
       result = result.filter(
         (activity) =>
-          activity.address.country.toLowerCase() === country.toLowerCase(),
+          activity.addressDetails.country.toLowerCase() ===
+          country.toLowerCase(),
       );
     }
     if (state) {
       result = result.filter(
         (activity) =>
-          activity.address.state?.toLowerCase() === state.toLowerCase(),
+          activity.addressDetails.state?.toLowerCase() === state.toLowerCase(),
       );
     }
     if (climbCategory) {
@@ -46,13 +47,13 @@ export const useSortedFilteredActivities = (activities: Activity[]) => {
           activity.description
             ?.toLowerCase()
             .includes(searchTerm.toLowerCase()) ||
-          activity.address.city
+          activity.addressDetails.city
             ?.toLowerCase()
             .includes(searchTerm.toLowerCase()) ||
-          activity.address.state
+          activity.addressDetails.state
             ?.toLowerCase()
             .includes(searchTerm.toLowerCase()) ||
-          activity.address.country
+          activity.addressDetails.country
             .toLowerCase()
             .includes(searchTerm.toLowerCase()) ||
           activity.climbCategory

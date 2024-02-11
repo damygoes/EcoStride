@@ -21,18 +21,16 @@ export const ActivityFormSchema = z.object({
   climbCategory: z.string().optional(),
   photos: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
-  address: z.object({
-    street: z.string().optional(),
+  addressDetails: z.object({
     city: z.string().min(1, { message: "Please provide a city" }),
     state: z.string().min(1, { message: "Please provide a state" }),
     country: z.string().min(1, { message: "Please provide a country" }),
-    continent: z.string().min(1, { message: "Please provide a continent" }),
   }),
-  startCoordinates: z.object({
+  startCoordinateDetails: z.object({
     latitude: z.string(),
     longitude: z.string(),
   }),
-  endCoordinates: z.object({
+  endCoordinateDetails: z.object({
     latitude: z.string(),
     longitude: z.string(),
   }),

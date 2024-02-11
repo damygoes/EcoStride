@@ -1,5 +1,5 @@
 import { CredentialResponse } from "@react-oauth/google";
-import { axiosClient } from "@services/axios/axios-client";
+import { axiosClient, setAuthToken } from "@services/axios/axios-client";
 import { useUser } from "@utils/user/user-store";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -10,11 +10,16 @@ export const useLogin = () => {
   const from = location.state?.from?.pathname || "/";
 
   const handleLoginSuccess = async (credentialResponse: CredentialResponse) => {
-    const token = credentialResponse.credential;
-
+    const googleToken = credentialResponse.credential;
+    // formerly /auth/google
     try {
-      const response = await axiosClient.post("/auth/google", { token: token });
-      setUser(response.data);
+      const response = await axiosClient.post("/api/auth", {
+        token: googleToken,
+      });
+      const user = response.data;
+      const userDoc = user?.user;
+      setUser({ ...userDoc });
+      setAuthToken(user.token);
       navigate(from);
     } catch (error) {
       console.error("Error creating user document", error);

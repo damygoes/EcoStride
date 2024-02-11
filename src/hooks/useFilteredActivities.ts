@@ -28,6 +28,7 @@ const useFilteredActivities = ({
     queryKey: [`related-by-${type}`, parameter],
     queryFn: () => fetchFunctionMap[type](parameter),
     enabled: !!parameter,
+    refetchInterval: 1000 * 60 * 1, // 1 minute
   });
 
   const filteredActivities = useMemo(() => {
