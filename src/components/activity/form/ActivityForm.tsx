@@ -114,12 +114,12 @@ const ActivityForm = () => {
       averageGrade: parseFloat(data.averageGrade),
       timeToComplete: parseFloat(data.timeToComplete ?? ""),
       startCoordinates: {
-        latitude: parseFloat(data.startCoordinates.latitude),
-        longitude: parseFloat(data.startCoordinates.longitude),
+        latitude: parseFloat(data.startCoordinateDetails.latitude),
+        longitude: parseFloat(data.startCoordinateDetails.longitude),
       },
       endCoordinates: {
-        latitude: parseFloat(data.endCoordinates.latitude),
-        longitude: parseFloat(data.endCoordinates.longitude),
+        latitude: parseFloat(data.endCoordinateDetails.latitude),
+        longitude: parseFloat(data.endCoordinateDetails.longitude),
       },
       tags: tagsArray,
     };

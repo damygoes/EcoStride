@@ -48,27 +48,27 @@ function ActivityDetailsHeader({
   // Extract the coordinates from the selected climb
   const startCoordinates = {
     longitude:
-      selectedActivity.startCoordinates &&
-      selectedActivity.startCoordinates.longitude
-        ? selectedActivity.startCoordinates.longitude
+      selectedActivity.startCoordinateDetails &&
+      selectedActivity.startCoordinateDetails.longitude
+        ? selectedActivity.startCoordinateDetails.longitude
         : null,
     latitude:
-      selectedActivity.startCoordinates &&
-      selectedActivity.startCoordinates.latitude
-        ? selectedActivity.startCoordinates.latitude
+      selectedActivity.startCoordinateDetails &&
+      selectedActivity.startCoordinateDetails.latitude
+        ? selectedActivity.startCoordinateDetails.latitude
         : null,
   };
 
   const endCoordinates = {
     longitude:
-      selectedActivity.endCoordinates &&
-      selectedActivity.endCoordinates.longitude
-        ? selectedActivity.endCoordinates.longitude
+      selectedActivity.endCoordinateDetails &&
+      selectedActivity.endCoordinateDetails.longitude
+        ? selectedActivity.endCoordinateDetails.longitude
         : null,
     latitude:
-      selectedActivity.endCoordinates &&
-      selectedActivity.endCoordinates.latitude
-        ? selectedActivity.endCoordinates.latitude
+      selectedActivity.endCoordinateDetails &&
+      selectedActivity.endCoordinateDetails.latitude
+        ? selectedActivity.endCoordinateDetails.latitude
         : null,
   };
 
