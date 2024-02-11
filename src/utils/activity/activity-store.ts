@@ -30,28 +30,22 @@ export const useActivity = () => {
     return response.data as Activity;
   };
   const fetchRelatedActivitiesByCity = async (city: string) => {
-    const response = await axiosClient.get(`/activities/related/city/${city}`);
+    const response = await axiosClient.get(`/activities?city=${city}`);
     return response.data as Activity[];
   };
 
   const fetchRelatedActivitiesByState = async (state: string) => {
-    const response = await axiosClient.get(
-      `/activities/related/state/${state}`,
-    );
+    const response = await axiosClient.get(`/activities?state=${state}`);
     return response.data as Activity[];
   };
 
   const fetchRelatedActivitiesByCountry = async (country: string) => {
-    const response = await axiosClient.get(
-      `/activities/related/country/${country}`,
-    );
+    const response = await axiosClient.get(`/activities?country=${country}`);
     return response.data as Activity[];
   };
 
   const fetchRelatedActivitiesByCategory = async (category: string) => {
-    const response = await axiosClient.get(
-      `/activities/related/category/${category}`,
-    );
+    const response = await axiosClient.get(`/activities?category=${category}`);
     return response.data as Activity[];
   };
 

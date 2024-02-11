@@ -1,7 +1,7 @@
 export type Activity = {
   id: string;
-  slug: string;
   name: string;
+  slug: string;
   description: string;
   distance: number;
   elevationGain: number;
@@ -15,30 +15,24 @@ export type Activity = {
   climbCategory?: ClimbCategory;
   photos?: string[];
   tags?: string[];
-  address: Address;
-  startCoordinates?: Coordinates;
-  endCoordinates?: Coordinates;
+  addressDetails: Address;
+  startCoordinateDetails?: Coordinates;
+  endCoordinateDetails?: Coordinates;
+  createdBy: string;
+  isCreatedByAdmin: boolean;
   createdAt: string;
   updatedAt: string;
 };
 
 export type Address = {
-  id: number;
-  street?: string;
   city: string;
   state: string;
-  postalCode: string;
   country: string;
-  createdAt: string;
-  updatedAt: string;
 };
 
 export type Coordinates = {
-  id: number;
   latitude: number;
   longitude: number;
-  createdAt: string;
-  updatedAt: string;
 };
 
 export type DifficultyLevel =
@@ -52,7 +46,12 @@ export type ActivityType = "Run" | "Bike" | "Hike";
 
 export type RouteType = "Flat" | "Rolling" | "Hilly";
 
-export type ClimbCategory = "Four" | "Three" | "Two" | "One" | "Hors Categorie";
+export type ClimbCategory =
+  | "Four"
+  | "Three"
+  | "Two"
+  | "One"
+  | "Hors Categorie (HC)";
 
 export type Continent =
   | "Africa"

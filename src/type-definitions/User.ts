@@ -1,14 +1,23 @@
 export type User = {
-  id: string | null | undefined;
-  firstName: string | null | undefined;
-  lastName: string | null | undefined;
-  email: string | null | undefined;
-  image: string | null | undefined;
-  token: string | null | undefined;
-  tokenExpiration: number | null | undefined;
+  id: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  email: string | null;
+  avatar: string | null;
   location?: UserLocation;
-  createdAt?: string | null | undefined;
-  updatedAt?: string | null | undefined;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+  details?: UserDetails | null;
+  role: "USER" | "ADMIN";
 };
 
-export type UserLocation = string | null | undefined;
+export type UserLocation = string | null;
+
+export type UserDetails = {
+  bio: string | null;
+  age: number | null;
+  bikeWeight: number | null;
+  ftp: number | null;
+  role: "USER" | "ADMIN";
+  weight: number | null;
+};

@@ -6,9 +6,7 @@ import { persist } from "zustand/middleware";
 
 type UserStore = {
   user: User | null;
-  // userLocation: UserLocation | null;
   setUser: (user: User | null) => void;
-  // setUserLocation: (userLocation: UserLocation) => void;
   updateUser: (user: User) => void;
 };
 

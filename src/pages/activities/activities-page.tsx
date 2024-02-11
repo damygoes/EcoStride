@@ -1,4 +1,4 @@
-import Filters from "@components/activity/filters/Filters";
+import ActivityPageSideBarContent from "@components/activity/activity/ActivityPageSideBarContent";
 import ActivitiesList from "@components/activity/list/ActivitiesList";
 import ClimbViewSelector from "@components/activity/view-selector/ActivityViewSelector";
 import Badge from "@components/common/badge/badge";
@@ -20,6 +20,7 @@ function ActivitiesPage() {
   } = useQuery({
     queryKey: ["activities"],
     queryFn: () => fetchActivities(),
+    refetchInterval: 1000 * 60 * 1, // 1 minute
   });
   const {
     sortedAndFilteredActivities,
@@ -41,7 +42,7 @@ function ActivitiesPage() {
       withFooter
       withSidebar
       pageTitle={t("page-header.all-activities")}
-      sidebarContent={<Filters />}
+      sidebarContent={<ActivityPageSideBarContent />}
     >
       <section className="flex flex-col items-start justify-start h-full gap-4 overflow-hidden">
         <header

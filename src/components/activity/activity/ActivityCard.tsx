@@ -2,7 +2,10 @@ import defaultImage from "@assets/mountain-elevation.svg";
 import { cn } from "@lib/utils";
 import { Activity } from "@type-definitions/Activity";
 import { getActivityCardBadgeInfo } from "@utils/activity/get-activity-card-badge-info";
+import { useUser } from "@utils/user/user-store";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import ActivityCardActions from "./ActivityCardActions";
 
 function ActivityCard({
   activity,
@@ -11,9 +14,10 @@ function ActivityCard({
   activity: Activity;
   basePath?: string;
 }) {
-  const { color: badgeColor, icon: BadgeIcon } = getActivityCardBadgeInfo(
-    activity.activityType,
-  );
+  const { user } = useUser();
+  const { color: badgeColor, icon: BadgeIcon } = useMemo(() => {
+    return getActivityCardBadgeInfo(activity.activityType);
+  }, [activity.activityType]);
 
   if (!activity) {
     return null;
@@ -22,8 +26,9 @@ function ActivityCard({
   return (
     <Link
       to={`/${basePath}/${activity.slug}`}
-      className="relative block h-[22rem] w-96 max-w-sm overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
+      className="group relative block h-[22rem] w-96 max-w-sm overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
     >
+      {user?.role === "ADMIN" && <ActivityCardActions activity={activity} />}
       <img
         alt="activity photo"
         src={
@@ -39,24 +44,35 @@ function ActivityCard({
         className="object-cover w-full h-56 shadow-xs rounded-ss-md"
       />
 
-      <div className="p-4 mt-2">
+      <div className="p-4 mt-2 ">
         <dl>
           <div>
             <dt className="sr-only">Address</dt>
             <dd className="text-xs font-light text-accent">
-              {`${activity.address.city}, ${activity.address.state}, ${activity.address.country}`}
+              {`${activity.addressDetails.city}, ${activity.addressDetails.state}, ${activity.addressDetails.country}`}
             </dd>
           </div>
           <div>
             <dt className="sr-only">Name</dt>
-            <dd className="text-2xl font-semibold">{activity.name}</dd>
+            <dd className="text-2xl font-semibold truncate">{activity.name}</dd>
           </div>
         </dl>
       </div>
-      <div className="flex items-center justify-end w-full gap-3 p-3 text-sm text-text-color bg-gradient-to-br from-white via-secondary/50 to-secondary">
-        <p> {`${activity.distance}km`} </p>|
-        <p>{`${activity.elevationGain}m`}</p>|
-        <p>{`${activity.averageGrade}%`}</p>
+      <div className="flex items-center justify-between w-full gap-2 p-3 text-sm shrink-0 text-text-color bg-gradient-to-br from-white via-secondary/50 to-secondary">
+        <div className="flex items-center justify-start flex-1 gap-2">
+          {activity.climbCategory && (
+            <p className="text-xs font-semibold">
+              {activity.climbCategory === "Hors Categorie (HC)"
+                ? "HC"
+                : `Cat: ${activity.climbCategory.toUpperCase()}`}
+            </p>
+          )}
+        </div>
+        <div className="flex items-center justify-end flex-1 gap-1">
+          <p> {`${activity.distance}km`} </p>|
+          <p>{`${activity.elevationGain}m`}</p>|
+          <p>{`${activity.averageGrade}%`}</p>
+        </div>
       </div>
       <div
         className={cn(

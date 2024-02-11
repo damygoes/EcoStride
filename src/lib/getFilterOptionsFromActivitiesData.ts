@@ -2,9 +2,11 @@ import type { Activity, ClimbCategory } from "@type-definitions/Activity";
 
 export const getFilterOptionsFromActivitiesData = (activities: Activity[]) => {
   if (!activities) return null;
-  const cities = activities.map((activity) => activity.address.city);
-  const states = activities.map((activity) => activity.address.state);
-  const countries = activities.map((activity) => activity.address.country);
+  const cities = activities.map((activity) => activity.addressDetails.city);
+  const states = activities.map((activity) => activity.addressDetails.state);
+  const countries = activities.map(
+    (activity) => activity.addressDetails.country,
+  );
   const uniqueCities = [...new Set(cities)];
   const uniqueStates = [...new Set(states)];
   const uniqueCountries = [...new Set(countries)];
@@ -14,7 +16,7 @@ export const getFilterOptionsFromActivitiesData = (activities: Activity[]) => {
     "Two",
     "Three",
     "Four",
-    "Hors Categorie",
+    "Hors Categorie (HC)",
   ];
   const uniqueCategories = [
     ...new Set(

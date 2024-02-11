@@ -14,7 +14,7 @@ function NavRight() {
       <div className="hidden md:flex md:gap-2 md:items-center">
         {user !== null && (
           <Avatar
-            src={user?.image ?? undefined}
+            src={user?.avatar ?? undefined}
             alt={`Photo of ${user?.email} ${user?.lastName}`}
             size="sm"
           />

@@ -17,7 +17,7 @@ function ClimbCategorySelect({
     "Two",
     "Three",
     "Four",
-    "Hors Categorie",
+    "Hors Categorie (HC)",
   ]);
 
   return (

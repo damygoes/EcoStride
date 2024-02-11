@@ -45,7 +45,7 @@ function ActivityCardHorizontalFormat({
         </div>
         <div className="flex items-center justify-start p-2 truncate 2xl:flex-1 w-52 line-clamp-1">
           <p>
-            {`${activity.address.city}, ${activity.address.state}, ${activity.address.country}`}
+            {`${activity.addressDetails.city}, ${activity.addressDetails.state}, ${activity.addressDetails.country}`}
           </p>
         </div>
         <div className="flex items-center justify-start flex-none p-2 truncate w-28 shrink-0 2xl:flex-1 line-clamp-1">
@@ -60,7 +60,7 @@ function ActivityCardHorizontalFormat({
           </span>
         </div>
         <div className="flex items-center justify-start p-2 truncate 2xl:flex-1 w-52 line-clamp-1">
-          {activity.climbCategory !== null && (
+          {activity.climbCategory && (
             <div className="flex flex-col text-sm font-semibold">
               Category:
               <span className="font-medium uppercase">{`${activity.climbCategory}`}</span>

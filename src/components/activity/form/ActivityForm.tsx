@@ -1,7 +1,6 @@
 import ActivityTypeSelect from "@components/common/activity-type-select/activity-type-select";
 import CitySelect from "@components/common/city-select/city-select";
 import ClimbCategorySelect from "@components/common/climb-category-select/climb-category-select";
-import ContinentSelect from "@components/common/continent-select/continent-select";
 import CountrySelect from "@components/common/country-select/country-select";
 import DifficultyLevelSelect from "@components/common/difficulty-level-select/difficulty-level-select";
 import RouteTypeSelect from "@components/common/route-type-select/route-type-select";
@@ -24,6 +23,7 @@ import {
   ActivityFormType,
 } from "@models/activity-form-schema";
 import { IconPhoto } from "@tabler/icons-react";
+import { useActivityForm } from "@utils/activity/activity-form-store";
 import { useActivityRequestModalStore } from "@utils/activity/activity-request-modal-store";
 import { PickerOverlay } from "filestack-react";
 import { useEffect, useState } from "react";
@@ -32,47 +32,53 @@ import FormSection from "./ActivityFormSection";
 
 const ActivityForm = () => {
   const { setIsActivityRequestModalOpen } = useActivityRequestModalStore();
+  const { activity, resetActivity } = useActivityForm();
   const [showImageUploadPicker, setShowImageUploadPicker] =
     useState<boolean>(false);
   const [shouldRenderClimbCategorySelect, setShouldRenderClimbCategorySelect] =
     useState<boolean>(false);
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
-  const [selectedState, setSelectedState] = useState<string>("");
+  const [selectedCountry, setSelectedCountry] = useState<string>(
+    activity?.addressDetails.country ?? "",
+  );
+  const [selectedState, setSelectedState] = useState<string>(
+    activity?.addressDetails.state ?? "",
+  );
   const [uploadedPhotoUrls, setUploadedPhotoUrls] = useState<string[]>([]);
-  const [tagsInput, setTagsInput] = useState("");
-  const [richTextDescription, setRichTextDescription] = useState<string>("");
+  const [tagsInput, setTagsInput] = useState(activity?.tags?.join(", ") ?? "");
+  const [richTextDescription, setRichTextDescription] = useState<string>(
+    activity?.description ?? "",
+  );
 
   const form = useForm<ActivityFormType>({
     resolver: zodResolver(ActivityFormSchema),
     defaultValues: {
-      activityName: "",
+      activityName: activity?.name ?? "",
       activityDescription: "",
-      distance: "",
-      elevationGain: "",
-      minimumGrade: "",
-      maximumGrade: "",
-      averageGrade: "",
-      timeToComplete: "",
-      difficultyLevel: "",
-      activityType: "Bike",
-      routeType: "",
-      climbCategory: "",
-      photos: [],
+      distance: activity?.distance.toString() ?? "",
+      elevationGain: activity?.elevationGain.toString() ?? "",
+      minimumGrade: activity?.minimumGrade?.toString() ?? "",
+      maximumGrade: activity?.maximumGrade?.toString() ?? "",
+      averageGrade: activity?.averageGrade.toString() ?? "",
+      timeToComplete: activity?.timeToComplete?.toString() ?? "",
+      difficultyLevel: activity?.difficultyLevel ?? "",
+      activityType: activity?.activityType ?? "Bike",
+      routeType: activity?.routeType ?? "",
+      climbCategory: activity?.climbCategory ?? "",
+      photos: activity?.photos ?? [],
       tags: [],
-      address: {
-        street: "",
-        city: "",
-        state: "",
-        country: "",
-        continent: "",
+      addressDetails: {
+        city: activity?.addressDetails.city ?? "",
+        state: activity?.addressDetails.state ?? "",
+        country: activity?.addressDetails.country ?? "",
       },
-      startCoordinates: {
-        latitude: "",
-        longitude: "",
+      startCoordinateDetails: {
+        latitude: activity?.startCoordinateDetails?.latitude?.toString() ?? "",
+        longitude:
+          activity?.startCoordinateDetails?.longitude?.toString() ?? "",
       },
-      endCoordinates: {
-        latitude: "",
-        longitude: "",
+      endCoordinateDetails: {
+        latitude: activity?.endCoordinateDetails?.latitude?.toString() ?? "",
+        longitude: activity?.endCoordinateDetails?.longitude?.toString() ?? "",
       },
     },
   });
@@ -108,12 +114,12 @@ const ActivityForm = () => {
       averageGrade: parseFloat(data.averageGrade),
       timeToComplete: parseFloat(data.timeToComplete ?? ""),
       startCoordinates: {
-        latitude: parseFloat(data.startCoordinates.latitude),
-        longitude: parseFloat(data.startCoordinates.longitude),
+        latitude: parseFloat(data.startCoordinateDetails.latitude),
+        longitude: parseFloat(data.startCoordinateDetails.longitude),
       },
       endCoordinates: {
-        latitude: parseFloat(data.endCoordinates.latitude),
-        longitude: parseFloat(data.endCoordinates.longitude),
+        latitude: parseFloat(data.endCoordinateDetails.latitude),
+        longitude: parseFloat(data.endCoordinateDetails.longitude),
       },
       tags: tagsArray,
     };
@@ -126,6 +132,7 @@ const ActivityForm = () => {
   };
 
   const handleClose = () => {
+    resetActivity();
     form.reset();
     setIsActivityRequestModalOpen(false);
   };
@@ -141,6 +148,7 @@ const ActivityForm = () => {
           <p className="mt-1 text-sm font-light leading-6 text-text-color/60">
             We will review your request and get back to you as soon as possible.
           </p>
+          {/* Activity Name */}
           <FormGroup className="grid-cols-1 my-2">
             <FormField
               control={form.control}
@@ -162,6 +170,7 @@ const ActivityForm = () => {
               )}
             />
           </FormGroup>
+          {/* Activity Description */}
           <FormGroup className="grid-cols-1 my-2">
             <FormField
               control={form.control}
@@ -179,10 +188,11 @@ const ActivityForm = () => {
               )}
             />
           </FormGroup>
+          {/* Country, State and City Inputs */}
           <FormGroup className="grid-cols-3 my-2">
             <FormField
               control={form.control}
-              name="address.country"
+              name="addressDetails.country"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel required>Country</FormLabel>
@@ -194,7 +204,9 @@ const ActivityForm = () => {
                         setSelectedCountry(value);
                       }}
                       isErrored={
-                        form.formState.errors.address?.country ? true : false
+                        form.formState.errors.addressDetails?.country
+                          ? true
+                          : false
                       }
                     />
                   </FormControl>
@@ -203,7 +215,7 @@ const ActivityForm = () => {
             />
             <FormField
               control={form.control}
-              name="address.state"
+              name="addressDetails.state"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>State/Province</FormLabel>
@@ -216,7 +228,9 @@ const ActivityForm = () => {
                         setSelectedState(value);
                       }}
                       isErrored={
-                        form.formState.errors.address?.state ? true : false
+                        form.formState.errors.addressDetails?.state
+                          ? true
+                          : false
                       }
                     />
                   </FormControl>
@@ -225,7 +239,7 @@ const ActivityForm = () => {
             />
             <FormField
               control={form.control}
-              name="address.city"
+              name="addressDetails.city"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>City</FormLabel>
@@ -236,46 +250,9 @@ const ActivityForm = () => {
                       selectedCity={field.value as string}
                       onChange={(value) => field.onChange(value)}
                       isErrored={
-                        form.formState.errors.address?.city ? true : false
-                      }
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="address.street"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Street (optional)</FormLabel>
-                  <FormControl>
-                    <InputField
-                      type="text"
-                      placeholder="Street"
-                      {...field}
-                      isErrored={
-                        form.formState.errors.address?.street ? true : false
-                      }
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="address.continent"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Continent</FormLabel>
-                  <FormControl>
-                    <ContinentSelect
-                      selectedContinent={field.value as string}
-                      onChange={(value) => {
-                        field.onChange(value);
-                      }}
-                      isErrored={
-                        form.formState.errors.address?.continent ? true : false
+                        form.formState.errors.addressDetails?.city
+                          ? true
+                          : false
                       }
                     />
                   </FormControl>
@@ -511,17 +488,20 @@ const ActivityForm = () => {
           <FormGroup className="grid-cols-2 gap-12 my-2">
             <FormField
               control={form.control}
-              name="startCoordinates.latitude"
+              name="startCoordinateDetails.latitude"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Start Latitude</FormLabel>
                   <FormControl>
                     <InputField
                       type="text"
-                      placeholder="Start Latitude"
+                      placeholder={
+                        activity?.startCoordinateDetails?.latitude.toString() ??
+                        "Start Latitude"
+                      }
                       {...field}
                       isErrored={
-                        form.formState.errors.startCoordinates?.latitude
+                        form.formState.errors.startCoordinateDetails?.latitude
                           ? true
                           : false
                       }
@@ -532,17 +512,20 @@ const ActivityForm = () => {
             />
             <FormField
               control={form.control}
-              name="endCoordinates.latitude"
+              name="endCoordinateDetails.latitude"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>End Latitude</FormLabel>
                   <FormControl>
                     <InputField
                       type="text"
-                      placeholder="End Latitude"
+                      placeholder={
+                        activity?.endCoordinateDetails?.latitude.toString() ??
+                        "End Latitude"
+                      }
                       {...field}
                       isErrored={
-                        form.formState.errors.endCoordinates?.latitude
+                        form.formState.errors.endCoordinateDetails?.latitude
                           ? true
                           : false
                       }
@@ -556,17 +539,20 @@ const ActivityForm = () => {
           <FormGroup className="grid-cols-2 gap-12 my-2">
             <FormField
               control={form.control}
-              name="startCoordinates.longitude"
+              name="startCoordinateDetails.longitude"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Start Longitude</FormLabel>
                   <FormControl>
                     <InputField
                       type="text"
-                      placeholder="Start Longitude"
+                      placeholder={
+                        activity?.startCoordinateDetails?.longitude.toString() ??
+                        "Start Longitude"
+                      }
                       {...field}
                       isErrored={
-                        form.formState.errors.startCoordinates?.longitude
+                        form.formState.errors.startCoordinateDetails?.longitude
                           ? true
                           : false
                       }
@@ -577,17 +563,20 @@ const ActivityForm = () => {
             />
             <FormField
               control={form.control}
-              name="endCoordinates.longitude"
+              name="endCoordinateDetails.longitude"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>End Longitude</FormLabel>
                   <FormControl>
                     <InputField
                       type="text"
-                      placeholder="End Longitude"
+                      placeholder={
+                        activity?.endCoordinateDetails?.longitude.toString() ??
+                        "End Longitude"
+                      }
                       {...field}
                       isErrored={
-                        form.formState.errors.endCoordinates?.longitude
+                        form.formState.errors.endCoordinateDetails?.longitude
                           ? true
                           : false
                       }
@@ -673,13 +662,24 @@ const ActivityForm = () => {
               }}
             />
           )}
-
           {uploadedPhotoUrls.length > 0 && (
             <div className="flex flex-wrap items-start justify-start gap-4 px-6 py-10 mt-2 overflow-x-hidden overflow-y-auto bg-transparent border border-dashed rounded-lg border-text-color/25">
               {uploadedPhotoUrls.map((url, index) => (
                 <img
                   key={index}
                   src={url}
+                  alt="Uploaded photo"
+                  className="object-cover rounded-lg w-52 h-52"
+                />
+              ))}
+            </div>
+          )}
+          {activity?.photos && activity.photos.length > 0 && (
+            <div className="flex items-start justify-start gap-4 px-6 py-10 mt-2 overflow-x-auto overflow-y-hidden bg-transparent border border-dashed rounded-lg border-text-color/25">
+              {activity.photos.map((photo, index) => (
+                <img
+                  key={index}
+                  src={photo}
                   alt="Uploaded photo"
                   className="object-cover rounded-lg w-52 h-52"
                 />
