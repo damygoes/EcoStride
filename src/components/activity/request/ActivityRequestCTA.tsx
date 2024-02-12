@@ -1,6 +1,6 @@
-import LoginModal from "@components/activity/request/ActivityRequestModal";
+import ActivityRequestModal from "@components/activity/request/ActivityRequestModal";
 import { Button } from "@components/ui/button/button";
-import { useActivityRequestModalStore } from "@utils/activity/activity-request-modal-store";
+import { useActivityActions } from "@utils/activity/activity-actions-store";
 import { useUser } from "@utils/user/user-store";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function ActivityRequestCTA() {
   const { user } = useUser();
 
   const { isActivityRequestModalOpen, setIsActivityRequestModalOpen } =
-    useActivityRequestModalStore();
+    useActivityActions();
 
   const handleActivityRequestModalOpen = () => {
     if (user === null) {
@@ -34,7 +34,7 @@ function ActivityRequestCTA() {
       >
         {user?.role === "ADMIN" ? "Add Activity" : "Submit a Request"}
       </Button>
-      {isActivityRequestModalOpen && <LoginModal />}
+      {isActivityRequestModalOpen && <ActivityRequestModal />}
     </div>
   );
 }

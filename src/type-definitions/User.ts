@@ -4,20 +4,20 @@ export type User = {
   lastName: string | null;
   email: string | null;
   avatar: string | null;
+  role: USER_ROLE;
+  authenticated?: {
+    sessionToken: string;
+  };
+  profile?: {
+    bio: string;
+    age: number;
+    ftp: number;
+    bikeWeight: number;
+    bodyWeight: number;
+  };
   location?: UserLocation;
-  createdAt?: string | null;
-  updatedAt?: string | null;
-  details?: UserDetails | null;
-  role: "USER" | "ADMIN";
 };
 
 export type UserLocation = string | null;
 
-export type UserDetails = {
-  bio: string | null;
-  age: number | null;
-  bikeWeight: number | null;
-  ftp: number | null;
-  role: "USER" | "ADMIN";
-  weight: number | null;
-};
+export type USER_ROLE = "USER" | "ADMIN";

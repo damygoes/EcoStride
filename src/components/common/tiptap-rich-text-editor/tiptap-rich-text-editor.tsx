@@ -22,7 +22,7 @@ function TipTapRichTextEditor({ richText, onChange }: TipTapRichTextEditor) {
     },
   });
   return (
-    <div className="flex flex-col bg-white rounded-lg justify-stretch min-h-64">
+    <div className="flex flex-col bg-white rounded-lg justify-stretch min-h-44">
       <Toolbar editor={editor} />
       <EditorContent editor={editor} />
     </div>

@@ -20,14 +20,13 @@ export const useSortedFilteredActivities = (activities: Activity[]) => {
     if (country) {
       result = result.filter(
         (activity) =>
-          activity.addressDetails.country.toLowerCase() ===
-          country.toLowerCase(),
+          activity.address.country.toLowerCase() === country.toLowerCase(),
       );
     }
     if (state) {
       result = result.filter(
         (activity) =>
-          activity.addressDetails.state?.toLowerCase() === state.toLowerCase(),
+          activity.address.state?.toLowerCase() === state.toLowerCase(),
       );
     }
     if (climbCategory) {
@@ -38,28 +37,18 @@ export const useSortedFilteredActivities = (activities: Activity[]) => {
 
     // Apply search
     if (searchTerm) {
-      result = result.filter(
-        (activity) =>
-          activity.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          activity.description
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase()) ||
-          activity.description
-            ?.toLowerCase()
-            .includes(searchTerm.toLowerCase()) ||
-          activity.addressDetails.city
-            ?.toLowerCase()
-            .includes(searchTerm.toLowerCase()) ||
-          activity.addressDetails.state
-            ?.toLowerCase()
-            .includes(searchTerm.toLowerCase()) ||
-          activity.addressDetails.country
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase()) ||
-          activity.climbCategory
-            ?.toLowerCase()
-            .includes(searchTerm.toLowerCase()),
-      );
+      result = result.filter((activity) => {
+        const lowerSearchTerm = searchTerm.toLowerCase();
+        // Applying optional chaining and guard clauses
+        return (
+          activity.name?.toLowerCase().includes(lowerSearchTerm) ||
+          activity.description?.toLowerCase().includes(lowerSearchTerm) ||
+          activity.address.city?.toLowerCase().includes(lowerSearchTerm) ||
+          activity.address.state?.toLowerCase().includes(lowerSearchTerm) ||
+          activity.address.country?.toLowerCase().includes(lowerSearchTerm) ||
+          activity.climbCategory?.toLowerCase().includes(lowerSearchTerm)
+        );
+      });
     }
 
     // Apply sorting

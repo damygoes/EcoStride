@@ -19,7 +19,7 @@ const HeroSection = () => {
           {t("hero.description")}
         </p>
 
-        <Link to="/climbs">
+        <Link to="/activities">
           <Button>{t("hero.button")}</Button>
         </Link>
       </div>
