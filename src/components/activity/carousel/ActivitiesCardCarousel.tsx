@@ -97,7 +97,7 @@ const ActivitiesCardCarousel = ({
 
 const Card = ({
   photos,
-  addressDetails: { city },
+  address: { city },
   name,
   description,
   slug,
