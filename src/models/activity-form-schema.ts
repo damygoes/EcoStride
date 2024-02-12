@@ -1,10 +1,10 @@
 import { z } from "zod";
 
 export const ActivityFormSchema = z.object({
-  activityName: z
+  name: z
     .string()
     .min(1, { message: "Please provide a descriptive name for this activity" }),
-  activityDescription: z
+  description: z
     .string()
     .min(1, { message: "Please describe this activity in a few words" }),
   distance: z.string().min(1, { message: "Distance is required" }),
@@ -21,16 +21,16 @@ export const ActivityFormSchema = z.object({
   climbCategory: z.string().optional(),
   photos: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
-  addressDetails: z.object({
+  address: z.object({
     city: z.string().min(1, { message: "Please provide a city" }),
     state: z.string().min(1, { message: "Please provide a state" }),
     country: z.string().min(1, { message: "Please provide a country" }),
   }),
-  startCoordinateDetails: z.object({
+  startCoordinate: z.object({
     latitude: z.string(),
     longitude: z.string(),
   }),
-  endCoordinateDetails: z.object({
+  endCoordinate: z.object({
     latitude: z.string(),
     longitude: z.string(),
   }),

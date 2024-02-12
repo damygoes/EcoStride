@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 type SpringModalProps = {
   isOpen: boolean;
   setIsOpen: () => void;
-  // setIsOpen: Dispatch<SetStateAction<boolean>>;
   children?: React.ReactNode;
+  shouldCloseOnOutsideClick?: boolean;
   className?: string;
 };
 
@@ -13,8 +13,12 @@ function SpringModal({
   isOpen,
   setIsOpen,
   children,
+  shouldCloseOnOutsideClick = true,
   className,
 }: SpringModalProps) {
+  const handleClose = () => {
+    setIsOpen();
+  };
   return (
     <AnimatePresence>
       {isOpen && (
@@ -22,7 +26,7 @@ function SpringModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          onClick={setIsOpen}
+          onClick={shouldCloseOnOutsideClick ? handleClose : undefined}
           className="fixed inset-0 z-50 grid p-8 overflow-y-scroll cursor-pointer backdrop-blur place-items-center"
         >
           <motion.div
@@ -35,7 +39,8 @@ function SpringModal({
               className,
             )}
           >
-            <div className="relative z-10 ">{children}</div>
+            {children}
+            {/* <div className="relative z-10 ">{children}</div> */}
           </motion.div>
         </motion.div>
       )}

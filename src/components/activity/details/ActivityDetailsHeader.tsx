@@ -48,27 +48,25 @@ function ActivityDetailsHeader({
   // Extract the coordinates from the selected climb
   const startCoordinates = {
     longitude:
-      selectedActivity.startCoordinateDetails &&
-      selectedActivity.startCoordinateDetails.longitude
-        ? selectedActivity.startCoordinateDetails.longitude
+      selectedActivity.startCoordinate &&
+      selectedActivity.startCoordinate.longitude
+        ? selectedActivity.startCoordinate.longitude
         : null,
     latitude:
-      selectedActivity.startCoordinateDetails &&
-      selectedActivity.startCoordinateDetails.latitude
-        ? selectedActivity.startCoordinateDetails.latitude
+      selectedActivity.startCoordinate &&
+      selectedActivity.startCoordinate.latitude
+        ? selectedActivity.startCoordinate.latitude
         : null,
   };
 
   const endCoordinates = {
     longitude:
-      selectedActivity.endCoordinateDetails &&
-      selectedActivity.endCoordinateDetails.longitude
-        ? selectedActivity.endCoordinateDetails.longitude
+      selectedActivity.endCoordinate && selectedActivity.endCoordinate.longitude
+        ? selectedActivity.endCoordinate.longitude
         : null,
     latitude:
-      selectedActivity.endCoordinateDetails &&
-      selectedActivity.endCoordinateDetails.latitude
-        ? selectedActivity.endCoordinateDetails.latitude
+      selectedActivity.endCoordinate && selectedActivity.endCoordinate.latitude
+        ? selectedActivity.endCoordinate.latitude
         : null,
   };
 
@@ -85,7 +83,7 @@ function ActivityDetailsHeader({
             {selectedActivity.name.toLocaleUpperCase() || "Climb Name"}
           </h3>
           <p className="text-sm font-light">
-            {`Located in ${selectedActivity.addressDetails.city}, ${selectedActivity.addressDetails.state}, ${selectedActivity.addressDetails.country}`}
+            {`Located in ${selectedActivity.address.city}, ${selectedActivity.address.state}, ${selectedActivity.address.country}`}
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center w-full gap-3">

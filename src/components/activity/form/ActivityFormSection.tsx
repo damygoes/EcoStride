@@ -12,12 +12,7 @@ export default function ActivityFormSection({
   className,
 }: ActivityFormSectionProps) {
   return (
-    <div
-      className={cn(
-        "w-full pt-4 pb-8 px-3 border-b border-text-color/10",
-        className,
-      )}
-    >
+    <div className={cn("w-full px-3 border-b border-text-color/10", className)}>
       <h2 className="text-2xl font-semibold leading-7 text-text-color">
         {title}
       </h2>

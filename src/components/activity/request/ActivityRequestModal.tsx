@@ -1,16 +1,31 @@
 import SpringModal from "@components/common/modal/spring-modal";
-import { useActivityRequestModalStore } from "@utils/activity/activity-request-modal-store";
+import { IconCircleX } from "@tabler/icons-react";
+import { useActivityActions } from "@utils/activity/activity-actions-store";
+import { useActivityForm } from "@utils/activity/activity-form-store";
 import ActivityForm from "../form/ActivityForm";
 
 function ActivityRequestModal() {
   const { isActivityRequestModalOpen, setIsActivityRequestModalOpen } =
-    useActivityRequestModalStore();
+    useActivityActions();
+  const { resetExistingActivity } = useActivityForm();
+
+  const handleCancelActivityRequest = () => {
+    setIsActivityRequestModalOpen(false);
+    resetExistingActivity();
+  };
+
   return (
     <SpringModal
       isOpen={isActivityRequestModalOpen}
       setIsOpen={() => setIsActivityRequestModalOpen(false)}
-      className="max-w-4xl scrollbar-hide"
+      shouldCloseOnOutsideClick={false}
+      className="relative max-w-7xl scrollbar-hide"
     >
+      <IconCircleX
+        className="absolute cursor-pointer top-3 right-3 text-accent hover:text-accent/50"
+        size={24}
+        onClick={handleCancelActivityRequest}
+      />
       <ActivityForm />
     </SpringModal>
   );

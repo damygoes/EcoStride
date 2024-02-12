@@ -1,21 +1,31 @@
 import { IconEdit, IconTrashXFilled } from "@tabler/icons-react";
 import { Activity } from "@type-definitions/Activity";
+import { useActivityActions } from "@utils/activity/activity-actions-store";
 import { useActivityForm } from "@utils/activity/activity-form-store";
-import { useActivityRequestModalStore } from "@utils/activity/activity-request-modal-store";
 
 type ActivityCardActionsProps = {
   activity: Activity;
 };
 
 function ActivityCardActions({ activity }: ActivityCardActionsProps) {
-  const { setIsActivityRequestModalOpen } = useActivityRequestModalStore();
-  const { setActivity } = useActivityForm();
+  const { setIsActivityRequestModalOpen, setIsActivityDeleteModalOpen } =
+    useActivityActions();
+  const { setExistingActivity } = useActivityForm();
 
   const handleEditActivity = (event: React.MouseEvent<SVGSVGElement>) => {
     event.preventDefault();
     event.stopPropagation();
     setIsActivityRequestModalOpen(true);
-    setActivity(activity);
+    setIsActivityDeleteModalOpen(false);
+    setExistingActivity(activity);
+  };
+
+  const handleDeleteActivity = (event: React.MouseEvent<SVGSVGElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setExistingActivity(activity);
+    setIsActivityDeleteModalOpen(true);
+    setIsActivityRequestModalOpen(false);
   };
 
   return (
@@ -26,7 +36,12 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
         className="hover:text-primary"
         onClick={(event) => handleEditActivity(event)}
       />
-      <IconTrashXFilled size={20} stroke={1} className="hover:text-accent" />
+      <IconTrashXFilled
+        size={20}
+        stroke={1}
+        className="hover:text-accent"
+        onClick={(event) => handleDeleteActivity(event)}
+      />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import ActivityDeleteConfirmation from "@components/activity/activity-delete-confirmation/ActivityDeleteConfirmation";
 import ActivityPageSideBarContent from "@components/activity/activity/ActivityPageSideBarContent";
 import ActivitiesList from "@components/activity/list/ActivitiesList";
 import ClimbViewSelector from "@components/activity/view-selector/ActivityViewSelector";
@@ -8,11 +9,13 @@ import { useSortedFilteredActivities } from "@hooks/useSortedFilteredActivities"
 import PageLayout from "@layouts/page-layout/page-layout";
 import { cn } from "@lib/utils";
 import { useQuery } from "@tanstack/react-query";
+import { useActivityActions } from "@utils/activity/activity-actions-store";
 import { useActivity } from "@utils/activity/activity-store";
 import { useTranslation } from "react-i18next";
 
 function ActivitiesPage() {
   const { fetchActivities } = useActivity();
+  const { isActivityDeleteModalOpen } = useActivityActions();
   const {
     data: activities,
     isLoading,
@@ -87,6 +90,7 @@ function ActivitiesPage() {
               isLoading={isLoading}
             />
           )}
+          {isActivityDeleteModalOpen && <ActivityDeleteConfirmation />}
         </section>
       </section>
     </PageLayout>

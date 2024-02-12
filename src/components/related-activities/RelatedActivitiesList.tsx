@@ -11,17 +11,17 @@ const RelatedActivitiesList = ({
 }: RelatedActivitiesListProps) => {
   const filteredByCity = useFilteredActivities({
     type: "city",
-    parameter: selectedActivity.addressDetails.city,
+    parameter: selectedActivity.address.city,
     excludeId: selectedActivity.id,
   });
   const filteredByState = useFilteredActivities({
     type: "state",
-    parameter: selectedActivity.addressDetails?.state,
+    parameter: selectedActivity.address?.state,
     excludeId: selectedActivity.id,
   });
   const filteredByCountry = useFilteredActivities({
     type: "country",
-    parameter: selectedActivity.addressDetails?.country,
+    parameter: selectedActivity.address?.country,
     excludeId: selectedActivity.id,
   });
   const filteredByCategory = useFilteredActivities({
@@ -34,15 +34,15 @@ const RelatedActivitiesList = ({
     <div className="flex flex-col items-start justify-start w-full h-full gap-4 p-3 overflow-x-hidden overflow-y-auto rounded-md text-text-color bg-gradient-to-br from-primary/10 via-primary/30 to-secondary">
       <RelatedActivityListSectionGroup
         activities={filteredByCity}
-        type={selectedActivity.addressDetails?.city}
+        type={selectedActivity.address?.city}
       />
       <RelatedActivityListSectionGroup
         activities={filteredByState}
-        type={selectedActivity.addressDetails?.state}
+        type={selectedActivity.address?.state}
       />
       <RelatedActivityListSectionGroup
         activities={filteredByCountry}
-        type={selectedActivity.addressDetails?.country}
+        type={selectedActivity.address?.country}
       />
       <RelatedActivityListSectionGroup
         activities={filteredByCategory}

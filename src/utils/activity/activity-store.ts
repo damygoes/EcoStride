@@ -1,5 +1,5 @@
 import { axiosClient } from "@services/axios/axios-client";
-import { Activity } from "@type-definitions/Activity";
+import { Activity, ActivityRequestObject } from "@type-definitions/Activity";
 import { create } from "zustand";
 
 export type ACTIVITIES_VIEW_MODE = "grid" | "list";
@@ -49,6 +49,27 @@ export const useActivity = () => {
     return response.data as Activity[];
   };
 
+  const createActivity = async (activity: ActivityRequestObject) => {
+    const response = await axiosClient.post("/activities/", activity);
+    return response.data as Activity;
+  };
+
+  const updateActivity = async (updatedActivity: Activity) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { id, slug, ...newUpdateBody } = updatedActivity;
+
+    const response = await axiosClient.patch(
+      `/activities/${updatedActivity.slug}`,
+      newUpdateBody,
+    );
+    return response.data as Activity;
+  };
+
+  const deleteActivity = async (activitySlug: string) => {
+    const response = await axiosClient.delete(`/activities/${activitySlug}`);
+    return response.data;
+  };
+
   return {
     activitiesViewMode,
     setActivitiesViewMode,
@@ -58,5 +79,8 @@ export const useActivity = () => {
     fetchRelatedActivitiesByCountry,
     fetchRelatedActivitiesByCategory,
     fetchActivity,
+    createActivity,
+    updateActivity,
+    deleteActivity,
   };
 };

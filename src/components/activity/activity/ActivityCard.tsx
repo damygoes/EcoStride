@@ -15,6 +15,9 @@ function ActivityCard({
   basePath?: string;
 }) {
   const { user } = useUser();
+  const userRole = useMemo(() => {
+    return user?.role === "ADMIN";
+  }, [user?.role]);
   const { color: badgeColor, icon: BadgeIcon } = useMemo(() => {
     return getActivityCardBadgeInfo(activity.activityType);
   }, [activity.activityType]);
@@ -28,7 +31,7 @@ function ActivityCard({
       to={`/${basePath}/${activity.slug}`}
       className="group relative block h-[22rem] w-96 max-w-sm overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
     >
-      {user?.role === "ADMIN" && <ActivityCardActions activity={activity} />}
+      {userRole && <ActivityCardActions activity={activity} />}
       <img
         alt="activity photo"
         src={
@@ -49,7 +52,7 @@ function ActivityCard({
           <div>
             <dt className="sr-only">Address</dt>
             <dd className="text-xs font-light text-accent">
-              {`${activity.addressDetails.city}, ${activity.addressDetails.state}, ${activity.addressDetails.country}`}
+              {`${activity.address.city}, ${activity.address.state}, ${activity.address.country}`}
             </dd>
           </div>
           <div>
@@ -90,25 +93,3 @@ function ActivityCard({
 }
 
 export default ActivityCard;
-
-/**
- * <div className="flex flex-wrap items-center gap-4 mt-6 text-xs">
-          <ActivityCardDetail
-            icon={<DistanceIcon />}
-            name={t("activity-card.distance")}
-            value={`${activity.distance}km`}
-          />
-
-          <ActivityCardDetail
-            icon={<AverageGradientIcon />}
-            name={t("activity-card.avg-grade")}
-            value={`${activity.averageGrade}%`}
-          />
-
-          <ActivityCardDetail
-            icon={<ElevationIcon />}
-            name={t("activity-card.elevation")}
-            value={`${activity.elevationGain}m`}
-          />
-        </div>
- */
