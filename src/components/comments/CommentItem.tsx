@@ -50,10 +50,6 @@ function CommentItem({ comment, className }: CommentItemProps) {
     return null;
   }
 
-  // console.log("Comment received: ", comment);
-
-  // Function to toggle the reply area visibility
-  // const toggleReply = () => setShowReply((prevShowReply) => !prevShowReply);
   const handleShowReply = () => {
     setShowReply(true);
   };
@@ -67,8 +63,6 @@ function CommentItem({ comment, className }: CommentItemProps) {
     await deleteCommentMutation({ commentId, slug });
     setIsDeletingComment(false);
   };
-
-  // console.log("Comment received: ", comment);
 
   return (
     <div
@@ -111,23 +105,6 @@ function CommentItem({ comment, className }: CommentItemProps) {
             parentCommentId={comment.id}
             secondaryFunction={handleHideReply}
           />
-          // <div className="flex flex-col items-end justify-start w-full gap-2 mt-2">
-          //   <textarea
-          //     className="w-full p-2 border rounded-md resize-none border-secondary/30 text-text-color/60"
-          //     placeholder="Write a reply..."
-          //   />
-          //   <div className="flex justify-between gap-3">
-          //     <IconX
-          //       size={18}
-          //       onClick={handleHideReply}
-          //       className="cursor-pointer text-secondary/60 hover:text-secondary"
-          //     />
-          //     <IconSend2
-          //       size={18}
-          //       className="cursor-pointer text-secondary/60 hover:text-secondary"
-          //     />
-          //   </div>
-          // </div>
         )}
       </div>
     </div>

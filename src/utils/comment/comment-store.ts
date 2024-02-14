@@ -1,13 +1,7 @@
 import { axiosClient } from "@services/axios/axios-client";
 import { Comment } from "@type-definitions/Comment";
 
-// type CommentStore = {};
-
-// const useCommentStore = create<CommentStore>((set) => ({}));
-
 export const useComment = () => {
-  //   const {} = useCommentStore();
-
   const createComment = async (commentData: {
     activitySlug: string | null;
     comment: string;
@@ -26,22 +20,6 @@ export const useComment = () => {
 
     return response.data as Comment;
   };
-  // const createComment = async ({
-  //   activitySlug,
-  //   comment,
-  // }: {
-  //   activitySlug: string | null;
-  //   comment: string;
-  // }) => {
-  //   const text = comment;
-  //   const response = await axiosClient.post(
-  //     `/activities/${activitySlug}/comments`,
-  //     {
-  //       text,
-  //     },
-  //   );
-  //   return response.data as Comment;
-  // };
 
   const fetchComments = async (activitySlug?: string | null) => {
     const response = await axiosClient.get(
