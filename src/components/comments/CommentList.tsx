@@ -1,8 +1,8 @@
-import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import type { Comment } from "@type-definitions/Comment";
 import dayjs from "dayjs";
 import { useMemo, useState } from "react";
 import CommentItem from "./CommentItem";
+import CommentReplyToggle from "./CommentReplyToggle";
 
 type CommentListProps = {
   comments: Comment[];
@@ -26,34 +26,31 @@ const CommentList = ({ comments }: CommentListProps) => {
     }));
   };
 
+  if (!comments) {
+    return null;
+  }
+
   return (
     <div className="flex flex-col items-start justify-start w-full gap-3 p-3 overflow-x-hidden overflow-y-auto md:w-11/12">
       {sortedComments.map((comment) => (
         <div
-          key={comment.commentId}
+          key={comment.id}
           className="flex flex-col items-start justify-start w-full gap-2 rounded-md"
         >
           <div className="flex items-start justify-between w-full gap-3">
             <CommentItem comment={comment} className="flex-1" />
-            {comment.subComments &&
-              comment.subComments.length > 0 &&
-              (openComments[comment.commentId] ? (
-                <IconChevronUp
-                  size={20}
-                  onClick={() => handleCommentOpen(comment.commentId)}
-                  className="cursor-pointer text-text-color hover:text-accent"
-                />
-              ) : (
-                <IconChevronDown
-                  size={20}
-                  onClick={() => handleCommentOpen(comment.commentId)}
-                  className="cursor-pointer text-text-color hover:text-accent"
-                />
-              ))}
+            {comment.replies && comment.replies.length > 0 && (
+              <CommentReplyToggle
+                commentId={comment.id}
+                repliesCount={comment.replies.length}
+                isCommentOpen={openComments[comment.id]}
+                handleCommentOpen={handleCommentOpen}
+              />
+            )}
           </div>
-          {openComments[comment.commentId] && (
-            <div className="flex flex-col items-start justify-start w-full gap-3 p-3 overflow-x-hidden overflow-y-auto rounded-md shadow-sm md:w-11/12 bg-gradient-to-br from-white to-text-color/20">
-              <CommentList comments={comment.subComments} />
+          {openComments[comment.id] && (
+            <div className="flex flex-col items-start justify-start w-full gap-3 px-4 overflow-x-hidden overflow-y-auto rounded-md md:w-11/12">
+              <CommentList comments={comment.replies ?? []} />
             </div>
           )}
         </div>

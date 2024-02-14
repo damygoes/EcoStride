@@ -17,7 +17,7 @@ export interface ButtonProps
     | "outline"
     | "gradient"
     | "ghost";
-  size?: "sm" | "md" | "lg" | "icon";
+  size?: "xs" | "sm" | "md" | "lg" | "icon";
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   disabled?: boolean;
