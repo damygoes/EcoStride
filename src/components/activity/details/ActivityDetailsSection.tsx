@@ -3,7 +3,7 @@ import DOMPurify from "dompurify";
 import { ReactNode, useMemo } from "react";
 
 type ActivityDetailsSectionProps = {
-  title: string;
+  title: string | ReactNode;
   content: string | ReactNode;
   className?: string;
 };

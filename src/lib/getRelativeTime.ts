@@ -4,7 +4,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 // Extend dayjs with the relativeTime plugin
 dayjs.extend(relativeTime);
 
-type timeInput = string;
+type timeInput = Date | string;
 
 export function getRelativeTime(createdAt: timeInput) {
   return dayjs(createdAt).fromNow();

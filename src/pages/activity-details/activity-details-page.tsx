@@ -1,6 +1,7 @@
 import ActivityLoadingStateFallback from "@components/activity/activity-loading-state-fallback/ActivityLoadingStateFallback";
 import ActivityDetailsHeader from "@components/activity/details/ActivityDetailsHeader";
 import ActivityDetailsSection from "@components/activity/details/ActivityDetailsSection";
+import CommentCountDisplay from "@components/comments/CommentCountDisplay";
 import CommentList from "@components/comments/CommentList";
 import CommentTextArea from "@components/comments/CommentTextArea";
 import BreadCrumbsComponent from "@components/common/breadcrumbs/breadcrumbs";
@@ -8,9 +9,9 @@ import PhotoCarousel from "@components/common/carousel/photo-carousel";
 import ErrorFallback from "@components/common/error-fallback/error-fallback";
 import RelatedActivitiesList from "@components/related-activities/RelatedActivitiesList";
 import PageLayout from "@layouts/page-layout/page-layout";
-import { ALL_ACTIVITIES_COMMENTS } from "@mock/comments";
 import { useQuery } from "@tanstack/react-query";
 import { useActivity } from "@utils/activity/activity-store";
+import { useComment } from "@utils/comment/comment-store";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -19,6 +20,7 @@ function ActivityDetails() {
   const { t } = useTranslation();
   const { activitySlug } = useParams();
   const { fetchActivity } = useActivity();
+  const { fetchComments } = useComment();
   const {
     data: Activity,
     isLoading,
@@ -28,13 +30,20 @@ function ActivityDetails() {
     queryFn: () => fetchActivity(activitySlug),
     enabled: !!activitySlug,
   });
+  const {
+    data: Comments,
+    // isLoading: isCommentsLoading,
+    // isError: isCommentsError,
+  } = useQuery({
+    queryKey: ["comments", activitySlug],
+    queryFn: () => fetchComments(activitySlug),
+    enabled: !!activitySlug,
+    refetchInterval: 1000 * 2, // 2 seconds
+  });
 
-  // TODO: Handle properly in backend
-  const activityComments = useMemo(() => {
-    return ALL_ACTIVITIES_COMMENTS.filter(
-      (comment) => comment.activityId === Activity?.id,
-    );
-  }, [Activity?.id]);
+  const activityCommentsCount = useMemo(() => {
+    return Comments?.length || 0;
+  }, [Comments]);
 
   if (!Activity) {
     return null;
@@ -60,12 +69,12 @@ function ActivityDetails() {
         <ActivityDetailsSection title="About" content={Activity.description} />
         <PhotoCarousel images={Activity.photos || []} />
         <ActivityDetailsSection
-          title="Comments"
+          title={<CommentCountDisplay commentCount={activityCommentsCount} />}
           content={
-            <>
-              <CommentTextArea />
-              <CommentList comments={activityComments} />
-            </>
+            <div className="flex flex-col gap-4">
+              <CommentTextArea placeholder="What do you think of this activity?" />
+              <CommentList comments={Comments ?? []} />
+            </div>
           }
         />
       </div>

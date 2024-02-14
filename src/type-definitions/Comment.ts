@@ -1,8 +1,15 @@
 export type Comment = {
-  userId: string;
-  commentId: string;
-  activityId: string;
+  id: string;
+  activitySlug: string;
+  userId: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    avatar: string;
+  };
   text: string;
-  subComments: Comment[];
-  createdAt: string;
+  createdAt: Date;
+  updatedAt?: Date;
+  parentId?: string;
+  replies?: Comment[];
 };
