@@ -12,7 +12,7 @@ interface AvatarProps
   alt: string;
   fallback?: string;
   src?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "square";
   className?: string;
 }
 

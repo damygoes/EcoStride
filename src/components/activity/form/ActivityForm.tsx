@@ -31,6 +31,7 @@ import { useActivity } from "@utils/activity/activity-store";
 import { PickerOverlay } from "filestack-react";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { FileStackConfig } from "../../../services/filestack/filestack-config";
 import { default as ActivityFormSection } from "./ActivityFormSection";
 
 const ActivityForm = () => {
@@ -151,7 +152,6 @@ const ActivityForm = () => {
 
     if (existingActivity) {
       // Update Function
-
       await updateActivityMutation(transformedActivityUpdateForm as Activity);
     } else {
       // Create Function
@@ -661,25 +661,26 @@ const ActivityForm = () => {
               <PickerOverlay
                 apikey={ENV_VARIABLES.FILESTACK_API_KEY}
                 pickerOptions={{
-                  maxFiles: 5,
-                  maxSize: 10 * 1024 * 1024,
-                  fromSources: [
-                    "local_file_system",
-                    "url",
-                    "imagesearch",
-                    "facebook",
-                    "instagram",
-                    "googledrive",
-                    "dropbox",
-                    "onedrive",
-                    "unsplash",
-                  ],
-                  accept: ["image/jpeg", "image/png", "image/jpg"],
-                  transformations: {
-                    crop: {
-                      aspectRatio: 4 / 3,
-                    },
-                  },
+                  ...FileStackConfig,
+                  // maxFiles: 5,
+                  // maxSize: 10 * 1024 * 1024,
+                  // fromSources: [
+                  //   "local_file_system",
+                  //   "url",
+                  //   "imagesearch",
+                  //   "facebook",
+                  //   "instagram",
+                  //   "googledrive",
+                  //   "dropbox",
+                  //   "onedrive",
+                  //   "unsplash",
+                  // ],
+                  // accept: ["image/jpeg", "image/png", "image/jpg"],
+                  // transformations: {
+                  //   crop: {
+                  //     aspectRatio: 4 / 3,
+                  //   },
+                  // },
                   onUploadDone: (res) => {
                     const urls = res.filesUploaded.map((file) => file.url);
                     setUploadedPhotoUrls(urls);

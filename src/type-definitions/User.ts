@@ -1,13 +1,11 @@
 export type User = {
   id: string | null;
+  googleId?: string | null;
   firstName: string | null;
   lastName: string | null;
   email: string | null;
   avatar: string | null;
   role: USER_ROLE;
-  authenticated?: {
-    sessionToken: string;
-  };
   profile?: {
     bio: string;
     age: number;

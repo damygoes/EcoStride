@@ -35,7 +35,7 @@ function ActivityDetailsSection({
       "__html" in sanitizedContent ? (
         // Render sanitized HTML content safely
         <div
-          className="w-full my-3 text-base text-balance first-letter:uppercase first-letter:text-2xl"
+          className="w-full my-3 text-base text-pretty first-letter:uppercase first-letter:text-2xl"
           dangerouslySetInnerHTML={sanitizedContent}
         />
       ) : (

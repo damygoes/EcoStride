@@ -4,7 +4,7 @@ import { Activity } from "@type-definitions/Activity";
 import { getActivityCardBadgeInfo } from "@utils/activity/get-activity-card-badge-info";
 import { useUser } from "@utils/user/user-store";
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ActivityCardActions from "./ActivityCardActions";
 
 function ActivityCard({
@@ -14,10 +14,14 @@ function ActivityCard({
   activity: Activity;
   basePath?: string;
 }) {
+  const { pathname } = useLocation();
   const { user } = useUser();
-  const userRole = useMemo(() => {
+  const isUserAdmin = useMemo(() => {
     return user?.role === "ADMIN";
   }, [user?.role]);
+  const currentUrl = useMemo(() => {
+    return pathname.split("/")[1];
+  }, [pathname]);
   const { color: badgeColor, icon: BadgeIcon } = useMemo(() => {
     return getActivityCardBadgeInfo(activity.activityType);
   }, [activity.activityType]);
@@ -31,7 +35,9 @@ function ActivityCard({
       to={`/${basePath}/${activity.slug}`}
       className="group relative block h-[22rem] w-96 max-w-sm overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
     >
-      {userRole && <ActivityCardActions activity={activity} />}
+      {isUserAdmin && currentUrl === "activities" && (
+        <ActivityCardActions activity={activity} />
+      )}
       <img
         alt="activity photo"
         src={

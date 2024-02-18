@@ -1,8 +1,17 @@
+import { BucketListActivity } from "@components/activity/details/ActivityDetailsHeaderAddToBucketListManager";
+import { DoneActivity } from "@components/activity/details/ActivityDetailsHeaderMarkAsRiddenIconManager";
 import { axiosClient } from "@services/axios/axios-client";
 import { Activity, ActivityRequestObject } from "@type-definitions/Activity";
 import { create } from "zustand";
 
 export type ACTIVITIES_VIEW_MODE = "grid" | "list";
+export type UserActionOnAnActivity =
+  | "addToBucketList"
+  | "alreadyCompleted"
+  | "like"
+  | "unlike"
+  | "removeFromBucketList"
+  | "unmarkAsCompleted";
 
 type ActivityStore = {
   activitiesViewMode: ACTIVITIES_VIEW_MODE;
@@ -65,8 +74,36 @@ export const useActivity = () => {
     return response.data as Activity;
   };
 
+  const getActivityLikesCount = async (activitySlug: string | null) => {
+    const response = await axiosClient.get(`/activities/${activitySlug}/likes`);
+    return response.data;
+  };
+
   const deleteActivity = async (activitySlug: string) => {
     const response = await axiosClient.delete(`/activities/${activitySlug}`);
+    return response.data;
+  };
+
+  const fetchAllDoneActivities = async () => {
+    const response = await axiosClient.get("/activities?done=true");
+    return response.data as DoneActivity[];
+  };
+
+  const fetchAllBucketListActivities = async () => {
+    const response = await axiosClient.get("/activities?bucketList=true");
+    return response.data as BucketListActivity[];
+  };
+
+  const effectUserActionOnActivity = async ({
+    activitySlug,
+    action,
+  }: {
+    activitySlug: string;
+    action: UserActionOnAnActivity;
+  }) => {
+    const response = await axiosClient.post(
+      `/activities/${activitySlug}?${action}=true`,
+    );
     return response.data;
   };
 
@@ -82,5 +119,9 @@ export const useActivity = () => {
     createActivity,
     updateActivity,
     deleteActivity,
+    effectUserActionOnActivity,
+    getActivityLikesCount,
+    fetchAllDoneActivities,
+    fetchAllBucketListActivities,
   };
 };
