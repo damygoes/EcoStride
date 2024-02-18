@@ -1,9 +1,9 @@
-import { GoogleLogin } from "@react-oauth/google";
+import { Button } from "@components/ui/button/button";
+import { IconBrandGoogleFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import { useLogin } from "../../utils/auth/use-login";
+import { Link } from "react-router-dom";
 
 const RightContent = () => {
-  const { handleLoginSuccess, handleLoginFailure } = useLogin();
   return (
     <motion.div
       initial="initial"
@@ -39,10 +39,14 @@ const RightContent = () => {
             </p>
           </div>
           <div className="flex items-center justify-start w-full mx-auto">
-            <GoogleLogin
-              onSuccess={handleLoginSuccess}
-              onError={handleLoginFailure}
-            />
+            <Button
+              className="w-full rounded-lg"
+              size="lg"
+              variant="gradient"
+              iconLeft={<IconBrandGoogleFilled className="text-accent" />}
+            >
+              <Link to="/api/auth/google">Sign in with Google</Link>
+            </Button>
           </div>
         </motion.div>
       </div>

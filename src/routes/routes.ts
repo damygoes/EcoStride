@@ -12,8 +12,23 @@ export const navbarRoutes: NavbarLink[] = [
     name: "All Activities",
     path: "/activities",
   },
+];
+
+export const userProfileRoutes: NavbarLink[] = [
   {
-    name: "PR Estimator",
-    path: "/pr-estimator",
+    name: "Profile",
+    path: "",
+  },
+  {
+    name: "Bucket List",
+    path: "my-bucket",
+  },
+  {
+    name: "Liked Activities",
+    path: "liked-activities",
+  },
+  {
+    name: "Completed Activities",
+    path: "completed-activities",
   },
 ];

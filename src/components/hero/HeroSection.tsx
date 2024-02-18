@@ -15,7 +15,7 @@ const HeroSection = () => {
         <h3 className="text-4xl font-semibold text-text-color text-pretty md:text-6xl">
           {t("hero.title")}
         </h3>
-        <p className="my-4 text-base text-pretty md:text-lg text-text-color/60 md:my-6">
+        <p className="my-4 text-base text-pretty text-text-color/60 md:my-6">
           {t("hero.description")}
         </p>
 
@@ -121,11 +121,6 @@ const ShuffleGrid = () => {
     <div className="hidden  md:grid md:grid-cols-2 md:grid-rows-2 md:h-[450px] md:gap-1">
       {squares.map((sq) => sq)}
     </div>
-
-    // <div className="hidden md:grid md:grid-cols-4 md:grid-rows-4 md:h-[450px] md:gap-1">
-    //   {squares.map((sq) => sq)}
-    // </div>
-    // mx-auto my-auto
   );
 };
 

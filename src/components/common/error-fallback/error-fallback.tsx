@@ -3,6 +3,7 @@ import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 
 type ErrorFallbackProps = {
+  errorText?: string;
   withAction?: boolean;
   actionText?: string;
   redirectUrl?: string;
@@ -10,6 +11,7 @@ type ErrorFallbackProps = {
 };
 
 function ErrorFallback({
+  errorText = "Oops! Something went wrong",
   withAction,
   actionText,
   redirectUrl,
@@ -39,9 +41,7 @@ function ErrorFallback({
         className,
       )}
     >
-      <p className="text-lg font-light text-accent">
-        Oops! Something went wrong
-      </p>
+      <p className="text-lg font-light text-accent">{errorText}</p>
       {withAction && (
         <button
           onClick={() => navigate(redirectUrl as string)}

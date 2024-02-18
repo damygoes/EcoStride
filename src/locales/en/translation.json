@@ -1,14 +1,17 @@
 {
   "activity-card": {
     "distance": "Distance",
+    "min-grade": "Min. Gradient",
     "avg-grade": "Avg. Gradient",
-    "elevation": "Elevation"
+    "max-grade": "Max. Gradient",
+    "elevation": "Elevation",
+    "duration": "Duration"
   },
   "hero": {
-    "title": "Ride into a New Adventure",
+    "title": "Explore Without Limits",
     "subtitle": "Embrace the Journey",
-    "description": "Discover breathtaking routes,challenge your limits, and be part of a passionate community. Let's pedal towards new horizons together. Every ride is a story waiting to unfold.",
-    "button": "Discover Routes",
+    "description": "Join a community fueled by a passion for discovery and adventure. Find and forge your path in the vast expanse of the outdoors. Each journey is a tale waiting to be told. Together, let's unlock the endless possibilities that await.",
+    "button": "Discover Activities",
     "location-loading": "Finding your location...",
     "location-found-nearby": "Explore activities near",
     "activity-not-found-near-location": "No activities found near",
@@ -20,6 +23,5 @@
     "nearby-activities": "Nearby Activities",
     "all-activities": "All Activities",
     "home": "Homepage"
-  },
-  "footer": "Developed by"
+  }
 }

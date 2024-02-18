@@ -1,6 +1,7 @@
 import { cn } from "@lib/utils";
 import maximumGradient from "./chart-maximum.svg";
 import minimumGradient from "./chart-minimum.svg";
+import timeIcon from "./clock.svg";
 import defaultCardImage from "./default-card-image.svg";
 import distance from "./distance.svg";
 import homepageIcon from "./homepage-icon.svg";
@@ -80,6 +81,9 @@ function StartMapPin() {
     <img src={startPin} alt="start pin map point" className="w-12 h-12 " />
   );
 }
+function TimeIcon() {
+  return <img src={timeIcon} alt="Clock" className="w-4 h-4 " />;
+}
 
 export {
   AverageGradientIcon,
@@ -91,4 +95,5 @@ export {
   MaximumGradientIcon,
   MinimumGradientIcon,
   StartMapPin,
+  TimeIcon,
 };

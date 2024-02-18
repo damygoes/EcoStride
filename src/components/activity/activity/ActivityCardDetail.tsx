@@ -12,7 +12,7 @@ function ActivityCardDetail({ icon, name, value }: ActivityCardDetailProps) {
       {icon}
 
       <div className="w-1/2 mt-1.5 md:mt-0 flex-1">
-        <p className="overflow-hidden text-text-color overflow-ellipsis whitespace-nowrap">
+        <p className="overflow-hidden text-text-color/70 overflow-ellipsis whitespace-nowrap">
           {name}
         </p>
 

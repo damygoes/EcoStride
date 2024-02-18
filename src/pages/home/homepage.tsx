@@ -1,6 +1,7 @@
 import ActivitiesList from "@components/activity/list/ActivitiesList";
 import ErrorFallback from "@components/common/error-fallback/error-fallback";
 import HeroSection from "@components/hero/HeroSection";
+import UpcomingFeatures from "@components/upcoming-features/UpcomingFeatures";
 import PageLayout from "@layouts/page-layout/page-layout";
 import { useQuery } from "@tanstack/react-query";
 import { useActivity } from "@utils/activity/activity-store";
@@ -11,13 +12,26 @@ import { useTranslation } from "react-i18next";
 function HomePageScreen() {
   // const location = useContext(UserLocationContext);
   const { t } = useTranslation();
-  const { userGeolocationData } = useUser();
+  const { userGeolocationData, fetchUser, setUser, user } = useUser();
   const usersCity = userGeolocationData?.city ?? "";
   const { fetchActivities } = useActivity();
   useState(false);
   const [shoudFetchAllActivities, setShouldFetchAllActivities] =
     useState(false);
   const [locationMessage, setLocationMessage] = useState("");
+
+  const { data: userData, isSuccess } = useQuery({
+    queryKey: ["authenticated-user-data"],
+    queryFn: fetchUser,
+    enabled: !user, // Only run query if `user` is not already set
+  });
+
+  useEffect(() => {
+    if (isSuccess && userData) {
+      setUser(userData.user);
+    }
+  }, [isSuccess, userData, setUser]);
+
   // First query: fetch activities based on usersCity
   const {
     data: nearbyActivities,
@@ -89,7 +103,9 @@ function HomePageScreen() {
           : t("page-header.home")
       }
       sidebarContent={
-        <div className="w-full p-4 space-y-4">Content Coming Soon</div>
+        <div className="w-full overflow-x-hidden overflow-y-auto">
+          <UpcomingFeatures />
+        </div>
       }
     >
       <section className="w-full h-full overflow-x-hidden overflow-y-auto">

@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 type PageLayoutProps = {
   children: ReactNode;
-  pageTitle: string;
+  pageTitle: string | ReactNode;
   withSidebar?: boolean;
   sidebarContent?: ReactNode;
   withFooter?: boolean;
@@ -20,11 +20,11 @@ const PageHeader = ({ pageTitle, className }: PageHeaderProps) => {
   return (
     <div
       className={cn(
-        "flex items-center rounded-md text-center shrink-0 justify-center w-full h-full bg-gradient-to-br from-primary to-secondary md:h-1/6",
+        "flex items-center rounded-md text-center shrink-0 justify-center w-full h-full bg-gradient-to-br from-primary to-secondary ",
         className,
       )}
     >
-      <h3 className="font-semibold capitalize text-md text-pretty text-text-color">
+      <h3 className="text-base font-semibold capitalize text-pretty text-text-color">
         {pageTitle}
       </h3>
     </div>
@@ -50,15 +50,17 @@ function PageLayout({
         "flex flex-col items-start justify-between w-full h-full gap-2 p-3 overflow-hidden bg-inherit md:flex-row md:px-4 md:py-3",
       )}
     >
-      <section className="w-full h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:w-1/5">
-        <PageHeader pageTitle={pageTitle} />
+      <section className="w-full overflow-hidden h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:w-1/5">
+        <div className="w-full h-1/6">
+          <PageHeader pageTitle={pageTitle} />
+        </div>
         {withSidebar && (
-          <div className="hidden shadow-sm md:flex md:flex-1 md:w-full">
+          <div className="hidden overflow-hidden shadow-sm md:flex md:flex-1 md:w-full">
             {sidebarContent}
           </div>
         )}
         {withFooter && (
-          <div className="hidden w-full text-text-color md:flex md:h-[2%]">
+          <div className="hidden w-full text-text-color md:flex md:h-[5%] overflow-hidden">
             <Footer />
           </div>
         )}

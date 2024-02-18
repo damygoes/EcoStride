@@ -1,11 +1,16 @@
+import NotFoundFallback from "@components/common/not-found-fallback/NotFoundFallback";
+import UserBucketList from "@components/user-profile-page/user-bucket-list/UserBucketList";
+import UserCompletedActivities from "@components/user-profile-page/user-completed-activities/UserCompletedActivities";
+import UserLikedActivities from "@components/user-profile-page/user-liked-activities/UserLikedActivities";
+import UserProfile from "@components/user-profile-page/user-profile/UserProfile";
 import { BasicPageLayout, RootAppLayout } from "@layouts/index";
 import {
   ActivitiesPage,
   ActivityDetailsPage,
   HomePage,
   LoginPage,
-  PrEstimatorPage,
 } from "@pages/index";
+import UserProfilePage from "@pages/user-profile/user-profile-page";
 import {
   Route,
   createBrowserRouter,
@@ -15,54 +20,40 @@ import RequireAuth from "./require-auth";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-      <Route element={<RootAppLayout />}>
-        {/* //* Public Routes */}
-        <Route path="/" element={<HomePage />} />,
-        <Route path="login" element={<LoginPage />} />,
-        <Route path="create-account" element={<div>Create Account</div>} />,
-        <Route path="/activities" element={<ActivitiesPage />} />,
-        <Route path="/home/:activitySlug" element={<ActivityDetailsPage />} />,
-        <Route
-          path="/activities/:activitySlug"
-          element={<ActivityDetailsPage />}
-        />
-        ,
-        <Route
-          path="unauthorized"
-          element={<div> You are not authorized to view this page </div>}
-        />
-        ,
-        {/* // TODO: Add an unauthorized path and component for role-based access */}
-        {/* //* Protected Routes */}
-        <Route element={<RequireAuth />}>
-          <Route path="/pr-estimator" element={<PrEstimatorPage />} />,
-          <Route
-            path="/pr-estimator/:activitySlug"
-            element={<ActivityDetailsPage />}
-          />
-          ,
-          <Route path="/profile" element={<div>User Profile</div>}>
-            {/* <Route
-              index
-              element={<Navigate to="external-integrations" replace />}
-            /> //TODO: Change this later, it will set the default page to load when a user visits /profile */}
+    <Route element={<RootAppLayout />}>
+      <Route index element={<HomePage />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route path="create-account" element={<div>Create Account</div>} />
+      <Route path="activities" element={<ActivitiesPage />} />
+      <Route
+        path="activities/:activitySlug"
+        element={<ActivityDetailsPage />}
+      />
+      <Route
+        path="unauthorized"
+        element={<div>You are not authorized to view this page</div>}
+      />
 
-            <Route path="account" element={<div>User Account</div>} />
-            <Route path="my-bucket" element={<div>User Bucket List</div>} />
-          </Route>
-          ,{/* //* Catch All */}
+      <Route element={<RequireAuth />}>
+        <Route path="profile" element={<UserProfilePage />}>
+          <Route index element={<UserProfile />} />
+          <Route path="my-bucket" element={<UserBucketList />} />
+          <Route path="liked-activities" element={<UserLikedActivities />} />
           <Route
-            path="*"
-            element={
-              <BasicPageLayout pageTitle="NOT FOUND">
-                <p>Page not found</p>
-              </BasicPageLayout>
-            }
+            path="completed-activities"
+            element={<UserCompletedActivities />}
           />
-          {/* //TODO: change this route later to a catch-all component */},
         </Route>
       </Route>
+
+      <Route
+        path="*"
+        element={
+          <BasicPageLayout pageTitle="NOT FOUND">
+            <NotFoundFallback />
+          </BasicPageLayout>
+        }
+      />
     </Route>,
   ),
 );

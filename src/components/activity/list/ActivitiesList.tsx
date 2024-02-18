@@ -1,6 +1,8 @@
 import { cn } from "@lib/utils";
 import { Activity } from "@type-definitions/Activity";
+import { useActivityCard } from "@utils/activity/activity-card-store";
 import { useActivity } from "@utils/activity/activity-store";
+import { useEffect } from "react";
 import ActivityCard from "../activity/ActivityCard";
 import ActivityCardHorizontalFormat from "../activity/ActivityCardHorizontalFormat";
 import ActivityCardSkeleton from "../activity/ActivityCardSkeleton";
@@ -17,6 +19,14 @@ export default function ActivitiesList({
   className,
 }: ActivitiesListProps) {
   const { activitiesViewMode } = useActivity();
+  const { cardType, setActivityCardType } = useActivityCard();
+
+  useEffect(() => {
+    if (cardType !== "activity") {
+      setActivityCardType("activity");
+    }
+  }, [cardType, setActivityCardType]);
+
   if (!activities) {
     return;
   }

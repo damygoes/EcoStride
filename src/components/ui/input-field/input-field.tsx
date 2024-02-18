@@ -13,6 +13,7 @@ export interface InputFieldProps
   placeholder?: string; // This is the placeholder text that appears in the input field
   className?: string; // This is the className that is passed to the input field
   isErrored?: boolean; // This is the boolean that determines if the input field is errored
+  maskForm?: boolean; // This is the boolean that determines if the input field is masked
 }
 
 const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
@@ -25,6 +26,7 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
       iconPosition = "left",
       placeholder,
       isErrored = false,
+      maskForm = false,
       ...props
     },
     ref,
@@ -38,6 +40,7 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
             "pr-10": icon && iconPosition === "right",
             "pl-10": icon && iconPosition === "left",
             "ring-accent": isErrored,
+            "bg-transparent": maskForm,
           })}
           ref={ref}
           {...props}
