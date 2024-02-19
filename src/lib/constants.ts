@@ -53,7 +53,7 @@ export const upcomingFeatures = [
 export const heroSectionSquareData = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1478059299873-f047d8c5fe1a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGN5Y2xpbmclMjByb2FkfGVufDB8fDB8fHww",
+    src: "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGlraW5nfGVufDB8fDB8fHwy",
   },
   {
     id: 2,
@@ -77,10 +77,26 @@ export const heroSectionSquareData = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1603646427277-b0389c096a96?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc3fHxjeWNsaW5nJTIwcm9hZHxlbnwwfHwwfHx8Mg%3D%3D",
+    src: "https://images.unsplash.com/photo-1486218119243-13883505764c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cnVubmluZ3xlbnwwfHwwfHx8Mg%3D%3D",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1695238070179-218301c2480d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI1fHxjeWNsaW5nJTIwcm9hZHxlbnwwfHwwfHx8Mg%3D%3D",
+    src: "https://images.unsplash.com/photo-1553969546-6f7388a7e07c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cnVubmluZ3xlbnwwfHwwfHx8Mg%3D%3D",
+  },
+  {
+    id: 9,
+    src: "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cnVubmluZ3xlbnwwfHwwfHx8Mg%3D%3D",
+  },
+  {
+    id: 10,
+    src: "https://images.unsplash.com/photo-1501554728187-ce583db33af7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhpa2luZ3xlbnwwfHwwfHx8Mg%3D%3D",
+  },
+  {
+    id: 10,
+    src: "https://images.unsplash.com/photo-1629185752152-fe65698ddee4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGhpa2luZ3xlbnwwfHwwfHx8Mg%3D%3D",
+  },
+  {
+    id: 10,
+    src: "https://images.unsplash.com/photo-1536625979259-edbae645c7c3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGhpa2luZ3xlbnwwfHwwfHx8Mg%3D%3D",
   },
 ];

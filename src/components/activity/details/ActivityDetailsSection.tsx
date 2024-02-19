@@ -29,7 +29,7 @@ function ActivityDetailsSection({
         className,
       )}
     >
-      <h5 className="mb-4 text-4xl capitalize">{title}</h5>
+      <h5 className="mb-4 text-lg font-medium capitalize">{title}</h5>
       {sanitizedContent &&
       typeof sanitizedContent === "object" &&
       "__html" in sanitizedContent ? (

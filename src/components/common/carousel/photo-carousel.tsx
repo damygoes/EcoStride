@@ -52,13 +52,13 @@ const PhotoCarousel = ({ images, carouselTitle }: PhotoCarouselProps) => {
 
   return (
     <section
-      className="w-full py-8 rounded-md shadow-sm bg-gradient-to-br from-white to-text-color/40"
+      className="w-full py-2 rounded-md shadow-sm bg-gradient-to-br from-white to-text-color/40"
       ref={ref}
     >
       <div className="relative p-4 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="mb-4 text-4xl">
+            <h2 className="mb-4 text-lg font-medium">
               {carouselTitle ? carouselTitle : "Photos"}
             </h2>
             <div className="flex items-center gap-2">

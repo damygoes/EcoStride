@@ -1,29 +1,53 @@
-import Badge from "@components/common/badge/badge";
-import { POI } from "@type-definitions/PointOfInterest";
+import { Feature } from "@type-definitions/PointOfInterest";
+import { getPOICategories } from "@utils/point-of-interest/getPOICategories";
 import { useMemo } from "react";
+import PointOfInterestFeatureCategoryBadge from "./PointOfInterestFeatureCategoryGroupBadge";
+import PointOfInterestFeatureCategoryNameBadge from "./PointOfInterestFeatureCategoryNameBadge";
 
 type PointOfInterestItemProps = {
-  poi: POI;
+  feature: Feature;
 };
 
-function PointOfInterestItem({ poi }: PointOfInterestItemProps) {
-  const poiTags = useMemo(() => {
-    const tags = poi.properties.category.split(",");
-    return tags;
-  }, [poi.properties.category]);
+function PointOfInterestItem({ feature }: PointOfInterestItemProps) {
+  const categoryItems = useMemo(() => {
+    const categories = Object.values(feature.properties.category_ids || {}).map(
+      (value) => ({
+        category_group: value.category_group,
+        category_name: value.category_name,
+      }),
+    );
+    return categories;
+  }, [feature]);
+
+  const poiCategories = useMemo(
+    () => getPOICategories({ categoryItems }),
+    [categoryItems],
+  );
+
+  const featureName = useMemo(() => {
+    return feature.properties.osm_tags?.name;
+  }, [feature.properties.osm_tags?.name]);
 
   return (
-    <div className="flex flex-col items-start justify-between gap-3 p-5 rounded-md cursor-default bg-gradient-to-br from-primary/10 via-primary/20 to-primary/60 ">
-      <div className="space-y-1">
-        <h5 className="text-sm font-semibold">{poi.text}</h5>
-        <p className="text-sm font-light text-balance">{poi.place_name}</p>
-      </div>
-      <div className="flex items-center justify-start w-full gap-3">
-        {poiTags.map((tag) => {
-          return <Badge key={tag}>{tag}</Badge>;
-        })}
-      </div>
-    </div>
+    <>
+      {featureName !== undefined && (
+        <>
+          <div className="flex flex-col flex-wrap items-start justify-between w-full h-48 gap-3 p-3 rounded-md cursor-default text-pretty bg-gradient-to-br from-secondary/10 via-secondary/20 to-secondary/10">
+            <h5 className="text-sm font-semibold text-text-color">
+              {feature.properties.osm_tags?.name}
+            </h5>
+            <div className="flex flex-wrap items-center justify-start w-full gap-2">
+              <PointOfInterestFeatureCategoryNameBadge
+                poiCategories={poiCategories}
+              />
+              <PointOfInterestFeatureCategoryBadge
+                poiCategories={poiCategories}
+              />
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 }
 

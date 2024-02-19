@@ -31,7 +31,7 @@ const RelatedActivitiesList = ({
   });
 
   return (
-    <div className="flex flex-col items-start justify-start w-full h-full gap-4 p-3 overflow-x-hidden overflow-y-auto rounded-md text-text-color bg-gradient-to-br from-primary/10 via-primary/30 to-secondary">
+    <div className="flex flex-col items-start justify-start w-full h-full gap-4 p-3 overflow-x-hidden overflow-y-auto rounded-md text-text-color bg-gradient-to-br from-primary/10 via-primary/20 to-primary/30 scrollbar-hide">
       <RelatedActivityListSectionGroup
         activities={filteredByCity}
         type={selectedActivity.address?.city}
