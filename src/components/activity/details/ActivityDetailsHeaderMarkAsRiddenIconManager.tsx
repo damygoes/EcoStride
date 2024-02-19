@@ -107,13 +107,17 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
           <IconCircleCheckFilled
             className="cursor-pointer text-accent/80 hover:text-accent"
             onClick={handleUnMarkAsRidden}
+            stroke={2}
+            size={26}
           />
         </Tooltip>
       ) : (
         <Tooltip content="Mark as completed" side="top" align="end">
           <IconCircleCheck
-            className="cursor-pointer text-primary/80 hover:text-primary"
+            className="cursor-pointer text-primary hover:text-primary/60"
             onClick={handleMarkAsRidden}
+            stroke={2}
+            size={26}
           />
         </Tooltip>
       )}

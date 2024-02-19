@@ -107,13 +107,15 @@ function ActivityDetailsHeaderLikeCounter({
           <IconThumbUpFilled
             className="cursor-pointer text-accent/80 hover:text-accent"
             onClick={handleUnlikeActivity}
+            size={28}
           />
         </Tooltip>
       ) : (
         <Tooltip content="Like" side="top" align="end">
           <IconThumbUp
-            className="cursor-pointer text-primary/80 hover:text-primary"
+            className="cursor-pointer text-primary hover:text-primary/60"
             onClick={handleLikeActivity}
+            size={28}
           />
         </Tooltip>
       )}
