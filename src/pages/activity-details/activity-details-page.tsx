@@ -8,13 +8,14 @@ import BreadCrumbsComponent from "@components/common/breadcrumbs/breadcrumbs";
 import PhotoCarousel from "@components/common/carousel/photo-carousel";
 import ErrorFallback from "@components/common/error-fallback/error-fallback";
 import SummitSeekersMap from "@components/common/map/Map";
-import PointOfInterest from "@components/point-of-interest/PointOfInterest";
+import PointOfInterestList from "@components/point-of-interest/PointOfInterestList";
 import RelatedActivitiesList from "@components/related-activities/RelatedActivitiesList";
 import PageLayout from "@layouts/page-layout/page-layout";
 import { useQuery } from "@tanstack/react-query";
+import { POI } from "@type-definitions/PointOfInterest";
 import { useActivity } from "@utils/activity/activity-store";
 import { useComment } from "@utils/comment/comment-store";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
@@ -23,6 +24,7 @@ function ActivityDetails() {
   const { activitySlug } = useParams();
   const { fetchActivity } = useActivity();
   const { fetchComments } = useComment();
+  const [pois, setPois] = useState<POI[] | []>([]);
   const {
     data: Activity,
     isLoading,
@@ -75,6 +77,7 @@ function ActivityDetails() {
           <SummitSeekersMap
             startCoordinates={Activity.startCoordinate}
             endCoordinates={Activity.endCoordinate}
+            setPois={setPois}
           />
         </div>
         <div className="w-full lg:col-span-3 lg:row-start-2 lg:h-full">
@@ -84,7 +87,7 @@ function ActivityDetails() {
           />
         </div>
         <div className="w-full lg:col-span-2 lg:col-start-4 lg:row-start-2 lg:row-end-4 lg:h-full">
-          <PointOfInterest />
+          <PointOfInterestList pois={pois} />
         </div>
         <div className="w-full lg:col-span-3 lg:row-start-3">
           <PhotoCarousel images={Activity.photos || []} />

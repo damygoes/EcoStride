@@ -104,13 +104,17 @@ function ActivityDetailsHeaderAddToBucketListManager({
           <IconPlaylistX
             className="cursor-pointer text-accent/80 hover:text-accent"
             onClick={handleRemoveFromBucketList}
+            stroke={2}
+            size={34}
           />
         </Tooltip>
       ) : (
         <Tooltip content="Add to Bucket List" side="top">
           <IconPlaylistAdd
-            className="cursor-pointer text-primary/80 hover:text-primary"
+            className="cursor-pointer text-primary hover:text-primary/60"
             onClick={handleAddToBucketList}
+            stroke={2}
+            size={34}
           />
         </Tooltip>
       )}

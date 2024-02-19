@@ -16,6 +16,16 @@ export default defineConfig({
     // https://github.com/vitest-dev/vitest/blob/main/examples/react-testing-lib/vite.config.ts#L14-L16
     // css: false,
   },
+  server: {
+    proxy: {
+      // Proxying API requests to Mapbox
+      "/api": {
+        target: "https://api.mapbox.com",
+        changeOrigin: true, // needed for virtual hosted sites
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
