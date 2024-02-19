@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --primary: 92, 214, 255;
-  --secondary: 79, 187, 187;
-  --accent: 255, 120, 71;
-  --background: 248, 249, 250;
-  --white: 255, 255, 255;
-  --text-color: 21, 8, 17;
+  --primary: 60, 179, 60; /* #3CB33C */
+  --secondary: 135, 206, 235; /* #87CEEB */
+  --accent: 72, 209, 204; /* #48D1CC */
+  --background: 245, 245, 245; /* #F5F5F5 */
+  --white: 255, 255, 255; /* #FFFFFF */
+  --text-color: 47, 79, 79; /* #2F4F4F */
 }
 
 * {
@@ -34,8 +34,8 @@ body {
 }
 
 .dark {
-  --background: 21, 8, 17;
-  --text-color: 255, 255, 255;
+  --background: 32, 32, 32; /* #202020 */
+  --text-color: 255, 255, 255; /* #FFFFFF */
 }
 
 /* Scrollbar Hide */

@@ -20,7 +20,7 @@ const PageHeader = ({ pageTitle, className }: PageHeaderProps) => {
   return (
     <div
       className={cn(
-        "flex items-center rounded-md text-center shrink-0 justify-center w-full h-full bg-gradient-to-br from-primary to-secondary ",
+        "flex items-center rounded-md text-center text-pretty p-3 shrink-0 justify-center w-full h-full bg-gradient-to-br from-primary to-secondary ",
         className,
       )}
     >

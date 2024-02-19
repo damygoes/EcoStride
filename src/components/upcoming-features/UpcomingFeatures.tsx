@@ -4,7 +4,7 @@ function UpcomingFeatures() {
   return (
     <div className="flex flex-col w-full h-full gap-3 p-3">
       <h3 className="text-lg font-semibold text-primary">Upcoming Features</h3>
-      <ul className="flex flex-col gap-4 pr-3 overflow-auto">
+      <ul className="flex flex-col gap-4 pr-3 overflow-auto scrollbar-hide">
         {upcomingFeatures.map((feature) => (
           <li
             key={feature.id}

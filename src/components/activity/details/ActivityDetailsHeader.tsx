@@ -37,7 +37,7 @@ function ActivityDetailsHeader({
   return (
     <div className="flex flex-col items-start justify-between flex-1 w-full gap-4 md:flex-row md:items-center md:flex-none">
       {/* Left */}
-      <div className="flex flex-col items-center justify-between flex-1 w-full gap-5 p-3 rounded-md bg-gradient-to-br from-text-color/10 via-text-color/20 to-secondary/10 text-text-color md:h-full md:py-5 md:gap-12">
+      <div className="flex flex-col items-center justify-between flex-1 w-full gap-5 p-3 rounded-md bg-gradient-to-br from-secondary/10 via-secondary/20 to-secondary/10 text-text-color md:h-full md:py-5 md:gap-12">
         <div className="space-y-2 text-center">
           <h3 className="text-2xl font-semibold">
             {selectedActivity.name.toLocaleUpperCase() || "Climb Name"}
@@ -54,7 +54,7 @@ function ActivityDetailsHeader({
               </Badge>
             )}
           {selectedActivity.tags?.map((tag) => (
-            <Badge key={tag} variant="secondary">
+            <Badge key={tag} variant="accent">
               {tag.charAt(0).toUpperCase() + tag.slice(1)}
             </Badge>
           ))}

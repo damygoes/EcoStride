@@ -10,7 +10,7 @@ function CommentCountDisplay({ commentCount }: CommentCountDisplayProps) {
     message = `${commentCount} Comments`;
   }
 
-  return <p className="text-xl">{message}</p>;
+  return <p className="text-lg font-medium">{message}</p>;
 }
 
 export default CommentCountDisplay;

@@ -103,12 +103,12 @@ function HomePageScreen() {
           : t("page-header.home")
       }
       sidebarContent={
-        <div className="w-full overflow-x-hidden overflow-y-auto">
+        <div className="w-full overflow-x-hidden overflow-y-auto scrollbar-hide">
           <UpcomingFeatures />
         </div>
       }
     >
-      <section className="w-full h-full overflow-x-hidden overflow-y-auto">
+      <section className="w-full h-full overflow-x-hidden overflow-y-auto scrollbar-hide">
         <HeroSection />
         <div className="px-8 py-4 space-y-6">
           <h3 className="text-xs font-medium text-accent md:text-sm">

@@ -6,9 +6,7 @@ import defaultCardImage from "./default-card-image.svg";
 import distance from "./distance.svg";
 import homepageIcon from "./homepage-icon.svg";
 import elevation from "./mountain-elevation.svg";
-import EndPin from "./mountain-location.svg";
 import gradient from "./percentage.svg";
-import startPin from "./pin.svg";
 
 type IconProps = {
   className?: string;
@@ -51,9 +49,6 @@ function ElevationIcon({ className }: IconProps) {
     />
   );
 }
-function EndMapPin() {
-  return <img src={EndPin} alt="end pin map point" className="w-12 h-12" />;
-}
 
 function HomepageHeaderIcon() {
   return <img src={homepageIcon} alt="homepage-icon" />;
@@ -76,11 +71,7 @@ function MinimumGradientIcon({ className }: IconProps) {
     />
   );
 }
-function StartMapPin() {
-  return (
-    <img src={startPin} alt="start pin map point" className="w-12 h-12 " />
-  );
-}
+
 function TimeIcon() {
   return <img src={timeIcon} alt="Clock" className="w-4 h-4 " />;
 }
@@ -90,10 +81,8 @@ export {
   DefaultClimbCardImage,
   DistanceIcon,
   ElevationIcon,
-  EndMapPin,
   HomepageHeaderIcon,
   MaximumGradientIcon,
   MinimumGradientIcon,
-  StartMapPin,
   TimeIcon,
 };
