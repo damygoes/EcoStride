@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 function HomePageScreen() {
-  // const location = useContext(UserLocationContext);
   const { t } = useTranslation();
   const { userGeolocationData, fetchUser, setUser, user } = useUser();
   const usersCity = userGeolocationData?.city ?? "";

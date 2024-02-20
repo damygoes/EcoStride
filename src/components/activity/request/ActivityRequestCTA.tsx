@@ -2,9 +2,11 @@ import ActivityRequestModal from "@components/activity/request/ActivityRequestMo
 import { Button } from "@components/ui/button/button";
 import { useActivityActions } from "@utils/activity/activity-actions-store";
 import { useUser } from "@utils/user/user-store";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function ActivityRequestCTA() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const currentURL = useLocation();
   const { user } = useUser();
@@ -24,7 +26,7 @@ function ActivityRequestCTA() {
     <div className="flex flex-col items-start justify-between w-full gap-3 p-3 rounded-md shadow-sm text-text-color bg-background">
       {user?.role !== "ADMIN" && (
         <h5 className="text-sm font-light text-wrap">
-          Is there an activity you would like us to add?
+          {t("activities-page-sidebar-cta.text")}
         </h5>
       )}
       <Button
@@ -32,7 +34,9 @@ function ActivityRequestCTA() {
         variant="gradient"
         onClick={handleActivityRequestModalOpen}
       >
-        {user?.role === "ADMIN" ? "Add Activity" : "Submit a Request"}
+        {user?.role === "ADMIN"
+          ? `${t("activities-page-sidebar-cta.add-activity")}`
+          : `${t("activities-page-sidebar-cta.request-activity")}`}
       </Button>
       {isActivityRequestModalOpen && <ActivityRequestModal />}
     </div>

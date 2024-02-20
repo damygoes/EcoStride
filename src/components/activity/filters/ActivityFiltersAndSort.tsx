@@ -2,6 +2,7 @@ import ClimbCategorySelect from "@components/common/climb-category-select/climb-
 import CountrySelect from "@components/common/country-select/country-select";
 import StateSelect from "@components/common/state-select/state-select";
 import { Button } from "@components/ui/button/button";
+import { useTranslation } from "react-i18next";
 import { useFilterAndSortingStore } from "../../../utils/filters/filters-and-sorting-store";
 import SortingComponent from "./SortComponent";
 
@@ -15,6 +16,7 @@ const ActivityFiltersAndSort = () => {
     setClimbCategory,
     resetFiltersAndSorting,
   } = useFilterAndSortingStore();
+  const { t } = useTranslation();
 
   // Handlers for each filter
   const handleCountryChange = (newCountry: string) => setCountry(newCountry);
@@ -30,7 +32,9 @@ const ActivityFiltersAndSort = () => {
 
   return (
     <div className="space-y-3">
-      <h4 className="my-3 text-sm uppercase text-text-color">Filters</h4>
+      <h4 className="my-3 text-sm uppercase text-text-color">
+        {t("activities-page-sidebar.filter")}
+      </h4>
       <ClimbCategorySelect
         selectedClimbCategory={climbCategory}
         onChange={handleCategoryChange}
@@ -45,7 +49,7 @@ const ActivityFiltersAndSort = () => {
       <SortingComponent />
       <br />
       <Button variant="error" onClick={handleResetFilters} className="w-full">
-        Reset Filters
+        {t("activities-page-sidebar.reset")}
       </Button>
     </div>
   );

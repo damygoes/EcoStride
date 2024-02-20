@@ -11,7 +11,6 @@ type CommentListProps = {
 type OpenCommentsState = Record<string, boolean>;
 
 const CommentList = ({ comments }: CommentListProps) => {
-  // State to track open comments.
   const [openComments, setOpenComments] = useState<OpenCommentsState>({});
   const sortedComments = useMemo(() => {
     return comments.sort(

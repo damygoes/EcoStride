@@ -1,3 +1,10 @@
+export type navbarRoutes = "navbarHome" | "navbarActivities";
+export type userProfileRoutes =
+  | "userProfile"
+  | "userBucketList"
+  | "userLikedActivities"
+  | "userCompletedActivities";
+
 export type NavbarLink = {
   name: string;
   path: string;
@@ -5,30 +12,30 @@ export type NavbarLink = {
 
 export const navbarRoutes: NavbarLink[] = [
   {
-    name: "Home",
+    name: "navbarHome",
     path: "/",
   },
   {
-    name: "All Activities",
+    name: "navbarActivities",
     path: "/activities",
   },
 ];
 
 export const userProfileRoutes: NavbarLink[] = [
   {
-    name: "Profile",
+    name: "userProfile",
     path: "",
   },
   {
-    name: "Bucket List",
+    name: "userBucketList",
     path: "my-bucket",
   },
   {
-    name: "Liked Activities",
+    name: "userLikedActivities",
     path: "liked-activities",
   },
   {
-    name: "Completed Activities",
+    name: "userCompletedActivities",
     path: "completed-activities",
   },
 ];

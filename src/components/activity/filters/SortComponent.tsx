@@ -1,9 +1,11 @@
 import SelectComponent from "@components/common/select-component/select-component";
 import { useFilterAndSortingStore } from "@utils/filters/filters-and-sorting-store";
+import { useTranslation } from "react-i18next";
 
 const SortingComponent: React.FC = () => {
   const { sortKey, sortOrder, setSortKey, setSortOrder } =
     useFilterAndSortingStore();
+  const { t } = useTranslation();
 
   // Define optionMap with an explicit index signature
   const optionMap: { [key: string]: string } = {
@@ -26,7 +28,9 @@ const SortingComponent: React.FC = () => {
   return (
     <>
       <div className="flex items-center justify-between gap-4">
-        <h4 className="my-3 text-sm uppercase text-text-color">Sort By</h4>{" "}
+        <h4 className="my-3 text-sm uppercase text-text-color">
+          {t("activities-page-sidebar.sort")}
+        </h4>
         <div className="flex space-x-2 text-sm text-text-color/60">
           <span
             className={`cursor-pointer ${
@@ -34,7 +38,7 @@ const SortingComponent: React.FC = () => {
             }`}
             onClick={() => handleSortOrderChange("asc")}
           >
-            Asc
+            {t("activities-page-sidebar.sort-ascending")}
           </span>
           <span
             className={`cursor-pointer ${
@@ -42,7 +46,7 @@ const SortingComponent: React.FC = () => {
             }`}
             onClick={() => handleSortOrderChange("desc")}
           >
-            Desc
+            {t("activities-page-sidebar.sort-descending")}
           </span>
         </div>
       </div>
@@ -52,7 +56,7 @@ const SortingComponent: React.FC = () => {
           selected={sortKey}
           onChange={setSortKey}
           labelFunction={getLabelForSortOption}
-          placeholder="Select"
+          placeholder={t("activities-page-sidebar.select")}
           className="flex-1"
         />
       </div>

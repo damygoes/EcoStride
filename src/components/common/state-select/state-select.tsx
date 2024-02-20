@@ -1,5 +1,6 @@
 import { getStates } from "@services/api/countries-api";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import SelectComponent from "../select-component/select-component";
 
 type StateSelectProps = {
@@ -16,6 +17,7 @@ function StateSelect({
   isErrored,
 }: StateSelectProps) {
   const [states, setStates] = useState<string[]>([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (selectedCountry) {
@@ -40,7 +42,11 @@ function StateSelect({
       items={states}
       selected={selectedState}
       onChange={onChange}
-      placeholder={states.length === 0 ? "No states found" : "State"}
+      placeholder={
+        states.length === 0
+          ? `${t("activities-page-sidebar.state-not-found")}`
+          : t("activities-page-sidebar.state-found")
+      }
       isErrored={isErrored}
       disabled={states.length === 0}
     />

@@ -1,13 +1,16 @@
+import { useTranslation } from "react-i18next";
+
 type CommentCountDisplayProps = {
   commentCount: number;
 };
 
 function CommentCountDisplay({ commentCount }: CommentCountDisplayProps) {
-  let message = "No Comments";
+  const { t } = useTranslation();
+  let message = `${t("comment.no-comments")}`;
   if (commentCount === 1) {
-    message = "1 Comment";
+    message = `${commentCount} ${t("comment.comment")}`;
   } else if (commentCount > 1) {
-    message = `${commentCount} Comments`;
+    message = `${commentCount} ${t("comment.comments")}`;
   }
 
   return <p className="text-lg font-medium">{message}</p>;

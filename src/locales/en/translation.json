@@ -1,11 +1,14 @@
 {
-  "activity-card": {
-    "distance": "Distance",
-    "min-grade": "Min. Gradient",
-    "avg-grade": "Avg. Gradient",
-    "max-grade": "Max. Gradient",
-    "elevation": "Elevation",
-    "duration": "Duration"
+  "navbarHome": "Home",
+  "navbarActivities": "All Activities",
+  "userProfile": "Profile",
+  "userBucketList": "Bucket List",
+  "userLikedActivities": "Liked Activities",
+  "userCompletedActivities": "Completed Activities",
+  "navbar": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
   },
   "hero": {
     "title": "Explore Without Limits",
@@ -19,9 +22,111 @@
     "location-denied": "Location access denied.",
     "location-all": "Showing all activities"
   },
+  "upcoming-features": {
+    "title": "Upcoming Features"
+  },
+  "stravaSegmentTimingTitle": "Strava Segment Timing",
+  "stravaSegmentTimingDescription": "Soon you'll be able to estimate the best times on Strava segments directly within our app.",
+  "stravaIntegrationTitle": "Strava Integration",
+  "stravaIntegrationDescription": "Login with Strava and import your activities to keep all your adventures in one place.",
+  "moreActivitiesTitle": "More Activities On The Way",
+  "moreActivitiesDescription": "We're expanding our horizons! Stay tuned for more activity types to track and share.",
+  "bmiCalculatorTitle": "BMI Calculator",
+  "bmiCalculatorDescription": "Track your progress with our built-in BMI calculator, designed for athletes.",
+  "calorieCounterTitle": "Calorie Counter",
+  "calorieCounterDescription": "Keep track of the energy you burn with our precise calorie calculator, tailored for outdoor sports.",
+  "trainingPlansTitle": "Training Plans",
+  "trainingPlansDescription": "Elevate your performance with cycling and running training plans, crafted for all levels.",
+  "multiLanguageSupportTitle": "Multi-Language Support",
+  "multiLanguageSupportDescription": "We're going global! Future support for multiple languages to make our app accessible to users worldwide.",
   "page-header": {
     "nearby-activities": "Nearby Activities",
     "all-activities": "All Activities",
     "home": "Homepage"
+  },
+  "activity-card": {
+    "distance": "Distance",
+    "min-grade": "Min. Gradient",
+    "avg-grade": "Avg. Gradient",
+    "max-grade": "Max. Gradient",
+    "elevation": "Elevation",
+    "duration": "Duration"
+  },
+  "activities-page-sidebar": {
+    "filter": "Filters",
+    "sort": "Sort By",
+    "reset": "Reset Filters",
+    "distance": "Distance",
+    "duration": "Duration",
+    "elevation": "Elevation",
+    "name": "Name",
+    "average-grade": "Average Gradient",
+    "climb-category": "Climb Category",
+    "country": "Country",
+    "state-found": "State",
+    "state-not-found": "No states found",
+    "select": "Select a sorting option",
+    "sort-ascending": "Asc",
+    "sort-descending": "Desc",
+    "clear-filters": "Clear Filters"
+  },
+  "activities-page": {
+    "searchbar-placeholder": "Search activities..."
+  },
+  "activities-page-sidebar-cta": {
+    "text": "Is there an activity you'd like to see here?",
+    "add-activity": "Add Activity",
+    "request-activity": "Request Activity"
+  },
+
+  "activity-details-page": {
+    "about": "About",
+    "photos": "Photos",
+    "comments": "Comments",
+    "no-comments": "No comments"
+  },
+  "points-of-interest": {
+    "title": "Points of Interest",
+    "no-points-of-interest": "No points of interest",
+    "searching": "Searching for points of interest..."
+  },
+  "comment": {
+    "no-comments": "No comments",
+    "comment": "Comment",
+    "comments": "Comments",
+    "comment-placeholder": "What do you think of this activity?",
+    "deleting-comment": "Deleting comment...",
+    "reply": "Reply"
+  },
+  "error-fallback": {
+    "back-to-home": "Back to homepage",
+    "back-to-activities": "Back to activities"
+  },
+  "loading-fallback": {
+    "loading": "Processing..."
+  },
+  "related-activities": {
+    "more": "More",
+    "activities": "Activities",
+    "activity": "Activity",
+    "in": "in"
+  },
+  "login-page": {
+    "supplementary-title": "Adventure awaits with EcoStride",
+    "supplementary-text": "EcoStride brings you closer to nature. Start your journey and embrace the adventure that lies in every turn."
+  },
+  "login-page-cta": {
+    "sub-text": "Ready to explore the great outdoors?",
+    "title": "Discover new adventures with EcoStride",
+    "sign-in": "Sign in",
+    "sign-in-sub-text": "to continue to EcoStride"
+  },
+  "not-found": {
+    "title": "Not Found",
+    "title-one": "Oops! You've strayed off the path...",
+    "description-one": "Unexpected turns open the door to new adventures. Though this digital trail ends here, countless others await your discovery.",
+    "title-two": "Let's Get Back on Track!",
+    "description-two": "The path you seek may be closer than you think.",
+    "guide-link": "Let us guide you back."
   }
 }
