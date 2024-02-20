@@ -7,6 +7,7 @@ import type { Comment } from "@type-definitions/Comment";
 import { useComment } from "@utils/comment/comment-store";
 import { useUser } from "@utils/user/user-store";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import CommentTextArea from "./CommentTextArea";
 
@@ -17,6 +18,7 @@ type CommentItemProps = {
 
 function CommentItem({ comment, className }: CommentItemProps) {
   const queryClient = new QueryClient();
+  const { t } = useTranslation();
   const { user } = useUser();
   const { activitySlug } = useParams();
   const { deleteComment } = useComment();
@@ -77,7 +79,9 @@ function CommentItem({ comment, className }: CommentItemProps) {
             </p>
             <p className="font-light">{commentRelativeTime}</p>
             {isDeletingComment && (
-              <p className="text-xs italic text-accent">deleting comment...</p>
+              <p className="text-xs italic text-accent">
+                {t("comment.deleting-comment")}
+              </p>
             )}
           </div>
           <div className="flex items-center justify-start gap-3 ">
@@ -100,7 +104,7 @@ function CommentItem({ comment, className }: CommentItemProps) {
         </div>
         {showReply && (
           <CommentTextArea
-            placeholder="Reply"
+            placeholder={t("comment.reply")}
             type="reply"
             parentCommentId={comment.id}
             secondaryFunction={handleHideReply}

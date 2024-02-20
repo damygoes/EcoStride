@@ -66,7 +66,7 @@ function ActivityDetails() {
         {isError && (
           <ErrorFallback
             withAction
-            actionText="Back to Activities"
+            actionText={t("error-fallback.back-to-activities")}
             redirectUrl="/activities"
           />
         )}
@@ -85,7 +85,7 @@ function ActivityDetails() {
         <div className="flex flex-col items-center justify-between w-full gap-2 lg:gap-4 lg:flex-row">
           <div className="w-full h-full lg:flex-1">
             <ActivityDetailsSection
-              title="About"
+              title={t("activity-details-page.about")}
               content={Activity.description}
             />
           </div>
@@ -101,7 +101,9 @@ function ActivityDetails() {
             title={<CommentCountDisplay commentCount={activityCommentsCount} />}
             content={
               <div className="flex flex-col gap-4">
-                <CommentTextArea placeholder="What do you think of this activity?" />
+                <CommentTextArea
+                  placeholder={t("comment.comment-placeholder")}
+                />
                 <CommentList comments={Comments ?? []} />
               </div>
             }

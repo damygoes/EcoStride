@@ -1,5 +1,7 @@
+import { navbarRoutes } from "@routes/routes";
 import { IconArrowRight } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 type MobileMenuLinkItemProps = {
@@ -11,6 +13,7 @@ type MobileMenuLinkItemProps = {
 };
 
 function MobileMenuLinkItem({ link, onClick }: MobileMenuLinkItemProps) {
+  const { t } = useTranslation();
   return (
     <Link
       to={link.path}
@@ -29,10 +32,10 @@ function MobileMenuLinkItem({ link, onClick }: MobileMenuLinkItemProps) {
         </motion.span>
         <motion.div whileHover={{ y: -30 }}>
           <span className="flex items-center h-[30px] text-text-color">
-            {link.name}
+            {t(link.name as navbarRoutes)}
           </span>
           <span className="flex items-center h-[30px] text-accent">
-            {link.name}
+            {t(link.name as navbarRoutes)}
           </span>
         </motion.div>
       </motion.div>

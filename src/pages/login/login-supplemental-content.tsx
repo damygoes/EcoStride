@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function LoginSupplementalContent() {
+  const { t } = useTranslation();
   return (
     <div className="group sticky m-4 h-80 overflow-hidden rounded-tl-3xl rounded-tr-3xl bg-background md:h-[calc(100vh_-_5rem)]">
       <img
@@ -19,19 +21,16 @@ function LoginSupplementalContent() {
         className="absolute inset-0 flex flex-col items-start justify-end p-8 bg-gradient-to-t from-text-color/80 to-text-color/10"
       >
         <motion.h2
-          className="mb-2 text-3xl font-semibold text-balance leading-[1.25] text-white lg:text-4xl"
+          className="mb-2 text-3xl font-semibold text-balance leading-[1.25] text-white lg:text-4xl lg:max-w-md"
           variants={primaryVariants}
         >
-          Adventure awaits
-          <br />
-          with EcoStride
+          {t("login-page.supplementary-title")}
         </motion.h2>
         <motion.p
           variants={primaryVariants}
           className="max-w-md mb-6 text-sm text-accent text-balance"
         >
-          EcoStride brings you closer to nature. Start your journey and embrace
-          the adventure that lies in every turn.
+          {t("login-page.supplementary-text")}
         </motion.p>
       </motion.div>
     </div>

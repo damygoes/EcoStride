@@ -5,12 +5,14 @@ import ThemeToggle from "@components/common/theme-toggle/theme-toggle";
 import { Button } from "@components/ui/button/button";
 import { useLogout } from "@utils/auth/use-logout";
 import { useUser } from "@utils/user/user-store";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 
 function NavRight() {
   const { user } = useUser();
   const logout = useLogout();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleUserProfileNavigation = () => {
     navigate("/profile");
@@ -31,7 +33,7 @@ function NavRight() {
             }
             onClick={handleUserProfileNavigation}
           >
-            Profile
+            {t("userProfile")}
           </Button>
         )}
         <ThemeToggle />
@@ -39,11 +41,11 @@ function NavRight() {
       </div>
       {!user ? (
         <Link to="/login">
-          <Button size="sm">Login</Button>
+          <Button size="sm">{t("navbar.login")}</Button>
         </Link>
       ) : (
         <Button variant="error" onClick={logout}>
-          Logout
+          {t("navbar.logout")}
         </Button>
       )}
     </div>

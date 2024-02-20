@@ -65,7 +65,7 @@ function ActivitiesPage() {
                 className="text-sm italic cursor-pointer text-accent hover:underline hover:underline-offset-1"
                 onClick={resetFiltersAndSorting}
               >
-                clear
+                {t("activities-page-sidebar.clear-filters")}
               </span>
             </div>
           )}
@@ -73,6 +73,7 @@ function ActivitiesPage() {
             <SearchInput
               value={searchTerm}
               onChange={handleSearchInputChange}
+              placeholder={t("activities-page.searchbar-placeholder")}
             />
           </div>
           <ClimbViewSelector />
@@ -81,7 +82,7 @@ function ActivitiesPage() {
           {isError ? (
             <ErrorFallback
               withAction
-              actionText="Back to Home"
+              actionText={t("error-fallback.back-to-home")}
               redirectUrl="/"
             />
           ) : (

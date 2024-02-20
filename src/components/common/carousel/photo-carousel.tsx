@@ -4,6 +4,7 @@ import { cn } from "@lib/utils";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useMeasure from "react-use-measure";
 
 type PhotoCarouselProps = {
@@ -23,6 +24,7 @@ const BREAKPOINTS = {
 const PhotoCarousel = ({ images, carouselTitle }: PhotoCarouselProps) => {
   const [ref, { width }] = useMeasure();
   const [offset, setOffset] = useState(0);
+  const { t } = useTranslation();
 
   const CARD_BUFFER =
     width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
@@ -59,7 +61,9 @@ const PhotoCarousel = ({ images, carouselTitle }: PhotoCarouselProps) => {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-3">
             <h2 className="mb-4 text-lg font-medium">
-              {carouselTitle ? carouselTitle : "Photos"}
+              {carouselTitle
+                ? carouselTitle
+                : t("activity-details-page.photos")}
             </h2>
             <div className="flex items-center gap-2">
               <Button

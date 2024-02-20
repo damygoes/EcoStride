@@ -1,5 +1,6 @@
 import { getCountries } from "@services/api/countries-api";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import SelectComponent from "../select-component/select-component";
 
 type CountrySelectProps = {
@@ -14,6 +15,7 @@ function CountrySelect({
   isErrored,
 }: CountrySelectProps) {
   const [countries, setCountries] = useState<string[]>([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     getCountries().then((res) => {
@@ -30,7 +32,7 @@ function CountrySelect({
       items={countries}
       selected={selectedCountry}
       onChange={onChange}
-      placeholder="Country"
+      placeholder={t("activities-page-sidebar.country")}
       isErrored={isErrored}
     />
   );

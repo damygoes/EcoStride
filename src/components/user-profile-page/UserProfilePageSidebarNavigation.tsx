@@ -1,9 +1,11 @@
 import { cn } from "@lib/utils";
 import { userProfileRoutes } from "@routes/routes";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 
 function UserProfilePageSidebarNavigation() {
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const modifiedPath = useMemo(() => {
     // Split the pathname and attempt to get the second segment
@@ -33,7 +35,7 @@ function UserProfilePageSidebarNavigation() {
               },
             )}
           >
-            {link.name}
+            {t(link.name as userProfileRoutes)}
           </NavLink>
         );
       })}

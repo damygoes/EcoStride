@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import SelectComponent from "../select-component/select-component";
 
 type ClimbCategorySelectProps = {
@@ -19,13 +20,14 @@ function ClimbCategorySelect({
     "Four",
     "Hors Categorie (HC)",
   ]);
+  const { t } = useTranslation();
 
   return (
     <SelectComponent
       items={climbCategories}
       selected={selectedClimbCategory}
       onChange={onChange}
-      placeholder="Climb Category"
+      placeholder={t("activities-page-sidebar.climb-category")}
       isErrored={isErrored}
     />
   );

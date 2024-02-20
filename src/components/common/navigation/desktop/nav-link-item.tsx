@@ -1,5 +1,7 @@
 import { cn } from "@lib/utils";
+import { navbarRoutes } from "@routes/routes";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 
 type LinkItemProps = {
@@ -13,6 +15,7 @@ const BASE_LINK_STYLE = "flex items-center h-[30px]";
 
 function NavLinkItem({ link }: LinkItemProps) {
   const { pathname } = useLocation();
+  const { t } = useTranslation();
   return (
     <NavLink
       to={link.path}
@@ -25,10 +28,10 @@ function NavLinkItem({ link }: LinkItemProps) {
             "text-accent": pathname === link.path,
           })}
         >
-          {link.name}
+          {t(link.name as navbarRoutes)}
         </span>
         <span className="flex items-center h-[30px] text-accent">
-          {link.name}
+          {t(link.name as navbarRoutes)}
         </span>
       </motion.div>
     </NavLink>
