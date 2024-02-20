@@ -35,12 +35,11 @@ function SpringModal({
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
             className={cn(
-              "relative w-full h-full max-w-2xl p-4 overflow-x-hidden overflow-y-auto text-white rounded-lg shadow-xl cursor-default bg-gradient-to-br from-primary via-secondary/90 to-white",
+              "relative w-full h-full max-w-2xl p-4 overflow-x-hidden overflow-y-auto text-white rounded-lg shadow-xl cursor-default bg-secondary",
               className,
             )}
           >
             {children}
-            {/* <div className="relative z-10 ">{children}</div> */}
           </motion.div>
         </motion.div>
       )}

@@ -2,9 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useActivityCard } from "@utils/activity/activity-card-store";
 import { useUser } from "@utils/user/user-store";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import UserProfileActivitiesSectionAndList from "../UserProfileActivitiesSectionAndList";
 
 const UserLikedActivities = () => {
+  const { t } = useTranslation();
   const { user } = useUser();
   const { getUsersLikedActivities } = useUser();
   const {
@@ -39,9 +41,9 @@ const UserLikedActivities = () => {
   ]);
   return (
     <UserProfileActivitiesSectionAndList
-      title="Liked Activities"
+      title={t("user-liked-activities-page.title")}
       activities={likedActivities ? likedActivities : []}
-      emptyMessage="You haven't liked any activity yet."
+      emptyMessage={t("user-liked-activities-page.no-activities")}
     />
   );
 };

@@ -31,11 +31,13 @@ import { useActivity } from "@utils/activity/activity-store";
 import { PickerOverlay } from "filestack-react";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { FileStackConfig } from "../../../services/filestack/filestack-config";
 import { default as ActivityFormSection } from "./ActivityFormSection";
 
 const ActivityForm = () => {
   const queryClient = new QueryClient();
+  const { t } = useTranslation();
   const { setIsActivityRequestModalOpen } = useActivityActions();
   const { existingActivity, resetExistingActivity } = useActivityForm();
   const { createActivity, updateActivity } = useActivity();
@@ -171,12 +173,15 @@ const ActivityForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col items-start justify-start w-full h-full gap-3 overflow-x-hidden overflow-y-auto"
+        className="flex flex-col items-start justify-start w-full h-full gap-3 overflow-x-hidden overflow-y-auto text-text-color scrollbar-hide"
       >
         {/* Information Section */}
-        <ActivityFormSection title="Activity Information" className="pb-2">
+        <ActivityFormSection
+          title={`${t("activity-form.title")}`}
+          className="pb-2"
+        >
           <p className="mt-1 text-sm font-light leading-6 text-text-color/60">
-            We will review your request and get back to you as soon as possible.
+            {t("activity-form.sub-text")}
           </p>
         </ActivityFormSection>
         {/* Grid Container */}
@@ -189,11 +194,11 @@ const ActivityForm = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Activity Name</FormLabel>
+                    <FormLabel required>{t("activity-form.name")}</FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Name of the activity"
+                        placeholder={t("activity-form.name-placeholder")}
                         {...field}
                         isErrored={form.formState.errors.name ? true : false}
                       />
@@ -209,7 +214,7 @@ const ActivityForm = () => {
                 name="description"
                 render={() => (
                   <FormItem>
-                    <FormLabel>Description</FormLabel>
+                    <FormLabel>{t("activity-form.description")}</FormLabel>
                     <FormControl>
                       <TipTapRichTextEditor
                         richText={richTextDescription}
@@ -227,7 +232,7 @@ const ActivityForm = () => {
                 name="address.country"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Country</FormLabel>
+                    <FormLabel required>{t("activity-form.country")}</FormLabel>
                     <FormControl>
                       <CountrySelect
                         selectedCountry={selectedCountry}
@@ -248,7 +253,7 @@ const ActivityForm = () => {
                 name="address.state"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>State/Province</FormLabel>
+                    <FormLabel>{t("activity-form.state")}</FormLabel>
                     <FormControl>
                       <StateSelect
                         selectedCountry={selectedCountry}
@@ -270,7 +275,7 @@ const ActivityForm = () => {
                 name="address.city"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>City</FormLabel>
+                    <FormLabel>{t("activity-form.city")}</FormLabel>
                     <FormControl>
                       <CitySelect
                         selectedCountry={selectedCountry}
@@ -290,7 +295,7 @@ const ActivityForm = () => {
           {/* Activity, Route Type and Technical Details */}
           <ActivityFormSection className="border-none lg:col-start-2">
             <p className="mb-2 text-lg font-semibold leading-6 text-text-color/80">
-              Technical Details
+              {t("activity-form.technical-details")}
             </p>
             <FormGroup className="grid-cols-4 my-2">
               <FormField
@@ -298,7 +303,9 @@ const ActivityForm = () => {
                 name="activityType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Activity Type</FormLabel>
+                    <FormLabel required>
+                      {t("activity-form.activity-type")}
+                    </FormLabel>
                     <FormControl>
                       <ActivityTypeSelect
                         selectedActivityType={field.value as string}
@@ -318,7 +325,9 @@ const ActivityForm = () => {
                 name="routeType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Route Type</FormLabel>
+                    <FormLabel required>
+                      {t("activity-form.route-type")}
+                    </FormLabel>
                     <FormControl>
                       <RouteTypeSelect
                         selectedRouteType={field.value as string}
@@ -338,7 +347,9 @@ const ActivityForm = () => {
                 name="difficultyLevel"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel required>Difficulty Level</FormLabel>
+                    <FormLabel required>
+                      {t("activity-form.difficulty-level")}
+                    </FormLabel>
                     <FormControl>
                       <DifficultyLevelSelect
                         selectedDifficultyLevel={field.value as string}
@@ -359,7 +370,9 @@ const ActivityForm = () => {
                   name="climbCategory"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel required>Climb Category</FormLabel>
+                      <FormLabel required>
+                        {t("activity-form.climb-category")}
+                      </FormLabel>
                       <FormControl>
                         <ClimbCategorySelect
                           selectedClimbCategory={field.value as string}
@@ -383,12 +396,13 @@ const ActivityForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Min. Grade <span className="text-xs italic">(%)</span>
+                      {t("activity-form.min-grade")}
+                      <span className="text-xs italic">(%)</span>
                     </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Min. Grade (%)"
+                        placeholder={t("activity-form.min-grade")}
                         {...field}
                         isErrored={
                           form.formState.errors.minimumGrade ? true : false
@@ -404,12 +418,13 @@ const ActivityForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>
-                      Max. Grade<span className="text-xs italic">(%)</span>
+                      {t("activity-form.max-grade")}
+                      <span className="text-xs italic">(%)</span>
                     </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Max. Grade (%)"
+                        placeholder={t("activity-form.max-grade")}
                         {...field}
                         isErrored={
                           form.formState.errors.maximumGrade ? true : false
@@ -425,12 +440,13 @@ const ActivityForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel required>
-                      Avg. Grade <span className="text-xs italic">(%)</span>
+                      {t("activity-form.avg-grade")}
+                      <span className="text-xs italic">(%)</span>
                     </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Avg. Grade (%)"
+                        placeholder={t("activity-form.avg-grade")}
                         {...field}
                         isErrored={
                           form.formState.errors.averageGrade ? true : false
@@ -448,12 +464,13 @@ const ActivityForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel required>
-                      Elevation <span className="text-xs italic">(metres)</span>
+                      {t("activity-form.elevation-gain")}
+                      <span className="text-xs italic">(metres)</span>
                     </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Elevation (m)"
+                        placeholder={t("activity-form.elevation-gain")}
                         {...field}
                         isErrored={
                           form.formState.errors.elevationGain ? true : false
@@ -469,12 +486,13 @@ const ActivityForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel required>
-                      Distance <span className="text-xs italic">(km)</span>
+                      {t("activity-form.distance")}
+                      <span className="text-xs italic">(km)</span>
                     </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Distance (km)"
+                        placeholder={t("activity-form.distance")}
                         {...field}
                         isErrored={
                           form.formState.errors.distance ? true : false
@@ -490,13 +508,13 @@ const ActivityForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel required>
-                      Avg. Duration
+                      {t("activity-form.avg-completion-time")}
                       <span className="text-xs italic">(seconds)</span>
                     </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="Average completion time (seconds)"
+                        placeholder={t("activity-form.avg-completion-time")}
                         {...field}
                         isErrored={
                           form.formState.errors.timeToComplete ? true : false
@@ -514,11 +532,16 @@ const ActivityForm = () => {
                 name="tags"
                 render={() => (
                   <FormItem>
-                    <FormLabel>Tags</FormLabel>
+                    <FormLabel>
+                      {t("activity-form.tags")}
+                      <span className="text-xs italic">
+                        (separate multiple tags with a comma)
+                      </span>
+                    </FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
-                        placeholder="One word to describe the climb e.g 'gravel', 'paved'. Separate multiple tags with a comma"
+                        placeholder={t("activity-form.tags-placeholder")}
                         value={tagsInput}
                         onChange={(e) => setTagsInput(e.target.value)}
                         isErrored={form.formState.errors.tags ? true : false}
@@ -539,7 +562,7 @@ const ActivityForm = () => {
                   className="w-6 h-6 text-accent/80"
                   aria-hidden="true"
                 />
-                upload photo(s)
+                {t("activity-form.upload-photos")}
               </button>
               <p className="text-xs italic font-medium leading-5 text-text-color/80">
                 PNG, JPG, GIF up to 10MB
@@ -549,7 +572,7 @@ const ActivityForm = () => {
           {/* Coordinates */}
           <ActivityFormSection className="border-none lg:col-start-1">
             <p className="my-1 text-lg font-semibold leading-6 text-text-color/80">
-              Coordinates
+              {t("activity-form.coordinates")}
             </p>
             {/* Start and End Latitudes */}
             <FormGroup className="grid-cols-2 gap-4">
@@ -558,13 +581,13 @@ const ActivityForm = () => {
                 name="startCoordinate.latitude"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Start Latitude</FormLabel>
+                    <FormLabel>{t("activity-form.start-latitude")}</FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
                         placeholder={
                           existingActivity?.startCoordinate?.latitude.toString() ??
-                          "Start Latitude"
+                          `${t("activity-form.start-latitude")}`
                         }
                         {...field}
                         isErrored={
@@ -582,13 +605,13 @@ const ActivityForm = () => {
                 name="endCoordinate.latitude"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>End Latitude</FormLabel>
+                    <FormLabel>{t("activity-form.end-latitude")}</FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
                         placeholder={
                           existingActivity?.endCoordinate?.latitude.toString() ??
-                          "End Latitude"
+                          `${t("activity-form.end-latitude")}`
                         }
                         {...field}
                         isErrored={
@@ -609,13 +632,13 @@ const ActivityForm = () => {
                 name="startCoordinate.longitude"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Start Longitude</FormLabel>
+                    <FormLabel>{t("activity-form.start-longitude")}</FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
                         placeholder={
                           existingActivity?.startCoordinate?.longitude.toString() ??
-                          "Start Longitude"
+                          `${t("activity-form.start-longitude")}`
                         }
                         {...field}
                         isErrored={
@@ -633,13 +656,13 @@ const ActivityForm = () => {
                 name="endCoordinate.longitude"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>End Longitude</FormLabel>
+                    <FormLabel>{t("activity-form.end-longitude")}</FormLabel>
                     <FormControl>
                       <InputField
                         type="text"
                         placeholder={
                           existingActivity?.endCoordinate?.longitude.toString() ??
-                          "End Longitude"
+                          `${t("activity-form.end-longitude")}`
                         }
                         {...field}
                         isErrored={
@@ -662,25 +685,6 @@ const ActivityForm = () => {
                 apikey={ENV_VARIABLES.FILESTACK_API_KEY}
                 pickerOptions={{
                   ...FileStackConfig,
-                  // maxFiles: 5,
-                  // maxSize: 10 * 1024 * 1024,
-                  // fromSources: [
-                  //   "local_file_system",
-                  //   "url",
-                  //   "imagesearch",
-                  //   "facebook",
-                  //   "instagram",
-                  //   "googledrive",
-                  //   "dropbox",
-                  //   "onedrive",
-                  //   "unsplash",
-                  // ],
-                  // accept: ["image/jpeg", "image/png", "image/jpg"],
-                  // transformations: {
-                  //   crop: {
-                  //     aspectRatio: 4 / 3,
-                  //   },
-                  // },
                   onUploadDone: (res) => {
                     const urls = res.filesUploaded.map((file) => file.url);
                     setUploadedPhotoUrls(urls);
@@ -720,10 +724,10 @@ const ActivityForm = () => {
         {/* Buttons */}
         <div className="flex items-center justify-end w-full mt-6 gap-x-6">
           <Button type="button" variant="outline" onClick={handleClose}>
-            Cancel
+            {t("activity-form.cancel-button")}
           </Button>
           <Button type="submit" variant="primary">
-            Save
+            {t("activity-form.submit-button")}
           </Button>
         </div>
       </form>

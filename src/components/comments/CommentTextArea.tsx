@@ -5,6 +5,7 @@ import { QueryClient, useMutation } from "@tanstack/react-query";
 import { useComment } from "@utils/comment/comment-store";
 import { useUser } from "@utils/user/user-store";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 interface CommentTextAreaProps {
   placeholder: string;
@@ -22,6 +23,7 @@ function CommentTextArea({
   const queryClient = new QueryClient();
   const { activitySlug } = useParams();
   const { user } = useUser();
+  const { t } = useTranslation();
   const { createComment } = useComment();
   const navigate = useNavigate();
   const currentURL = useLocation();
@@ -81,7 +83,7 @@ function CommentTextArea({
   return (
     <div className="w-full">
       <label htmlFor="comments-about-activity" className="sr-only">
-        Activity Comments
+        {t("comment.comments-label")}
       </label>
 
       <div className="flex items-start justify-start gap-3 overflow-hidden">
@@ -105,11 +107,11 @@ function CommentTextArea({
         <div className="flex items-center justify-end gap-4 py-3">
           {isCreatingComment && (
             <p className="text-xs italic text-text-color">
-              creating comment...
+              {t("comment.creating-comment")}
             </p>
           )}
           <Button variant="ghost" size="xs" onClick={handleCancelComment}>
-            Cancel
+            {t("comment.cancel-comment")}
           </Button>
           <Button
             size="xs"
@@ -117,7 +119,9 @@ function CommentTextArea({
             onClick={handleCreateComment}
             disabled={!newComment.trim()}
           >
-            {type === "comment" ? "Comment" : "Reply"}
+            {type === "comment"
+              ? `${t("comment.comment")}`
+              : `${t("comment.reply")}`}
           </Button>
         </div>
       )}

@@ -1,4 +1,5 @@
 import Avatar from "@components/common/avatar/avatar";
+import { Tooltip } from "@components/common/tooltip/tooltip";
 import { getRelativeTime } from "@lib/getRelativeTime";
 import { cn } from "@lib/utils";
 import { IconArrowBackUpDouble, IconTrashX } from "@tabler/icons-react";
@@ -85,17 +86,21 @@ function CommentItem({ comment, className }: CommentItemProps) {
             )}
           </div>
           <div className="flex items-center justify-start gap-3 ">
-            <IconArrowBackUpDouble
-              onClick={handleShowReply}
-              size={18}
-              className="cursor-pointer text-text-color/70 hover:text-text-color"
-            />
-            {shouldRenderDeleteButton && (
-              <IconTrashX
+            <Tooltip content={t("comment.reply")}>
+              <IconArrowBackUpDouble
+                onClick={handleShowReply}
                 size={18}
-                onClick={() => handleDeleteComment(commentId)}
-                className="cursor-pointer text-accent/60 hover:text-accent"
+                className="cursor-pointer text-text-color/70 hover:text-text-color"
               />
+            </Tooltip>
+            {shouldRenderDeleteButton && (
+              <Tooltip content={t("comment.delete-comment")}>
+                <IconTrashX
+                  size={18}
+                  onClick={() => handleDeleteComment(commentId)}
+                  className="cursor-pointer text-accent/60 hover:text-accent"
+                />
+              </Tooltip>
             )}
           </div>
         </div>

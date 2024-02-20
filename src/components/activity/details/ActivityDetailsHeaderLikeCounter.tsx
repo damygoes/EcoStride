@@ -6,6 +6,7 @@ import { Activity } from "@type-definitions/Activity";
 import { useActivity } from "@utils/activity/activity-store";
 import { useUser } from "@utils/user/user-store";
 import { useCallback, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 type ActivityDetailsHeaderLikeCounterProps = {
@@ -22,6 +23,7 @@ type Like = {
 function ActivityDetailsHeaderLikeCounter({
   selectedActivity,
 }: ActivityDetailsHeaderLikeCounterProps) {
+  const { t } = useTranslation();
   const queryClient = new QueryClient();
   const { user, removeActivityFromLikedList } = useUser();
   const navigate = useNavigate();
@@ -69,8 +71,7 @@ function ActivityDetailsHeaderLikeCounter({
       });
     }
     toast({
-      title: "Liked",
-      description: "Activity has been added to your liked list",
+      title: `${t("activity-details-header-toast.activity-liked")}`,
       variant: "success",
     });
   };
@@ -85,8 +86,7 @@ function ActivityDetailsHeaderLikeCounter({
         userId,
       });
       toast({
-        title: "Unliked",
-        description: "Activity has been removed from your liked list",
+        title: `${t("activity-details-header-toast.activity-unliked")}`,
         variant: "destructive",
       });
     }
@@ -103,7 +103,11 @@ function ActivityDetailsHeaderLikeCounter({
   return (
     <div className="flex items-end justify-start gap-1">
       {hasUserLikedActivity ? (
-        <Tooltip content="Unlike" side="top" align="center">
+        <Tooltip
+          content={t("activity-details-header-tooltip.unlike-activity")}
+          side="top"
+          align="center"
+        >
           <IconThumbUpFilled
             className="cursor-pointer text-accent/80 hover:text-accent"
             onClick={handleUnlikeActivity}
@@ -111,7 +115,11 @@ function ActivityDetailsHeaderLikeCounter({
           />
         </Tooltip>
       ) : (
-        <Tooltip content="Like" side="top" align="end">
+        <Tooltip
+          content={t("activity-details-header-tooltip.like-activity")}
+          side="top"
+          align="end"
+        >
           <IconThumbUp
             className="cursor-pointer text-primary hover:text-primary/60"
             onClick={handleLikeActivity}

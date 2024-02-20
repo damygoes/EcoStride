@@ -6,6 +6,7 @@ import { Activity } from "@type-definitions/Activity";
 import { useActivity } from "@utils/activity/activity-store";
 import { useUser } from "@utils/user/user-store";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 type ActivityDetailsHeaderMarkAsRiddenIconManagerProps = {
@@ -22,6 +23,7 @@ export type DoneActivity = {
 function ActivityDetailsHeaderMarkAsRiddenIconManager({
   selectedActivity,
 }: ActivityDetailsHeaderMarkAsRiddenIconManagerProps) {
+  const { t } = useTranslation();
   const queryClient = new QueryClient();
   const { user, removeActivityFromCompletedList } = useUser();
   const navigate = useNavigate();
@@ -75,9 +77,7 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
         action: "alreadyCompleted",
       });
       toast({
-        title: "Activity marked as completed",
-        description:
-          "You can view all your completed activities in your profile",
+        title: `${t("activity-details-header-toast.activity-completed")}`,
         variant: "success",
       });
     }
@@ -92,9 +92,7 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
         userId: user?.id ?? "",
       });
       toast({
-        title: "Activity removed from your completed activities",
-        description:
-          "You can view all your completed activities in your profile",
+        title: `${t("activity-details-header-toast.activity-uncompleted")}`,
         variant: "destructive",
       });
     }
@@ -103,7 +101,11 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
   return (
     <>
       {hasUserMarkedActivityAsRidden ? (
-        <Tooltip content="Mark as not completed" side="top" align="end">
+        <Tooltip
+          content={t("activity-details-header-tooltip.uncomplete-activity")}
+          side="top"
+          align="end"
+        >
           <IconCircleCheckFilled
             className="cursor-pointer text-accent/80 hover:text-accent"
             onClick={handleUnMarkAsRidden}
@@ -112,7 +114,11 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
           />
         </Tooltip>
       ) : (
-        <Tooltip content="Mark as completed" side="top" align="end">
+        <Tooltip
+          content={t("activity-details-header-tooltip.complete-activity")}
+          side="top"
+          align="end"
+        >
           <IconCircleCheck
             className="cursor-pointer text-primary hover:text-primary/60"
             onClick={handleMarkAsRidden}

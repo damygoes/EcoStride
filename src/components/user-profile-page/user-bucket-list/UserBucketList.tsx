@@ -2,9 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useActivityCard } from "@utils/activity/activity-card-store";
 import { useUser } from "@utils/user/user-store";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import UserProfileActivitiesSectionAndList from "../UserProfileActivitiesSectionAndList";
 
 function UserBucketList() {
+  const { t } = useTranslation();
   const { user } = useUser();
   const { getUsersBucketList } = useUser();
   const {
@@ -40,9 +42,9 @@ function UserBucketList() {
 
   return (
     <UserProfileActivitiesSectionAndList
-      title="Bucket List"
+      title={t("user-bucket-list-page.title")}
       activities={bucketListActivities ?? []}
-      emptyMessage="You haven't added any activity to your bucket list yet."
+      emptyMessage={t("user-bucket-list-page.no-activities")}
     />
   );
 }

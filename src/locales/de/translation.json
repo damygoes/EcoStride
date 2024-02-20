@@ -1,23 +1,208 @@
 {
-  "activity-card": {
-    "distance": "Entfernung",
-    "avg-grade": "Durchschn. Steigung",
-    "elevation": "Höhenunterschied"
+  "navbarHome": "Startseite",
+  "navbarActivities": "Alle Aktivitäten",
+  "userProfile": "Profil",
+  "userBucketList": "Bucket List",
+  "userLikedActivities": "Gefällt mir-Aktivitäten",
+  "userCompletedActivities": "Abgeschlossene Aktivitäten",
+  "navbar": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden"
   },
   "hero": {
-    "title": "Auf zu einem neuen Abenteuer",
-    "subtitle": "Die Reise umarmen",
-    "description": "Entdecke atemberaubende Strecken, fordere deine Grenzen heraus und werde Teil einer leidenschaftlichen Gemeinschaft. Lass uns gemeinsam neuen Horizonten entgegenradeln. Jede Fahrt ist eine Geschichte, die darauf wartet, sich zu entfalten.",
-    "button": "Routen entdecken",
-    "location-loading": "Standort wird geladen...",
-    "location-found": "Entdecken Sie Anstiege in die Nähe von",
-    "location-not-found": "Standort nicht gefunden. Stattdessen werden alle Anstiege angezeigt.",
-    "location-denied": "Sie haben den Zugriff auf Ihren Standort verweigert. Stattdessen werden alle Anstiege angezeigt."
+    "title": "Entdecken ohne Grenzen",
+    "subtitle": "Die Reise genießen",
+    "description": "Treten Sie einer Gemeinschaft bei, die von Leidenschaft für Entdeckung und Abenteuer angetrieben wird. Finden und schlagen Sie Ihren Weg in der weiten Wildnis ein. Jede Reise ist eine Geschichte, die darauf wartet, erzählt zu werden. Gemeinsam lassen wir die endlosen Möglichkeiten, die uns erwarten, Wirklichkeit werden.",
+    "button": "Aktivitäten entdecken",
+    "location-loading": "Suche nach Ihrem Standort...",
+    "location-found-nearby": "Erkunde Aktivitäten in der Nähe",
+    "activity-not-found-near-location": "Keine Aktivitäten in der Nähe gefunden",
+    "location-not-found": "Standort nicht gefunden.",
+    "location-denied": "Zugriff auf Standort verweigert.",
+    "location-all": "Zeige alle Aktivitäten"
   },
+  "upcoming-features": {
+    "title": "Kommende Funktionen"
+  },
+  "stravaSegmentTimingTitle": "Strava Segment Timing",
+  "stravaSegmentTimingDescription": "Bald können Sie die besten Zeiten auf Strava-Segmenten direkt in unserer App schätzen.",
+  "stravaIntegrationTitle": "Strava Integration",
+  "stravaIntegrationDescription": "Melden Sie sich mit Strava an und importieren Sie Ihre Aktivitäten, um alle Ihre Abenteuer an einem Ort zu haben.",
+  "moreActivitiesTitle": "Mehr Aktivitäten unterwegs",
+  "moreActivitiesDescription": "Wir erweitern unsere Horizonte! Bleiben Sie dran für mehr Aktivitätstypen zum Verfolgen und Teilen.",
+  "bmiCalculatorTitle": "BMI-Rechner",
+  "bmiCalculatorDescription": "Verfolgen Sie Ihren Fortschritt mit unserem integrierten BMI-Rechner, der für Athleten konzipiert ist.",
+  "calorieCounterTitle": "Kalorienzähler",
+  "calorieCounterDescription": "Behalten Sie den Überblick über die Energie, die Sie mit unserem präzisen Kalorienrechner verbrennen, zugeschnitten auf Outdoor-Sportarten.",
+  "trainingPlansTitle": "Trainingspläne",
+  "trainingPlansDescription": "Steigern Sie Ihre Leistung mit Rad- und Lauftrainingsplänen, die für alle Niveaus entwickelt wurden.",
+  "multiLanguageSupportTitle": "Mehrsprachige Unterstützung",
+  "multiLanguageSupportDescription": "Wir werden global! Zukünftige Unterstützung für mehrere Sprachen, um unsere App weltweit zugänglich zu machen.",
   "page-header": {
-    "nearby-activities": "Anstiege in der Nähe",
-    "all-activities": "Alle Anstiege",
+    "nearby-activities": "Aktivitäten in der Nähe",
+    "all-activities": "Alle Aktivitäten",
     "home": "Startseite"
   },
-  "footer": "Entwickelt von"
+  "activity-card": {
+    "distance": "Entfernung",
+    "min-grade": "Min. Steigung",
+    "avg-grade": "Durchschn. Steigung",
+    "max-grade": "Max. Steigung",
+    "elevation": "Höhe",
+    "duration": "Dauer"
+  },
+  "activities-page-sidebar": {
+    "filter": "Filter",
+    "sort": "Sortieren nach",
+    "reset": "Filter zurücksetzen",
+    "distance": "Entfernung",
+    "duration": "Dauer",
+    "elevation": "Höhe",
+    "name": "Name",
+    "average-grade": "Durchschnittliche Steigung",
+    "climb-category": "Steigungskategorie",
+    "country": "Land",
+    "state-found": "Bundesland",
+    "state-not-found": "Keine Bundesländer gefunden",
+    "select": "Wählen Sie eine Sortieroption",
+    "sort-ascending": "Aufsteigend",
+    "sort-descending": "Absteigend",
+    "clear-filters": "Filter löschen"
+  },
+  "activities-page": {
+    "searchbar-placeholder": "Aktivitäten suchen..."
+  },
+  "activities-page-sidebar-cta": {
+    "text": "Gibt es eine Aktivität, die Sie hier gerne sehen würden?",
+    "add-activity": "Aktivität hinzufügen",
+    "request-activity": "Aktivität anfordern"
+  },
+
+  "activity-details-page": {
+    "about": "Über",
+    "photos": "Fotos",
+    "comments": "Kommentare",
+    "no-comments": "Keine Kommentare"
+  },
+  "points-of-interest": {
+    "title": "Sehenswürdigkeiten",
+    "no-points-of-interest": "Keine Sehenswürdigkeiten",
+    "searching": "Suche nach Sehenswürdigkeiten..."
+  },
+  "comment": {
+    "no-comments": "Keine Kommentare",
+    "comment": "Kommentar",
+    "comments": "Kommentare",
+    "comment-placeholder": "Was denkst du über diese Aktivität?",
+    "deleting-comment": "Kommentar wird gelöscht...",
+    "reply": "Antworten",
+    "creating-comment": "Kommentar wird erstellt...",
+    "comments-label": "Aktivitätskommentare",
+    "cancel-comment": "Abbrechen",
+    "delete-comment": "Kommentar löschen"
+  },
+  "error-fallback": {
+    "back-to-home": "Zurück zur Startseite",
+    "back-to-activities": "Zurück zu den Aktivitäten"
+  },
+  "loading-fallback": {
+    "loading": "Wird verarbeitet..."
+  },
+  "related-activities": {
+    "more": "Mehr",
+    "activities": "Aktivitäten",
+    "activity": "Aktivität",
+    "in": "in"
+  },
+  "login-page": {
+    "supplementary-title": "Das Abenteuer wartet mit EcoStride",
+    "supplementary-text": "EcoStride bringt Sie der Natur näher. Beginnen Sie Ihre Reise und umarmen Sie das Abenteuer, das in jeder Kurve liegt."
+  },
+  "login-page-cta": {
+    "sub-text": "Bereit, die große Natur zu erkunden?",
+    "title": "Entdecken Sie neue Abenteuer mit EcoStride",
+    "sign-in": "Anmelden",
+    "sign-in-sub-text": "um fortzufahren zu EcoStride"
+  },
+  "not-found": {
+    "title": "Nicht gefunden",
+    "title-one": "Hoppla! Sie sind vom Weg abgekommen...",
+    "description-one": "Unerwartete Wendungen öffnen die Tür zu neuen Abenteuern. Obwohl dieser digitale Pfad hier endet, warten unzählige andere auf Ihre Entdeckung.",
+    "title-two": "Lassen Sie uns wieder auf den richtigen Weg kommen!",
+    "description-two": "Der Weg, den Sie suchen, könnte näher sein, als Sie denken.",
+    "guide-link": "Lassen Sie uns Ihnen den Weg zurück zeigen."
+  },
+  "user-profile-page": {
+    "upload-photo": "Foto hochladen",
+    "first-name": "Vorname",
+    "last-name": "Nachname",
+    "email": "E-Mail",
+    "bio": "Biografie",
+    "ftp": "FTP",
+    "age": "Alter",
+    "bodyWeight": "Körpergewicht",
+    "bikeWeight": "Fahrradgewicht",
+    "title": "Mein Profil",
+    "button": "Änderungen speichern"
+  },
+  "activity-form": {
+    "title": "Aktivitätsinformationen",
+    "sub-text": "Wir werden Ihre Aktivität überprüfen und uns so schnell wie möglich bei Ihnen melden.",
+    "name": "Aktivitätsname",
+    "name-placeholder": "Geben Sie den Namen der Aktivität ein",
+    "description": "Beschreibung",
+    "country": "Land",
+    "state": "Staat/Provinz",
+    "city": "Stadt",
+    "technical-details": "Technische Details",
+    "activity-type": "Aktivitätstyp",
+    "route-type": "Routentyp",
+    "difficulty-level": "Schwierigkeitsgrad",
+    "climb-category": "Steigungskategorie",
+    "min-grade": "Min. Steigung",
+    "avg-grade": "Durchschn. Steigung",
+    "max-grade": "Max. Steigung",
+    "elevation-gain": "Höhenunterschied",
+    "distance": "Entfernung",
+    "avg-completion-time": "Durchschn. Fertigstellungszeit",
+    "tags": "Tags",
+    "tags-placeholder": "Ein Wort, um die Steigung zu beschreiben, z.B. 'Schotter', 'Asphalt'. Trennen Sie mehrere Tags mit einem Komma",
+    "upload-photos": "Fotos hochladen",
+    "coordinates": "Koordinaten",
+    "start-latitude": "Startbreite",
+    "start-longitude": "Startlänge",
+    "end-latitude": "Endbreite",
+    "end-longitude": "Endlänge",
+    "cancel-button": "Abbrechen",
+    "submit-button": "Einreichen"
+  },
+  "activity-details-header-toast": {
+    "activity-added-to-bucket-list": "Aktivität zu Ihrer Bucket-Liste hinzugefügt",
+    "activity-removed-from-bucket-list": "Aktivität von Ihrer Bucket-Liste entfernt",
+    "activity-liked": "Aktivität gefällt",
+    "activity-unliked": "Gefällt mir nicht mehr bei Aktivität",
+    "activity-completed": "Aktivität abgeschlossen",
+    "activity-uncompleted": "Aktivität als unvollendet markiert"
+  },
+  "activity-details-header-tooltip": {
+    "add-to-bucket-list": "Zur Bucket-Liste hinzufügen",
+    "remove-from-bucket-list": "Von der Bucket-Liste entfernen",
+    "like-activity": "Aktivität gefällt mir",
+    "unlike-activity": "Gefällt mir nicht bei Aktivität",
+    "complete-activity": "Aktivität als abgeschlossen markieren",
+    "uncomplete-activity": "Aktivität als unvollendet markieren"
+  },
+  "user-bucket-list-page": {
+    "title": "Bucket-Liste",
+    "no-activities": "Keine Aktivitäten in Ihrer Bucket-Liste"
+  },
+  "user-liked-activities-page": {
+    "title": "Gefällt mir Aktivitäten",
+    "no-activities": "Keine gefällt mir Aktivitäten"
+  },
+  "user-completed-activities-page": {
+    "title": "Abgeschlossene Aktivitäten",
+    "no-activities": "Keine abgeschlossenen Aktivitäten"
+  }
 }

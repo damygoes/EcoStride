@@ -1,4 +1,5 @@
 import { Button } from "@components/ui/button/button";
+import { ENV_VARIABLES } from "@lib/env";
 import { IconBrandGoogleFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -48,7 +49,9 @@ function LoginPageCTA() {
               variant="gradient"
               iconLeft={<IconBrandGoogleFilled className="text-accent" />}
             >
-              <Link to="/api/auth/google">Sign in with Google</Link>
+              <Link to={ENV_VARIABLES.GOOGLE_AUTH_SERVER_URL}>
+                Sign in with Google
+              </Link>
             </Button>
           </div>
         </motion.div>

@@ -37,7 +37,7 @@ function ActivityDetailsHeader({
   return (
     <div className="flex flex-col items-start justify-between flex-1 w-full gap-4 md:flex-row md:items-center md:flex-none">
       {/* Left */}
-      <div className="flex flex-col items-center justify-between flex-1 w-full gap-5 p-3 rounded-md bg-gradient-to-br from-secondary/10 via-secondary/20 to-secondary/10 text-text-color md:h-full md:py-5 md:gap-12">
+      <div className="flex flex-col items-center justify-between flex-1 w-full gap-3 py-3 px-6 rounded-md bg-gradient-to-br from-secondary/10 via-secondary/20 to-secondary/10 text-text-color md:h-[25.2rem] md:py-5 md:flex-none">
         <div className="space-y-2 text-center">
           <h3 className="text-2xl font-semibold">
             {selectedActivity.name.toLocaleUpperCase() || "Climb Name"}
@@ -46,7 +46,7 @@ function ActivityDetailsHeader({
             {` ${selectedActivity.address.city}, ${selectedActivity.address.state}, ${selectedActivity.address.country}`}
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center w-full gap-3">
+        <div className="flex flex-wrap items-center justify-start w-full gap-3">
           {selectedActivity.activityType === "Bike" &&
             selectedActivity.routeType === "Hilly" && (
               <Badge variant="accent">
@@ -59,7 +59,7 @@ function ActivityDetailsHeader({
             </Badge>
           ))}
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-4 px-4 text-sm">
+        <div className="flex flex-wrap items-center justify-start gap-4 px-4 text-sm">
           <ClimbCardDetail
             icon={<DistanceIcon />}
             name={t("activity-card.distance")}

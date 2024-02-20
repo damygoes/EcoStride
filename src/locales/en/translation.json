@@ -96,7 +96,11 @@
     "comments": "Comments",
     "comment-placeholder": "What do you think of this activity?",
     "deleting-comment": "Deleting comment...",
-    "reply": "Reply"
+    "reply": "Reply",
+    "creating-comment": "creating comment...",
+    "comments-label": "Activity Comments",
+    "cancel-comment": "Cancel",
+    "delete-comment": "Delete Comment"
   },
   "error-fallback": {
     "back-to-home": "Back to homepage",
@@ -128,5 +132,77 @@
     "title-two": "Let's Get Back on Track!",
     "description-two": "The path you seek may be closer than you think.",
     "guide-link": "Let us guide you back."
+  },
+  "user-profile-page": {
+    "upload-photo": "Upload Photo",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email": "Email",
+    "bio": "Bio",
+    "ftp": "FTP",
+    "age": "Age",
+    "bodyWeight": "Body Weight",
+    "bikeWeight": "Bike Weight",
+    "title": "My  Profile",
+    "button": "Save Changes"
+  },
+  "activity-form": {
+    "title": "Activity Information",
+    "sub-text": "We will review your activity and get back to you as soon as possible.",
+    "name": "Activity Name",
+    "name-placeholder": "Enter the name of the activity",
+    "description": "Description",
+    "country": "Country",
+    "state": "State/Province",
+    "city": "City",
+    "technical-details": "Technical Details",
+    "activity-type": "Activity Type",
+    "route-type": "Route Type",
+    "difficulty-level": "Difficulty Level",
+    "climb-category": "Climb Category",
+    "min-grade": "Min. Gradient",
+    "avg-grade": "Avg. Gradient",
+    "max-grade": "Max. Gradient",
+    "elevation-gain": "Elevation",
+    "distance": "Distance",
+    "avg-completion-time": "Avg. Completion Time",
+    "tags": "Tags",
+    "tags-placeholder": "One word to describe the climb e.g 'gravel', 'paved'. Separate multiple tags with a comma",
+    "upload-photos": "Upload Photos",
+    "coordinates": "Coordinates",
+    "start-latitude": "Start Latitude",
+    "start-longitude": "Start Longitude",
+    "end-latitude": "End Latitude",
+    "end-longitude": "End Longitude",
+    "cancel-button": "Cancel",
+    "submit-button": "Submit"
+  },
+  "activity-details-header-toast": {
+    "activity-added-to-bucket-list": "Activity added to your bucket list",
+    "activity-removed-from-bucket-list": "Activity removed from your bucket list",
+    "activity-liked": "Activity liked",
+    "activity-unliked": "Activity unliked",
+    "activity-completed": "Activity completed",
+    "activity-uncompleted": "Activity uncompleted"
+  },
+  "activity-details-header-tooltip": {
+    "add-to-bucket-list": "Add to bucket list",
+    "remove-from-bucket-list": "Remove from bucket list",
+    "like-activity": "Like activity",
+    "unlike-activity": "Unlike activity",
+    "complete-activity": "Mark activity as completed",
+    "uncomplete-activity": "Mark activity as uncompleted"
+  },
+  "user-bucket-list-page": {
+    "title": "Bucket List",
+    "no-activities": "No activities in your bucket list"
+  },
+  "user-liked-activities-page": {
+    "title": "Liked Activities",
+    "no-activities": "No liked activities"
+  },
+  "user-completed-activities-page": {
+    "title": "Completed Activities",
+    "no-activities": "No completed activities"
   }
 }

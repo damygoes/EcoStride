@@ -2,9 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useActivityCard } from "@utils/activity/activity-card-store";
 import { useUser } from "@utils/user/user-store";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import UserProfileActivitiesSectionAndList from "../UserProfileActivitiesSectionAndList";
 
 function UserCompletedActivities() {
+  const { t } = useTranslation();
   const { user } = useUser();
   const { getUsersCompletedActivities } = useUser();
   const {
@@ -40,9 +42,9 @@ function UserCompletedActivities() {
 
   return (
     <UserProfileActivitiesSectionAndList
-      title="Completed Activities"
+      title={t("user-completed-activities-page.title")}
       activities={completedActivities ?? []}
-      emptyMessage="You haven't completed any activity yet."
+      emptyMessage={t("user-completed-activities-page.no-activities")}
     />
   );
 }

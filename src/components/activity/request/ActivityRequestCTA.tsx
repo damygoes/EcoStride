@@ -1,5 +1,6 @@
 import ActivityRequestModal from "@components/activity/request/ActivityRequestModal";
 import { Button } from "@components/ui/button/button";
+import { cn } from "@lib/utils";
 import { useActivityActions } from "@utils/activity/activity-actions-store";
 import { useUser } from "@utils/user/user-store";
 import { useTranslation } from "react-i18next";
@@ -23,7 +24,14 @@ function ActivityRequestCTA() {
   };
 
   return (
-    <div className="flex flex-col items-start justify-between w-full gap-3 p-3 rounded-md shadow-sm text-text-color bg-background">
+    <div
+      className={cn(
+        "flex flex-col items-start justify-between w-full gap-3 rounded-md shadow-sm text-text-color bg-background",
+        {
+          "p-3": user?.role !== "ADMIN",
+        },
+      )}
+    >
       {user?.role !== "ADMIN" && (
         <h5 className="text-sm font-light text-wrap">
           {t("activities-page-sidebar-cta.text")}

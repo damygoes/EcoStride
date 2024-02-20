@@ -18,7 +18,7 @@ function MobileMenuLinkItem({ link, onClick }: MobileMenuLinkItemProps) {
     <Link
       to={link.path}
       onClick={onClick}
-      className="flex items-center justify-start p-3 w-72"
+      className="flex items-center justify-start w-full p-3"
     >
       <motion.div
         variants={menuLinkVariants}

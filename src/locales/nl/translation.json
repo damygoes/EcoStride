@@ -1,23 +1,208 @@
 {
-  "activity-card": {
-    "distance": "Afstand",
-    "avg-grade": "Gem. Hellingsgraad",
-    "elevation": "Hoogteverschil"
+  "navbarHome": "Home",
+  "navbarActivities": "Alle Activiteiten",
+  "userProfile": "Profiel",
+  "userBucketList": "Bucket List",
+  "userLikedActivities": "Leuke Activiteiten",
+  "userCompletedActivities": "Voltooide Activiteiten",
+  "navbar": {
+    "login": "Inloggen",
+    "register": "Registreren",
+    "logout": "Uitloggen"
   },
   "hero": {
-    "title": "Rijd naar een Nieuw Avontuur",
+    "title": "Verken Zonder Grenzen",
     "subtitle": "Omarm de Reis",
-    "description": "Ontdek adembenemende routes, daag je grenzen uit en word deel van een gepassioneerde gemeenschap. Laten we samen naar nieuwe horizonten fietsen. Elke rit is een verhaal dat wacht om zich te ontvouwen.",
-    "button": "Ontdek Routes",
-    "location-loading": "Locatie wordt geladen...",
-    "location-found": "Ontdek beklimmingen in de buurt",
-    "location-not-found": "Locatie niet gevonden. In plaats daarvan worden alle beklimmingen weergegeven.",
-    "location-denied": "Je hebt geen toestemming gegeven om je locatie te gebruiken. In plaats daarvan worden alle beklimmingen weergegeven."
+    "description": "Sluit je aan bij een gemeenschap gedreven door passie voor ontdekking en avontuur. Vind en baan je eigen weg in de uitgestrektheid van de buitenwereld. Elke reis is een verhaal dat wacht om verteld te worden. Samen ontgrendelen we de eindeloze mogelijkheden die voor ons liggen.",
+    "button": "Ontdek Activiteiten",
+    "location-loading": "Uw locatie vinden...",
+    "location-found-nearby": "Verken activiteiten in de buurt van",
+    "activity-not-found-near-location": "Geen activiteiten gevonden in de buurt van",
+    "location-not-found": "Locatie niet gevonden.",
+    "location-denied": "Toegang tot locatie geweigerd.",
+    "location-all": "Alle activiteiten weergeven"
   },
+  "upcoming-features": {
+    "title": "Aankomende Functies"
+  },
+  "stravaSegmentTimingTitle": "Strava Segment Timing",
+  "stravaSegmentTimingDescription": "Binnenkort kun je de beste tijden op Strava-segmenten direct in onze app schatten.",
+  "stravaIntegrationTitle": "Strava Integratie",
+  "stravaIntegrationDescription": "Log in met Strava en importeer je activiteiten om al je avonturen op één plek te bewaren.",
+  "moreActivitiesTitle": "Meer Activiteiten Onderweg",
+  "moreActivitiesDescription": "We breiden onze horizon uit! Blijf op de hoogte voor meer soorten activiteiten om te volgen en te delen.",
+  "bmiCalculatorTitle": "BMI Calculator",
+  "bmiCalculatorDescription": "Volg je voortgang met onze ingebouwde BMI-calculator, ontworpen voor atleten.",
+  "calorieCounterTitle": "Calorieteller",
+  "calorieCounterDescription": "Houd bij hoeveel energie je verbrandt met onze nauwkeurige calorieteller, afgestemd op buitensporten.",
+  "trainingPlansTitle": "Trainingsplannen",
+  "trainingPlansDescription": "Verbeter je prestaties met fiets- en hardlooptrainingsplannen, gemaakt voor alle niveaus.",
+  "multiLanguageSupportTitle": "Meertalige Ondersteuning",
+  "multiLanguageSupportDescription": "We gaan wereldwijd! Toekomstige ondersteuning voor meerdere talen om onze app toegankelijk te maken voor gebruikers wereldwijd.",
   "page-header": {
-    "nearby-activities": "Beklimmingen in de buurt",
-    "all-activities": "Alle beklimmingen",
-    "home": "Startpagina"
+    "nearby-activities": "Activiteiten in de Buurt",
+    "all-activities": "Alle Activiteiten",
+    "home": "Homepage"
   },
-  "footer": "Ontwikkeld door"
+  "activity-card": {
+    "distance": "Afstand",
+    "min-grade": "Min. Hellingsgraad",
+    "avg-grade": "Gem. Hellingsgraad",
+    "max-grade": "Max. Hellingsgraad",
+    "elevation": "Hoogte",
+    "duration": "Duur"
+  },
+  "activities-page-sidebar": {
+    "filter": "Filters",
+    "sort": "Sorteren Op",
+    "reset": "Filters Resetten",
+    "distance": "Afstand",
+    "duration": "Duur",
+    "elevation": "Hoogte",
+    "name": "Naam",
+    "average-grade": "Gemiddelde Hellingsgraad",
+    "climb-category": "Klimcategorie",
+    "country": "Land",
+    "state-found": "Staat",
+    "state-not-found": "Geen staten gevonden",
+    "select": "Selecteer een sorteeroptie",
+    "sort-ascending": "Oplopend",
+    "sort-descending": "Aflopend",
+    "clear-filters": "Filters Wissen"
+  },
+  "activities-page": {
+    "searchbar-placeholder": "Zoek activiteiten..."
+  },
+  "activities-page-sidebar-cta": {
+    "text": "Is er een activiteit die je hier graag zou willen zien?",
+    "add-activity": "Activiteit Toevoegen",
+    "request-activity": "Activiteit Aanvragen"
+  },
+
+  "activity-details-page": {
+    "about": "Over",
+    "photos": "Foto's",
+    "comments": "Reacties",
+    "no-comments": "Geen reacties"
+  },
+  "points-of-interest": {
+    "title": "Bezienswaardigheden",
+    "no-points-of-interest": "Geen bezienswaardigheden",
+    "searching": "Zoeken naar bezienswaardigheden..."
+  },
+  "comment": {
+    "no-comments": "Geen reacties",
+    "comment": "Reactie",
+    "comments": "Reacties",
+    "comment-placeholder": "Wat vind je van deze activiteit?",
+    "deleting-comment": "Reactie wordt verwijderd...",
+    "reply": "Antwoorden",
+    "creating-comment": "Reactie aan het maken...",
+    "comments-label": "Reacties op de activiteit",
+    "cancel-comment": "Annuleren",
+    "delete-comment": "Reactie verwijderen"
+  },
+  "error-fallback": {
+    "back-to-home": "Terug naar homepage",
+    "back-to-activities": "Terug naar activiteiten"
+  },
+  "loading-fallback": {
+    "loading": "Verwerken..."
+  },
+  "related-activities": {
+    "more": "Meer",
+    "activities": "Activiteiten",
+    "activity": "Activiteit",
+    "in": "in"
+  },
+  "login-page": {
+    "supplementary-title": "Het avontuur wacht met EcoStride",
+    "supplementary-text": "EcoStride brengt je dichter bij de natuur. Begin je reis en omarm het avontuur dat in elke bocht ligt.",
+    "login-page-cta": {
+      "sub-text": "Klaar om de grote buiten te verkennen?",
+      "title": "Ontdek nieuwe avonturen met EcoStride",
+      "sign-in": "Inloggen",
+      "sign-in-sub-text": "om door te gaan naar EcoStride"
+    }
+  },
+  "not-found": {
+    "title": "Niet Gevonden",
+    "title-one": "Oeps! Je bent van het pad afgeweken...",
+    "description-one": "Onverwachte wendingen openen de deur naar nieuwe avonturen. Hoewel dit digitale pad hier eindigt, wachten talloze anderen op je ontdekking.",
+    "title-two": "Laten we Terug op het Juiste Pad Komen!",
+    "description-two": "Het pad dat je zoekt, kan dichterbij zijn dan je denkt.",
+    "guide-link": "Laat ons je terugleiden."
+  },
+  "user-profile-page": {
+    "upload-photo": "Foto Uploaden",
+    "first-name": "Voornaam",
+    "last-name": "Achternaam",
+    "email": "E-mail",
+    "bio": "Bio",
+    "ftp": "FTP",
+    "age": "Leeftijd",
+    "bodyWeight": "Lichaamsgewicht",
+    "bikeWeight": "Gewicht van de fiets",
+    "title": "Mijn Profiel",
+    "button": "Wijzigingen Opslaan"
+  },
+  "activity-form": {
+    "title": "Activiteitsinformatie",
+    "sub-text": "We zullen je activiteit beoordelen en zo snel mogelijk bij je terugkomen.",
+    "name": "Naam van de Activiteit",
+    "name-placeholder": "Voer de naam van de activiteit in",
+    "description": "Beschrijving",
+    "country": "Land",
+    "state": "Staat/Provincie",
+    "city": "Stad",
+    "technical-details": "Technische Details",
+    "activity-type": "Type Activiteit",
+    "route-type": "Type Route",
+    "difficulty-level": "Moeilijkheidsgraad",
+    "climb-category": "Klimcategorie",
+    "min-grade": "Min. Hellingsgraad",
+    "avg-grade": "Gem. Hellingsgraad",
+    "max-grade": "Max. Hellingsgraad",
+    "elevation-gain": "Hoogtewinst",
+    "distance": "Afstand",
+    "avg-completion-time": "Gem. Voltooiingstijd",
+    "tags": "Tags",
+    "tags-placeholder": "Een woord om de klim te beschrijven, bijv. 'gravel', 'geasfalteerd'. Scheid meerdere tags met een komma",
+    "upload-photos": "Foto's Uploaden",
+    "coordinates": "Coördinaten",
+    "start-latitude": "Start Breedtegraad",
+    "start-longitude": "Start Lengtegraad",
+    "end-latitude": "Eind Breedtegraad",
+    "end-longitude": "Eind Lengtegraad",
+    "cancel-button": "Annuleren",
+    "submit-button": "Indienen"
+  },
+  "activity-details-header-toast": {
+    "activity-added-to-bucket-list": "Activiteit aan je bucketlist toegevoegd",
+    "activity-removed-from-bucket-list": "Activiteit van je bucketlist verwijderd",
+    "activity-liked": "Activiteit leuk gevonden",
+    "activity-unliked": "Leuk vinden van activiteit ongedaan gemaakt",
+    "activity-completed": "Activiteit voltooid",
+    "activity-uncompleted": "Activiteit als onvoltooid gemarkeerd"
+  },
+  "activity-details-header-tooltip": {
+    "add-to-bucket-list": "Aan bucketlist toevoegen",
+    "remove-from-bucket-list": "Van bucketlist verwijderen",
+    "like-activity": "Activiteit leuk vinden",
+    "unlike-activity": "Leuk vinden ongedaan maken",
+    "complete-activity": "Activiteit als voltooid markeren",
+    "uncomplete-activity": "Activiteit als onvoltooid markeren"
+  },
+  "user-bucket-list-page": {
+    "title": "Bucketlist",
+    "no-activities": "Geen activiteiten in je bucketlist"
+  },
+  "user-liked-activities-page": {
+    "title": "Leuke Activiteiten",
+    "no-activities": "Geen leuke activiteiten"
+  },
+  "user-completed-activities-page": {
+    "title": "Voltooide Activiteiten",
+    "no-activities": "Geen voltooide activiteiten"
+  }
 }

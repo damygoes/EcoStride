@@ -8,7 +8,7 @@ type ActivityCardDetailProps = {
 
 function ActivityCardDetail({ icon, name, value }: ActivityCardDetailProps) {
   return (
-    <div className="inline-flex items-center gap-2 shrink-0">
+    <div className="inline-flex flex-wrap items-center gap-2 shrink-0">
       {icon}
 
       <div className="w-1/2 mt-1.5 md:mt-0 flex-1">

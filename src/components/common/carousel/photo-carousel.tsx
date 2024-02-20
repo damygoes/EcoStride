@@ -58,8 +58,8 @@ const PhotoCarousel = ({ images, carouselTitle }: PhotoCarouselProps) => {
       ref={ref}
     >
       <div className="relative p-4 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-3">
+        <div className="mx-auto lg:mx-0">
+          <div className="flex items-center justify-between flex-1 mb-3">
             <h2 className="mb-4 text-lg font-medium">
               {carouselTitle
                 ? carouselTitle

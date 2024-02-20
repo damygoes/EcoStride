@@ -14,9 +14,11 @@ import { getInitialFormData } from "@utils/user-profile-details/getInitialFormDa
 import { useUser } from "@utils/user/user-store";
 import { PickerOverlay } from "filestack-react";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FileStackConfig } from "../../../services/filestack/filestack-config";
 
 function UserProfile() {
+  const { t } = useTranslation();
   const { user, fetchUserDetails, updateUserDetails } = useUser();
   const { toast } = useToast();
   const queryClient = new QueryClient();
@@ -117,7 +119,7 @@ function UserProfile() {
             iconLeft={<IconCirclePlus />}
             onClick={() => setShowImageUploadPicker(true)}
           >
-            upload image
+            {t("user-profile-page.upload-photo")}
           </Button>
           {showImageUploadPicker && (
             <PickerOverlay
@@ -138,27 +140,27 @@ function UserProfile() {
         <div className="w-full grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center justify-start gap-5">
             <Label htmlFor="firstName" className="text-md min-w-36">
-              First Name
+              {t("user-profile-page.first-name")}
             </Label>
             <InputField
               className="pl-0 focus:pl-2"
               maskForm
               type="text"
-              placeholder="First Name"
+              placeholder={t("user-profile-page.first-name")}
               value={formData.firstName}
               onChange={handleChange}
               name="firstName"
             />
           </div>
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Last Name
+            <Label htmlFor="lastName" className="text-md min-w-36">
+              {t("user-profile-page.last-name")}
             </Label>
             <InputField
               className="pl-0 focus:pl-2"
               maskForm
               type="text"
-              placeholder="Last Name"
+              placeholder={t("user-profile-page.last-name")}
               value={formData.lastName}
               onChange={handleChange}
               name="lastName"
@@ -168,27 +170,27 @@ function UserProfile() {
         {/* Email Address and Bio */}
         <div className="w-full grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Email
+            <Label htmlFor="email" className="text-md min-w-36">
+              {t("user-profile-page.email")}
             </Label>
             <InputField
               className="pl-0 focus:pl-2"
               maskForm
               type="text"
-              placeholder="Email Name"
+              placeholder={t("user-profile-page.email")}
               value={formData.email}
               onChange={handleChange}
               name="email"
             />
           </div>
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Bio
+            <Label htmlFor="bio" className="text-md min-w-36">
+              {t("user-profile-page.bio")}
             </Label>
             <Textarea
               rows={1}
               maskTextArea
-              placeholder="Bio"
+              placeholder={t("user-profile-page.bio")}
               name="profile.bio"
               value={formData.profile.bio}
               onChange={handleChange}
@@ -199,29 +201,34 @@ function UserProfile() {
         {/* Ftp and Age */}
         <div className="w-full grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Ftp
+            <Label htmlFor="ftp" className="text-md min-w-36">
+              {t("user-profile-page.ftp")}
             </Label>
             <InputField
               className="pl-0 focus:pl-2"
               maskForm
               type="text"
-              placeholder={user?.profile?.ftp.toString() ?? "Ftp (watts)"}
+              placeholder={
+                user?.profile?.ftp.toString() ??
+                `${t("user-profile-page.ftp")} (watts)`
+              }
               value={formData.profile.ftp}
               onChange={handleChange}
               name="profile.ftp"
             />
           </div>
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Age
+            <Label htmlFor="age" className="text-md min-w-36">
+              {t("user-profile-page.age")}
             </Label>
 
             <InputField
               className="pl-0 focus:pl-2"
               maskForm
               type="text"
-              placeholder={user?.profile?.age.toString() ?? "Age"}
+              placeholder={
+                user?.profile?.age.toString() ?? `${t("user-profile-page.age")}`
+              }
               value={formData.profile.age}
               onChange={handleChange}
               name="profile.age"
@@ -231,15 +238,16 @@ function UserProfile() {
         {/* Body and Bike Weight */}
         <div className="w-full grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Body Weight
+            <Label htmlFor="bodyWeight" className="text-md min-w-36">
+              {t("user-profile-page.bodyWeight")}
             </Label>
             <InputField
               className="pl-0 focus:pl-2"
               maskForm
               type="text"
               placeholder={
-                user?.profile?.bodyWeight.toString() ?? "Body Weight (kg)"
+                user?.profile?.bodyWeight.toString() ??
+                `${t("user-profile-page.bodyWeight")} (kg)`
               }
               value={formData.profile.bodyWeight}
               onChange={handleChange}
@@ -247,8 +255,8 @@ function UserProfile() {
             />
           </div>
           <div className="flex items-center justify-start gap-5">
-            <Label htmlFor="firstName" className="text-md min-w-36">
-              Bike Weight
+            <Label htmlFor="bikeWeight" className="text-md min-w-36">
+              {t("user-profile-page.bikeWeight")}
             </Label>
 
             <InputField
@@ -256,7 +264,8 @@ function UserProfile() {
               maskForm
               type="text"
               placeholder={
-                user?.profile?.bikeWeight.toString() ?? "Bike Weight (kg)"
+                user?.profile?.bikeWeight.toString() ??
+                `${t("user-profile-page.bikeWeight")} (kg)`
               }
               value={formData.profile.bikeWeight}
               onChange={handleChange}
@@ -268,7 +277,7 @@ function UserProfile() {
         {/* Buttons */}
         <div className="flex items-center justify-end w-full mt-6 gap-x-6">
           <Button type="submit" variant="primary">
-            Save
+            {t("user-profile-page.button")}
           </Button>
         </div>
       </form>

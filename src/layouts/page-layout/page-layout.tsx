@@ -50,7 +50,7 @@ function PageLayout({
         "flex flex-col items-start justify-between w-full h-full gap-2 p-3 overflow-hidden bg-inherit md:flex-row md:px-4 md:py-3",
       )}
     >
-      <section className="w-full overflow-hidden h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:w-1/5">
+      <section className="w-full overflow-hidden h-1/6 md:flex md:flex-col md:justify-between md:items-start md:gap-3 md:h-full md:max-w-xs">
         <div className="w-full h-1/6">
           <PageHeader pageTitle={pageTitle} />
         </div>

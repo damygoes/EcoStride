@@ -3,24 +3,32 @@ import { cn } from "@lib/utils";
 import { ChangeEvent, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-function LocaleSwitch() {
+type LocaleSwitchProps = {
+  className?: string;
+};
+
+function LocaleSwitch({ className }: LocaleSwitchProps) {
   const { i18n } = useTranslation();
 
-  // Set default language to English on mount
   useEffect(() => {
-    i18n.changeLanguage("en");
+    const savedLang = localStorage.getItem("language");
+    if (savedLang) {
+      i18n.changeLanguage(savedLang);
+    } else {
+      i18n.changeLanguage("en");
+    }
   }, [i18n]);
 
   const switchLanguage = async (event: ChangeEvent<HTMLSelectElement>) => {
     const lang = event.target.value;
     try {
       await i18n.changeLanguage(lang);
+      localStorage.setItem("language", lang);
     } catch (error) {
-      console.error("The language is possibly invalid ", error);
+      console.error("Error changing language", error);
     }
   };
 
-  // Dynamically create options based on available languages in the resources
   const languageOptions = Object.keys(i18n.options.resources || {}).map(
     (lang) => (
       <option key={lang} value={lang}>
@@ -33,7 +41,9 @@ function LocaleSwitch() {
     <select
       value={i18n.language}
       onChange={switchLanguage}
-      className={cn(buttonVariants({ variant: "gradient", size: "sm" }))}
+      className={cn(
+        buttonVariants({ variant: "gradient", size: "sm", className }),
+      )}
     >
       {languageOptions}
     </select>

@@ -6,6 +6,7 @@ import { Activity } from "@type-definitions/Activity";
 import { useActivity } from "@utils/activity/activity-store";
 import { useUser } from "@utils/user/user-store";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 type ActivityDetailsHeaderAddToBucketListManagerProps = {
@@ -22,6 +23,7 @@ export type BucketListActivity = {
 function ActivityDetailsHeaderAddToBucketListManager({
   selectedActivity,
 }: ActivityDetailsHeaderAddToBucketListManagerProps) {
+  const { t } = useTranslation();
   const queryClient = new QueryClient();
   const { user, removeActivityFromBucketList } = useUser();
   const navigate = useNavigate();
@@ -74,8 +76,7 @@ function ActivityDetailsHeaderAddToBucketListManager({
         action: "addToBucketList",
       });
       toast({
-        title: "Activity added to your bucket list",
-        description: "You can view your bucket list in your profile",
+        title: `${t("activity-details-header-toast.activity-added-to-bucket-list")}`,
         variant: "success",
       });
     }
@@ -90,8 +91,7 @@ function ActivityDetailsHeaderAddToBucketListManager({
         userId: user?.id ?? "",
       });
       toast({
-        title: "Activity removed from your bucket list",
-        description: "You can view your bucket list in your profile",
+        title: `${t("activity-details-header-toast.activity-removed-from-bucket-list")}`,
         variant: "destructive",
       });
     }
@@ -100,7 +100,11 @@ function ActivityDetailsHeaderAddToBucketListManager({
   return (
     <>
       {hasUserMarkedActivityAsBucketList ? (
-        <Tooltip content="Remove from Bucket List" side="top" align="end">
+        <Tooltip
+          content={t("activity-details-header-tooltip.remove-from-bucket-list")}
+          side="top"
+          align="end"
+        >
           <IconPlaylistX
             className="cursor-pointer text-accent/80 hover:text-accent"
             onClick={handleRemoveFromBucketList}
@@ -109,7 +113,10 @@ function ActivityDetailsHeaderAddToBucketListManager({
           />
         </Tooltip>
       ) : (
-        <Tooltip content="Add to Bucket List" side="top">
+        <Tooltip
+          content={t("activity-details-header-tooltip.add-to-bucket-list")}
+          side="top"
+        >
           <IconPlaylistAdd
             className="cursor-pointer text-primary hover:text-primary/60"
             onClick={handleAddToBucketList}

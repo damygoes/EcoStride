@@ -93,7 +93,7 @@ function ActivityDetails() {
             <PointOfInterestList pois={pois ?? null} />
           </div>
         </div>
-        <div className="w-full lg:col-span-3 lg:row-start-3">
+        <div className="w-full">
           <PhotoCarousel images={Activity.photos || []} />
         </div>
         <div className="w-full lg:col-span-full">
