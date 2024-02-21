@@ -71,7 +71,8 @@
     "clear-filters": "Effacer les filtres"
   },
   "activities-page": {
-    "searchbar-placeholder": "Rechercher des activités..."
+    "searchbar-placeholder": "Rechercher des activités...",
+    "activities-not-found": "Aucune activité trouvée"
   },
   "activities-page-sidebar-cta": {
     "text": "Y a-t-il une activité que vous aimeriez voirici ?",
@@ -83,7 +84,8 @@
     "about": "À propos",
     "photos": "Photos",
     "comments": "Commentaires",
-    "no-comments": "Aucun commentaire"
+    "no-comments": "Aucun commentaire",
+    "no-photo": "Pas de photos"
   },
   "points-of-interest": {
     "title": "Points d'intérêt",
@@ -175,15 +177,21 @@
     "end-latitude": "Latitude d'arrivée",
     "end-longitude": "Longitude d'arrivée",
     "cancel-button": "Annuler",
-    "submit-button": "Soumettre"
+    "submit-button": "Soumettre",
+    "activity-created-toast": "Activité créée avec succès",
+    "activity-created-error-toast": "Erreur lors de la création de l'activité",
+    "activity-updated-toast": "Activité mise à jour avec succès",
+    "activity-updated-error-toast": "Erreur lors de la mise à jour de l'activité",
+    "uploading-activity": "Téléchargement de l'activité..."
   },
   "activity-details-header-toast": {
     "activity-added-to-bucket-list": "Activité ajoutée à votre liste de souhaits",
     "activity-removed-from-bucket-list": "Activité retirée de votre liste de souhaits",
-    "activity-liked": "Activité appréciée",
-    "activity-unliked": "Activité n'est plus appréciée",
-    "activity-completed": "Activité complétée",
-    "activity-uncompleted": "Activité marquée comme non complétée"
+    "activity-liked": "Activité ajoutée aux activités aimées",
+    "activity-unliked": "Activité retirée des activités aimées",
+    "activity-completed": "Activité ajoutée aux activités terminées",
+    "activity-uncompleted": "Activité retirée des activités terminées",
+    "error-toast": "Un problème est survenu. Veuillez réessayer plus tard."
   },
   "activity-details-header-tooltip": {
     "add-to-bucket-list": "Ajouter à la liste de souhaits",
@@ -204,5 +212,18 @@
   "user-completed-activities-page": {
     "title": "Activités complétées",
     "no-activities": "Aucune activité complétée"
+  },
+  "activity-card-actions-tooltip": {
+    "delete-activity": "Supprimer l'activité",
+    "edit-activity": "Modifier l'activité",
+    "remove-from-list": "Retirer de la liste"
+  },
+  "activity-delete-modal": {
+    "description": "Êtes-vous sûr de vouloir supprimer cette activité ?",
+    "cancel-button": "Non, annuler",
+    "delete-button": "Oui, supprimer",
+    "deleting-activity": "Suppression de l'activité...",
+    "activity-deleted-toast": "Activité supprimée avec succès",
+    "activity-deleted-error-toast": "Erreur lors de la suppression de l'activité"
   }
 }

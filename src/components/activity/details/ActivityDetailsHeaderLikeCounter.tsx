@@ -47,6 +47,16 @@ function ActivityDetailsHeaderLikeCounter({
     mutationFn: effectUserActionOnActivity,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["likedActivities"] });
+      toast({
+        title: `${t("activity-details-header-toast.activity-liked")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
 
@@ -54,6 +64,16 @@ function ActivityDetailsHeaderLikeCounter({
     mutationFn: removeActivityFromLikedList,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["likedActivities"] });
+      toast({
+        title: `${t("activity-details-header-toast.activity-unliked")}`,
+        variant: "destructive",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
 
@@ -70,10 +90,6 @@ function ActivityDetailsHeaderLikeCounter({
         action: "like",
       });
     }
-    toast({
-      title: `${t("activity-details-header-toast.activity-liked")}`,
-      variant: "success",
-    });
   };
 
   const handleUnlikeActivity = async () => {
@@ -84,10 +100,6 @@ function ActivityDetailsHeaderLikeCounter({
       await removeActivityFromUsersLikedList({
         activitySlug: slug,
         userId,
-      });
-      toast({
-        title: `${t("activity-details-header-toast.activity-unliked")}`,
-        variant: "destructive",
       });
     }
   };
@@ -109,7 +121,7 @@ function ActivityDetailsHeaderLikeCounter({
           align="center"
         >
           <IconThumbUpFilled
-            className="cursor-pointer text-accent/80 hover:text-accent"
+            className="cursor-pointer text-accent/70 hover:text-accent"
             onClick={handleUnlikeActivity}
             size={28}
           />
@@ -121,7 +133,7 @@ function ActivityDetailsHeaderLikeCounter({
           align="end"
         >
           <IconThumbUp
-            className="cursor-pointer text-primary hover:text-primary/60"
+            className="cursor-pointer text-primary/70 hover:text-primary"
             onClick={handleLikeActivity}
             size={28}
           />

@@ -78,7 +78,7 @@ function ActivitiesPage() {
           </div>
           <ClimbViewSelector />
         </header>
-        <section className="w-full h-full px-5 py-3 overflow-x-hidden overflow-y-auto md:flex-1 scrollbar-hide">
+        <section className="w-full h-full px-5 py-3 overflow-x-hidden overflow-y-auto md:flex-1 scrollbar-hide scroll-smooth">
           {isError ? (
             <ErrorFallback
               withAction

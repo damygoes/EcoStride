@@ -134,7 +134,7 @@ const EcoStrideMap: React.FC<EcoStrideMapProps> = ({
         position={[endCoordinates.latitude, endCoordinates.longitude]}
         icon={endIcon}
       />
-      {route.length > 0 && <Polyline positions={route} color="#3CB33C" />}
+      {route.length > 0 && <Polyline positions={route} color="#FF8C00" />}
     </MapContainer>
   );
 };

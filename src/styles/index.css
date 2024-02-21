@@ -5,7 +5,7 @@
 :root {
   --primary: 60, 179, 60; /* #3CB33C */
   --secondary: 135, 206, 235; /* #87CEEB */
-  --accent: 72, 209, 204; /* #48D1CC */
+  --accent: 255, 140, 0; /* #FF8C00 */
   --background: 245, 245, 245; /* #F5F5F5 */
   --white: 255, 255, 255; /* #FFFFFF */
   --text-color: 47, 79, 79; /* #2F4F4F */

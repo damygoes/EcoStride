@@ -7,6 +7,7 @@ import { useActivityActions } from "@utils/activity/activity-actions-store";
 import { useActivityCard } from "@utils/activity/activity-card-store";
 import { useActivityForm } from "@utils/activity/activity-form-store";
 import { useUser } from "@utils/user/user-store";
+import { useTranslation } from "react-i18next";
 
 type ActivityCardActionsProps = {
   activity: Activity;
@@ -14,6 +15,7 @@ type ActivityCardActionsProps = {
 
 function ActivityCardActions({ activity }: ActivityCardActionsProps) {
   const queryClient = new QueryClient();
+  const { t } = useTranslation();
   const { cardType, activityCardPageContext } = useActivityCard();
   const {
     user,
@@ -30,18 +32,48 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
     mutationFn: removeActivityFromCompletedList,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["completedActivities"] });
+      toast({
+        title: `${t("activity-details-header-toast.activity-uncompleted")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
   const { mutateAsync: removeActivityFromUsersLikedList } = useMutation({
     mutationFn: removeActivityFromLikedList,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["likedActivities"] });
+      toast({
+        title: `${t("activity-details-header-toast.activity-unliked")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
   const { mutateAsync: removeActivityFromUsersBucketList } = useMutation({
     mutationFn: removeActivityFromBucketList,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["bucketListActivities"] });
+      toast({
+        title: `${t("activity-details-header-toast.activity-removed-from-bucket-list")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
 
@@ -76,19 +108,11 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
           activitySlug: slug,
           userId,
         });
-        toast({
-          title: "Activity removed from completed list",
-          variant: "success",
-        });
         break;
       case "likedActivities":
         await removeActivityFromUsersLikedList({
           activitySlug: slug,
           userId,
-        });
-        toast({
-          title: "Activity removed from liked list",
-          variant: "success",
         });
         break;
       case "bucketList":
@@ -96,16 +120,11 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
           activitySlug: slug,
           userId,
         });
-        toast({
-          title: "Activity removed from bucket list",
-          variant: "success",
-        });
         break;
       default:
         console.error("Unknown page context");
         toast({
-          title: "Error",
-          description: "Something went wrong",
+          title: `${t("activity-details-header-toast.error-toast")}`,
           variant: "destructive",
         });
     }
@@ -115,7 +134,11 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
     <div className="absolute top-0 left-0 z-10 items-center justify-end hidden gap-3 px-3 py-1 group-hover:flex text-text-color rounded-ee-xl bg-background">
       {cardType === "activity" ? (
         <>
-          <Tooltip content="Edit Activity" side="top" align="start">
+          <Tooltip
+            content={`${t("activity-card-actions-tooltip.edit-activity")}`}
+            side="top"
+            align="start"
+          >
             <IconEdit
               size={20}
               stroke={1}
@@ -123,7 +146,11 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
               onClick={(event) => handleEditActivity(event)}
             />
           </Tooltip>
-          <Tooltip content="Delete Activity" side="top" align="start">
+          <Tooltip
+            content={`${t("activity-card-actions-tooltip.delete-activity")}`}
+            side="top"
+            align="start"
+          >
             <IconTrashXFilled
               size={20}
               stroke={1}
@@ -133,7 +160,10 @@ function ActivityCardActions({ activity }: ActivityCardActionsProps) {
           </Tooltip>
         </>
       ) : (
-        <Tooltip content="Remove from list" side="right">
+        <Tooltip
+          content={`${t("activity-card-actions-tooltip.remove-from-list")}`}
+          side="right"
+        >
           <IconTrashX
             size={20}
             stroke={1}

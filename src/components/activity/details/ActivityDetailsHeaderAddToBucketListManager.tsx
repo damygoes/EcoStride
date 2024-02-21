@@ -56,6 +56,16 @@ function ActivityDetailsHeaderAddToBucketListManager({
     mutationFn: effectUserActionOnActivity,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["bucketListActivities"] });
+      toast({
+        title: `${t("activity-details-header-toast.activity-added-to-bucket-list")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
   const { mutateAsync: removeActivityFromUsersBucketList } = useMutation({
@@ -63,6 +73,16 @@ function ActivityDetailsHeaderAddToBucketListManager({
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["bucketListActivities"],
+      });
+      toast({
+        title: `${t("activity-details-header-toast.activity-removed-from-bucket-list")}`,
+        variant: "destructive",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-details-header-toast.error-toast")}`,
+        variant: "destructive",
       });
     },
   });
@@ -75,10 +95,6 @@ function ActivityDetailsHeaderAddToBucketListManager({
         activitySlug: selectedActivity.slug,
         action: "addToBucketList",
       });
-      toast({
-        title: `${t("activity-details-header-toast.activity-added-to-bucket-list")}`,
-        variant: "success",
-      });
     }
   };
 
@@ -89,10 +105,6 @@ function ActivityDetailsHeaderAddToBucketListManager({
       await removeActivityFromUsersBucketList({
         activitySlug: selectedActivity.slug,
         userId: user?.id ?? "",
-      });
-      toast({
-        title: `${t("activity-details-header-toast.activity-removed-from-bucket-list")}`,
-        variant: "destructive",
       });
     }
   };
@@ -106,7 +118,7 @@ function ActivityDetailsHeaderAddToBucketListManager({
           align="end"
         >
           <IconPlaylistX
-            className="cursor-pointer text-accent/80 hover:text-accent"
+            className="cursor-pointer text-accent/70 hover:text-accent"
             onClick={handleRemoveFromBucketList}
             stroke={2}
             size={34}
@@ -118,7 +130,7 @@ function ActivityDetailsHeaderAddToBucketListManager({
           side="top"
         >
           <IconPlaylistAdd
-            className="cursor-pointer text-primary hover:text-primary/60"
+            className="cursor-pointer text-primary/70 hover:text-primary"
             onClick={handleAddToBucketList}
             stroke={2}
             size={34}

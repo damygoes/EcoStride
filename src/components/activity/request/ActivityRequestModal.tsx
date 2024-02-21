@@ -19,7 +19,7 @@ function ActivityRequestModal() {
       isOpen={isActivityRequestModalOpen}
       setIsOpen={() => setIsActivityRequestModalOpen(false)}
       shouldCloseOnOutsideClick={false}
-      className="relative max-w-7xl scrollbar-hide"
+      className="relative max-w-7xl scrollbar-hide bg-gradient-to-br from-white/80 via-secondary/90 to-secondary"
     >
       <IconCircleX
         className="absolute transition-colors cursor-pointer top-3 right-3 text-text-color/70 hover:text-text-color"

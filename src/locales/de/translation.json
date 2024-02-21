@@ -71,7 +71,8 @@
     "clear-filters": "Filter löschen"
   },
   "activities-page": {
-    "searchbar-placeholder": "Aktivitäten suchen..."
+    "searchbar-placeholder": "Aktivitäten suchen...",
+    "activities-not-found": "Keine Aktivitäten gefunden"
   },
   "activities-page-sidebar-cta": {
     "text": "Gibt es eine Aktivität, die Sie hier gerne sehen würden?",
@@ -83,7 +84,8 @@
     "about": "Über",
     "photos": "Fotos",
     "comments": "Kommentare",
-    "no-comments": "Keine Kommentare"
+    "no-comments": "Keine Kommentare",
+    "no-photo": "Keine Fotos"
   },
   "points-of-interest": {
     "title": "Sehenswürdigkeiten",
@@ -175,15 +177,21 @@
     "end-latitude": "Endbreite",
     "end-longitude": "Endlänge",
     "cancel-button": "Abbrechen",
-    "submit-button": "Einreichen"
+    "submit-button": "Einreichen",
+    "activity-created-toast": "Aktivität erfolgreich erstellt",
+    "activity-created-error-toast": "Fehler beim Erstellen der Aktivität",
+    "activity-updated-toast": "Aktivität erfolgreich aktualisiert",
+    "activity-updated-error-toast": "Fehler bei der Aktualisierung der Aktivität",
+    "uploading-activity": "Aktivität wird hochgeladen..."
   },
   "activity-details-header-toast": {
-    "activity-added-to-bucket-list": "Aktivität zu Ihrer Bucket-Liste hinzugefügt",
-    "activity-removed-from-bucket-list": "Aktivität von Ihrer Bucket-Liste entfernt",
-    "activity-liked": "Aktivität gefällt",
-    "activity-unliked": "Gefällt mir nicht mehr bei Aktivität",
-    "activity-completed": "Aktivität abgeschlossen",
-    "activity-uncompleted": "Aktivität als unvollendet markiert"
+    "activity-added-to-bucket-list": "Aktivität zu Ihrer Bucket-List hinzugefügt",
+    "activity-removed-from-bucket-list": "Aktivität von Ihrer Bucket-List entfernt",
+    "activity-liked": "Aktivität zu den gemochten Aktivitäten hinzugefügt",
+    "activity-unliked": "Aktivität aus den gemochten Aktivitäten entfernt",
+    "activity-completed": "Aktivität zu den abgeschlossenen Aktivitäten hinzugefügt",
+    "activity-uncompleted": "Aktivität aus den abgeschlossenen Aktivitäten entfernt",
+    "error-toast": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später noch einmal."
   },
   "activity-details-header-tooltip": {
     "add-to-bucket-list": "Zur Bucket-Liste hinzufügen",
@@ -204,5 +212,18 @@
   "user-completed-activities-page": {
     "title": "Abgeschlossene Aktivitäten",
     "no-activities": "Keine abgeschlossenen Aktivitäten"
+  },
+  "activity-card-actions-tooltip": {
+    "delete-activity": "Aktivität löschen",
+    "edit-activity": "Aktivität bearbeiten",
+    "remove-from-list": "Von der Liste entfernen"
+  },
+  "activity-delete-modal": {
+    "description": "Sind Sie sicher, dass Sie diese Aktivität löschen möchten?",
+    "cancel-button": "Nein, abbrechen",
+    "delete-button": "Ja, löschen",
+    "deleting-activity": "Aktivität wird gelöscht...",
+    "activity-deleted-toast": "Aktivität erfolgreich gelöscht",
+    "activity-deleted-error-toast": "Fehler beim Löschen der Aktivität"
   }
 }

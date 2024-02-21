@@ -1,3 +1,5 @@
+import { Button } from "@components/ui/button/button";
+import { IconLoaderQuarter } from "@tabler/icons-react";
 import { POIApiResponse } from "@type-definitions/PointOfInterest";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,11 +19,16 @@ function PointOfInterestList({ pois }: PointOfInterestListProps) {
       <h5 className="px-4 py-2 text-lg font-medium text-text-color">
         {t("points-of-interest.title")}
       </h5>
-      <div className="flex flex-col items-start justify-start w-full h-[95%] gap-4 p-4 overflow-x-hidden overflow-y-auto scrollbar-hide">
+      <div className="flex flex-col items-start justify-start w-full h-[95%] gap-4 p-4 overflow-x-hidden overflow-y-auto scrollbar-hide scroll-smooth">
         {POIFeatures.length === 0 && (
-          <p className="text-sm font-light text-text-color">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-xs font-light text-text-color text-pretty"
+            iconLeft={<IconLoaderQuarter className="animate-spin" />}
+          >
             {t("points-of-interest.searching")}
-          </p>
+          </Button>
         )}
         {POIFeatures.map((feature, index) => {
           return <PointOfInterestItem key={index} feature={feature} />;

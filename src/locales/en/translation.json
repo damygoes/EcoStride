@@ -71,7 +71,8 @@
     "clear-filters": "Clear Filters"
   },
   "activities-page": {
-    "searchbar-placeholder": "Search activities..."
+    "searchbar-placeholder": "Search activities...",
+    "activities-not-found": "No activities found"
   },
   "activities-page-sidebar-cta": {
     "text": "Is there an activity you'd like to see here?",
@@ -83,7 +84,8 @@
     "about": "About",
     "photos": "Photos",
     "comments": "Comments",
-    "no-comments": "No comments"
+    "no-comments": "No comments",
+    "no-photo": "No photos"
   },
   "points-of-interest": {
     "title": "Points of Interest",
@@ -165,7 +167,7 @@
     "max-grade": "Max. Gradient",
     "elevation-gain": "Elevation",
     "distance": "Distance",
-    "avg-completion-time": "Avg. Completion Time",
+    "avg-completion-time": "Completion Time",
     "tags": "Tags",
     "tags-placeholder": "One word to describe the climb e.g 'gravel', 'paved'. Separate multiple tags with a comma",
     "upload-photos": "Upload Photos",
@@ -175,15 +177,21 @@
     "end-latitude": "End Latitude",
     "end-longitude": "End Longitude",
     "cancel-button": "Cancel",
-    "submit-button": "Submit"
+    "submit-button": "Submit",
+    "uploading-activity": "Uploading activity...",
+    "activity-created-toast": "Activity created successfully",
+    "activity-created-error-toast": "Error creating activity",
+    "activity-updated-toast": "Activity updated successfully",
+    "activity-updated-error-toast": "Error updating activity"
   },
   "activity-details-header-toast": {
     "activity-added-to-bucket-list": "Activity added to your bucket list",
     "activity-removed-from-bucket-list": "Activity removed from your bucket list",
-    "activity-liked": "Activity liked",
-    "activity-unliked": "Activity unliked",
-    "activity-completed": "Activity completed",
-    "activity-uncompleted": "Activity uncompleted"
+    "activity-liked": "Activity added to liked activities",
+    "activity-unliked": "Activity removed from liked activities",
+    "activity-completed": "Activity added to completed activities",
+    "activity-uncompleted": "Activity removed from completed activities",
+    "error-toast": "Something went wrong. Please try again later."
   },
   "activity-details-header-tooltip": {
     "add-to-bucket-list": "Add to bucket list",
@@ -204,5 +212,18 @@
   "user-completed-activities-page": {
     "title": "Completed Activities",
     "no-activities": "No completed activities"
+  },
+  "activity-card-actions-tooltip": {
+    "delete-activity": "Delete activity",
+    "edit-activity": "Edit activity",
+    "remove-from-list": "Remove from list"
+  },
+  "activity-delete-modal": {
+    "description": "Are you sure you want to delete this activity?",
+    "cancel-button": "No, cancel",
+    "delete-button": "Yes, delete",
+    "deleting-activity": "Deleting activity...",
+    "activity-deleted-toast": "Activity deleted successfully",
+    "activity-deleted-error-toast": "Error deleting activity"
   }
 }

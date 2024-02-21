@@ -33,13 +33,13 @@ const TooltipContent = React.forwardRef<
       side={side}
       sideOffset={sideOffset}
       className={cn(
-        "min-w-[9.5625rem] max-w-xs shrink-0 z-50 overflow-y-auto whitespace-normal break-words rounded border-none bg-primary px-3 py-1.5 text-center text-md shadow-sm text-text-color/80 fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        "min-w-[9.5625rem] max-w-xs shrink-0 z-50 overflow-y-auto whitespace-normal break-words rounded border-none bg-secondary px-3 py-1.5 text-center text-md shadow-sm text-white fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
         className,
       )}
       {...props}
     >
       {children}
-      <TooltipArrow className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 shrink-0 fill-primary" />
+      <TooltipArrow className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 shrink-0 fill-secondary" />
     </TooltipPrimitive.Content>
   ),
 );

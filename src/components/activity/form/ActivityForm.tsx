@@ -6,6 +6,7 @@ import DifficultyLevelSelect from "@components/common/difficulty-level-select/di
 import RouteTypeSelect from "@components/common/route-type-select/route-type-select";
 import StateSelect from "@components/common/state-select/state-select";
 import TipTapRichTextEditor from "@components/common/tiptap-rich-text-editor/tiptap-rich-text-editor";
+import { useToast } from "@components/common/toast/use-toast";
 import { Button } from "@components/ui/button/button";
 import {
   Form,
@@ -38,6 +39,7 @@ import { default as ActivityFormSection } from "./ActivityFormSection";
 const ActivityForm = () => {
   const queryClient = new QueryClient();
   const { t } = useTranslation();
+  const { toast } = useToast();
   const { setIsActivityRequestModalOpen } = useActivityActions();
   const { existingActivity, resetExistingActivity } = useActivityForm();
   const { createActivity, updateActivity } = useActivity();
@@ -58,6 +60,8 @@ const ActivityForm = () => {
   const [richTextDescription, setRichTextDescription] = useState<string>(
     existingActivity?.description ?? "",
   );
+
+  console.log("existingActivity", existingActivity);
 
   const form = useForm<ActivityFormType>({
     resolver: zodResolver(ActivityFormSchema),
@@ -113,12 +117,32 @@ const ActivityForm = () => {
     mutationFn: createActivity,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["activities"] });
+      toast({
+        title: `${t("activity-form.activity-created-toast")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-form.activity-created-error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
   const { mutateAsync: updateActivityMutation } = useMutation({
     mutationFn: updateActivity,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["activities"] });
+      toast({
+        title: `${t("activity-form.activity-updated-toast")}`,
+        variant: "success",
+      });
+    },
+    onError: () => {
+      toast({
+        title: `${t("activity-form.activity-updated-error-toast")}`,
+        variant: "destructive",
+      });
     },
   });
 
@@ -128,7 +152,7 @@ const ActivityForm = () => {
     const tagsArray = tagsInput.split(",").map((tag) => tag.trim());
 
     // Create a new form submission object with tagsArray
-    const transformedForm = {
+    let transformedForm = {
       ...data,
       distance: parseFloat(data.distance),
       elevationGain: parseFloat(data.elevationGain),
@@ -146,6 +170,13 @@ const ActivityForm = () => {
       },
       tags: tagsArray,
     };
+
+    // Conditionally remove climbCategory if not applicable
+    if (!(activityType === "Bike" && routeType === "Hilly")) {
+      const { climbCategory, ...rest } = transformedForm; // Destructure to remove climbCategory
+      transformedForm = rest;
+      console.log("removedClimbCategory", climbCategory);
+    }
 
     const transformedActivityUpdateForm = {
       ...transformedForm,
@@ -677,7 +708,6 @@ const ActivityForm = () => {
               />
             </FormGroup>
           </ActivityFormSection>
-
           {/* Media Section */}
           <ActivityFormSection className="border-none">
             {showImageUploadPicker && (
@@ -719,16 +749,15 @@ const ActivityForm = () => {
               </div>
             )}
           </ActivityFormSection>
-        </div>
-
-        {/* Buttons */}
-        <div className="flex items-center justify-end w-full mt-6 gap-x-6">
-          <Button type="button" variant="outline" onClick={handleClose}>
-            {t("activity-form.cancel-button")}
-          </Button>
-          <Button type="submit" variant="primary">
-            {t("activity-form.submit-button")}
-          </Button>
+          {/* Buttons */}
+          <div className="flex items-center justify-end w-full mt-6 gap-x-6 lg:col-span-full">
+            <Button type="button" variant="outline" onClick={handleClose}>
+              {t("activity-form.cancel-button")}
+            </Button>
+            <Button type="submit" variant="primary">
+              {t("activity-form.submit-button")}
+            </Button>
+          </div>
         </div>
       </form>
     </Form>

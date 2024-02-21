@@ -1,4 +1,3 @@
-import defaultImage from "@assets/dslr-camera.svg";
 import { Button } from "@components/ui/button/button";
 import { cn } from "@lib/utils";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
@@ -6,6 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import useMeasure from "react-use-measure";
+import CarouselImageCard from "./carousel-image-card";
 
 type PhotoCarouselProps = {
   images: string[];
@@ -65,30 +65,32 @@ const PhotoCarousel = ({ images, carouselTitle }: PhotoCarouselProps) => {
                 ? carouselTitle
                 : t("activity-details-page.photos")}
             </h2>
-            <div className="flex items-center gap-2">
-              <Button
-                size="icon"
-                variant="outline"
-                className={cn("opacity-30", {
-                  "": CAN_SHIFT_LEFT,
-                })}
-                disabled={!CAN_SHIFT_LEFT}
-                onClick={shiftLeft}
-              >
-                <IconChevronLeft />
-              </Button>
-              <Button
-                size="icon"
-                variant="outline"
-                className={cn("opacity-30", {
-                  "": CAN_SHIFT_RIGHT,
-                })}
-                disabled={!CAN_SHIFT_RIGHT}
-                onClick={shiftRight}
-              >
-                <IconChevronRight />
-              </Button>
-            </div>
+            {images.length > 1 && (
+              <div className="flex items-center gap-2">
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className={cn("opacity-30", {
+                    "": CAN_SHIFT_LEFT,
+                  })}
+                  disabled={!CAN_SHIFT_LEFT}
+                  onClick={shiftLeft}
+                >
+                  <IconChevronLeft />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className={cn("opacity-30", {
+                    "": CAN_SHIFT_RIGHT,
+                  })}
+                  disabled={!CAN_SHIFT_RIGHT}
+                  onClick={shiftRight}
+                >
+                  <IconChevronRight />
+                </Button>
+              </div>
+            )}
           </div>
           <motion.div
             animate={{
@@ -99,36 +101,23 @@ const PhotoCarousel = ({ images, carouselTitle }: PhotoCarouselProps) => {
             }}
             className="flex"
           >
+            {images.length === 0 && (
+              <p> {t("activity-details-page.no-photo")} </p>
+            )}
             {images.map((image, index) => {
-              return <ImageCard key={index} imageSrc={image} />;
+              return (
+                <CarouselImageCard
+                  key={index}
+                  imageSrc={image}
+                  width={CARD_WIDTH}
+                  marginRight={MARGIN}
+                />
+              );
             })}
           </motion.div>
         </div>
       </div>
     </section>
-  );
-};
-
-const ImageCard = ({ imageSrc }: { imageSrc: string }) => {
-  return (
-    <div
-      className="relative transition-transform cursor-pointer shrink-0 hover:-translate-y-1"
-      style={{
-        width: CARD_WIDTH,
-        marginRight: MARGIN,
-      }}
-    >
-      <img
-        alt="photo"
-        src={imageSrc}
-        onError={(e) => {
-          const target = e.target as HTMLImageElement; // assert the target as an HTMLImageElement
-          target.onerror = null; // prevents looping
-          target.src = defaultImage; // set the default image
-        }}
-        className="mb-3 h-[350px] w-full rounded-lg object-cover"
-      />
-    </div>
   );
 };
 

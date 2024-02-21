@@ -83,13 +83,13 @@ function ActivityDetails() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between w-full gap-2 lg:gap-4 lg:flex-row">
-          <div className="w-full h-full lg:flex-1">
+          <div className="w-full h-full lg:flex-1 lg:max-h-[28rem] overflow-x-hidden overflow-y-auto scrollbar-hide scroll-smooth">
             <ActivityDetailsSection
               title={t("activity-details-page.about")}
               content={Activity.description}
             />
           </div>
-          <div className="w-full lg:w-1/4 overflow-hidden h-[27.5rem] bg-background max-h-[32rem]">
+          <div className="w-full lg:w-1/4 overflow-hidden h-[27.5rem] max-h-[32rem] bg-background">
             <PointOfInterestList pois={pois ?? null} />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import defaultImage from "@assets/mountain-elevation.svg";
+import { Tooltip } from "@components/common/tooltip/tooltip";
 import { cn } from "@lib/utils";
 import { Activity } from "@type-definitions/Activity";
 import { getActivityCardBadgeInfo } from "@utils/activity/get-activity-card-badge-info";
@@ -41,12 +42,18 @@ function ActivityCardHorizontalFormat({
 
       <div className="flex items-center justify-start w-full h-full gap-6">
         <div className="flex items-center justify-start p-2 truncate 2xl:flex-1 w-52 line-clamp-1">
-          <h4>{activity.name}</h4>
+          <Tooltip content={activity.name}>
+            <h4>{activity.name}</h4>
+          </Tooltip>
         </div>
         <div className="flex items-center justify-start p-2 truncate 2xl:flex-1 w-52 line-clamp-1">
-          <p>
-            {`${activity.address.city}, ${activity.address.state}, ${activity.address.country}`}
-          </p>
+          <Tooltip
+            content={`${activity.address.city}, ${activity.address.state}, ${activity.address.country}`}
+          >
+            <p>
+              {`${activity.address.city}, ${activity.address.state}, ${activity.address.country}`}
+            </p>
+          </Tooltip>
         </div>
         <div className="flex items-center justify-start flex-none p-2 truncate w-28 shrink-0 2xl:flex-1 line-clamp-1">
           <span

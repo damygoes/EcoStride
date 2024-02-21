@@ -35,7 +35,7 @@ function SpringModal({
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
             className={cn(
-              "relative w-full h-full max-w-2xl p-4 overflow-x-hidden overflow-y-auto text-white rounded-lg shadow-xl cursor-default bg-secondary",
+              "relative w-full h-full max-w-2xl p-4 overflow-x-hidden overflow-y-auto text-white rounded-lg shadow-xl cursor-default",
               className,
             )}
           >

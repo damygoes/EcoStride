@@ -33,7 +33,7 @@ function ActivityCard({
   return (
     <Link
       to={`/${basePath}/${activity.slug}`}
-      className="group relative block h-[22rem] w-96 max-w-sm overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
+      className="group relative block h-[22rem] w-72 max-w-sm overflow-hidden rounded-lg shadow-sm text-text-color shadow-accent/30 md:max-w-xs"
     >
       {isUserAdmin && currentUrl === "activities" && (
         <ActivityCardActions activity={activity} />

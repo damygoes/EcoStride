@@ -51,11 +51,21 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
 
   const hasUserMarkedActivityAsRidden = markedAsRidden();
 
-  const { mutateAsync: addActivityToUsersCompletedActivitiestListMutation } =
+  const { mutateAsync: addActivityToUsersCompletedActivitiesListMutation } =
     useMutation({
       mutationFn: effectUserActionOnActivity,
       onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ["completedActivities"] });
+        toast({
+          title: `${t("activity-details-header-toast.activity-completed")}`,
+          variant: "success",
+        });
+      },
+      onError: () => {
+        toast({
+          title: `${t("activity-details-header-toast.error-toast")}`,
+          variant: "destructive",
+        });
       },
     });
   const { mutateAsync: removeActivityFromUsersCompletedActivitiesList } =
@@ -65,6 +75,16 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
         queryClient.invalidateQueries({
           queryKey: ["completedActivities"],
         });
+        toast({
+          title: `${t("activity-details-header-toast.activity-uncompleted")}`,
+          variant: "destructive",
+        });
+      },
+      onError: () => {
+        toast({
+          title: `${t("activity-details-header-toast.error-toast")}`,
+          variant: "destructive",
+        });
       },
     });
 
@@ -72,13 +92,9 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
     if (user === null) {
       navigate("/login", { state: { from: currentURL }, replace: true });
     } else {
-      await addActivityToUsersCompletedActivitiestListMutation({
+      await addActivityToUsersCompletedActivitiesListMutation({
         activitySlug: selectedActivity.slug,
         action: "alreadyCompleted",
-      });
-      toast({
-        title: `${t("activity-details-header-toast.activity-completed")}`,
-        variant: "success",
       });
     }
   };
@@ -90,10 +106,6 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
       await removeActivityFromUsersCompletedActivitiesList({
         activitySlug: selectedActivity.slug,
         userId: user?.id ?? "",
-      });
-      toast({
-        title: `${t("activity-details-header-toast.activity-uncompleted")}`,
-        variant: "destructive",
       });
     }
   };
@@ -107,7 +119,7 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
           align="end"
         >
           <IconCircleCheckFilled
-            className="cursor-pointer text-accent/80 hover:text-accent"
+            className="cursor-pointer text-accent/70 hover:text-accent"
             onClick={handleUnMarkAsRidden}
             stroke={2}
             size={26}
@@ -120,7 +132,7 @@ function ActivityDetailsHeaderMarkAsRiddenIconManager({
           align="end"
         >
           <IconCircleCheck
-            className="cursor-pointer text-primary hover:text-primary/60"
+            className="cursor-pointer text-primary/70 hover:text-primary"
             onClick={handleMarkAsRidden}
             stroke={2}
             size={26}

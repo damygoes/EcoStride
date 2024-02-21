@@ -71,7 +71,8 @@
     "clear-filters": "Filters Wissen"
   },
   "activities-page": {
-    "searchbar-placeholder": "Zoek activiteiten..."
+    "searchbar-placeholder": "Zoek activiteiten...",
+    "activities-not-found": "Geen activiteiten gevonden"
   },
   "activities-page-sidebar-cta": {
     "text": "Is er een activiteit die je hier graag zou willen zien?",
@@ -83,7 +84,8 @@
     "about": "Over",
     "photos": "Foto's",
     "comments": "Reacties",
-    "no-comments": "Geen reacties"
+    "no-comments": "Geen reacties",
+    "no-photo": "Geen foto's"
   },
   "points-of-interest": {
     "title": "Bezienswaardigheden",
@@ -175,15 +177,21 @@
     "end-latitude": "Eind Breedtegraad",
     "end-longitude": "Eind Lengtegraad",
     "cancel-button": "Annuleren",
-    "submit-button": "Indienen"
+    "submit-button": "Indienen",
+    "activity-created-toast": "Activiteit succesvol aangemaakt",
+    "activity-created-error-toast": "Fout bij het aanmaken van de activiteit",
+    "activity-updated-toast": "Activiteit succesvol bijgewerkt",
+    "activity-updated-error-toast": "Fout bij het bijwerken van de activiteit",
+    "uploading-activity": "Activiteit wordt geüpload..."
   },
   "activity-details-header-toast": {
-    "activity-added-to-bucket-list": "Activiteit aan je bucketlist toegevoegd",
-    "activity-removed-from-bucket-list": "Activiteit van je bucketlist verwijderd",
-    "activity-liked": "Activiteit leuk gevonden",
-    "activity-unliked": "Leuk vinden van activiteit ongedaan gemaakt",
-    "activity-completed": "Activiteit voltooid",
-    "activity-uncompleted": "Activiteit als onvoltooid gemarkeerd"
+    "activity-added-to-bucket-list": "Activiteit toegevoegd aan uw bucketlist",
+    "activity-removed-from-bucket-list": "Activiteit verwijderd uit uw bucketlist",
+    "activity-liked": "Activiteit toegevoegd aan gelikete activiteiten",
+    "activity-unliked": "Activiteit verwijderd uit gelikete activiteiten",
+    "activity-completed": "Activiteit toegevoegd aan voltooide activiteiten",
+    "activity-uncompleted": "Activiteit verwijderd uit voltooide activiteiten",
+    "error-toast": "Er is iets fout gegaan. Probeer het later opnieuw."
   },
   "activity-details-header-tooltip": {
     "add-to-bucket-list": "Aan bucketlist toevoegen",
@@ -204,5 +212,18 @@
   "user-completed-activities-page": {
     "title": "Voltooide Activiteiten",
     "no-activities": "Geen voltooide activiteiten"
+  },
+  "activity-card-actions-tooltip": {
+    "delete-activity": "Activiteit verwijderen",
+    "edit-activity": "Activiteit bewerken",
+    "remove-from-list": "Verwijderen uit lijst"
+  },
+  "activity-delete-modal": {
+    "description": "Weet u zeker dat u deze activiteit wilt verwijderen?",
+    "cancel-button": "Nee, annuleren",
+    "delete-button": "Ja, verwijderen",
+    "deleting-activity": "Activiteit wordt verwijderd...",
+    "activity-deleted-toast": "Activiteit succesvol verwijderd",
+    "activity-deleted-error-toast": "Fout bij het verwijderen van de activiteit"
   }
 }

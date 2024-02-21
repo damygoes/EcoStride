@@ -3,6 +3,7 @@ import { Activity } from "@type-definitions/Activity";
 import { useActivityCard } from "@utils/activity/activity-card-store";
 import { useActivity } from "@utils/activity/activity-store";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import ActivityCard from "../activity/ActivityCard";
 import ActivityCardHorizontalFormat from "../activity/ActivityCardHorizontalFormat";
 import ActivityCardSkeleton from "../activity/ActivityCardSkeleton";
@@ -18,6 +19,7 @@ export default function ActivitiesList({
   isLoading,
   className,
 }: ActivitiesListProps) {
+  const { t } = useTranslation();
   const { activitiesViewMode } = useActivity();
   const { cardType, setActivityCardType } = useActivityCard();
 
@@ -34,7 +36,7 @@ export default function ActivitiesList({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center justify-center gap-6 md:justify-start",
+        "flex flex-wrap items-center justify-center gap-6",
         className,
       )}
     >
@@ -44,7 +46,7 @@ export default function ActivitiesList({
         ))}
       {!isLoading && activities.length === 0 && (
         <p className="mx-auto text-sm italic text-center text-accent">
-          No activities found. Try changing the filters.
+          {t("activities-page.activities-not-found")}
         </p>
       )}
       {activities.map((activity: Activity) => {
