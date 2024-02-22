@@ -42,9 +42,9 @@ function CommentTextArea({
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["comments"] }).then(() => {
-        setIsCreatingComment(false); // Now reset loading state after comments are refetched
-        setNewComment(""); // Reset comment input
-        setShowCommentActionButtons(false); // Hide action buttons
+        setIsCreatingComment(false);
+        setNewComment("");
+        setShowCommentActionButtons(false);
         secondaryFunction && secondaryFunction(); // Run secondary function if provided
       });
     },

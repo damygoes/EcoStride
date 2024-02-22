@@ -33,7 +33,7 @@ function ActivityRequestCTA() {
       )}
     >
       {user?.role !== "ADMIN" && (
-        <h5 className="text-sm font-light text-wrap">
+        <h5 className="text-sm font-light text-pretty">
           {t("activities-page-sidebar-cta.text")}
         </h5>
       )}

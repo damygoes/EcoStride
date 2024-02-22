@@ -5,4 +5,8 @@ export const ENV_VARIABLES = {
   FILESTACK_API_KEY: `${import.meta.env.VITE_FILESTACK_API_KEY}`,
   OPENROUTESERVICE_API_KEY: `${import.meta.env.VITE_OPENROUTESERVICE_API_KEY}`,
   GOOGLE_AUTH_SERVER_URL: `${import.meta.env.VITE_GOOGLE_AUTH_SERVER_URL}`,
+  GOOGLE_AUTH_LOG_OUT_URL: `${import.meta.env.VITE_GOOGLE_AUTH_LOG_OUT_URL}`,
+  BASE_URL: `${import.meta.env.VITE_BASE_URL}`,
+  OPEN_ROUTE_URL: `${import.meta.env.VITE_OPEN_ROUTE_URL}`,
+  OPEN_ROUTE_POIS_URL: `${import.meta.env.VITE_OPEN_ROUTE_POIS_URL}`,
 };

@@ -6,9 +6,9 @@ function LoginSupplementalContent() {
   return (
     <div className="group sticky m-4 h-80 overflow-hidden rounded-tl-3xl rounded-tr-3xl bg-background md:h-[calc(100vh_-_5rem)]">
       <img
-        alt="cycling photo"
+        alt="photo of trees and nature"
         src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG5hdHVyZXxlbnwwfHwwfHx8Mg%3D%3D"
-        className="object-cover w-full h-full transition-all duration-500 bg-white group-hover:scale-105 group-hover:opacity-90"
+        className="object-cover w-full h-full transition-all duration-500 group-hover:scale-105 group-hover:opacity-90"
       />
 
       <motion.div

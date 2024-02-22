@@ -1,7 +1,8 @@
+import { ENV_VARIABLES } from "@lib/env";
 import axios from "axios";
 
 export const axiosClient = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: ENV_VARIABLES.BASE_URL,
   withCredentials: true,
 });
 

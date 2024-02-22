@@ -6,7 +6,6 @@ import "leaflet/dist/leaflet.css";
 import React, { useCallback, useEffect, useState } from "react";
 import { MapContainer, Marker, Polyline, TileLayer } from "react-leaflet";
 
-// Define TypeScript types
 type Coordinates = {
   longitude: number;
   latitude: number;
@@ -43,7 +42,7 @@ const EcoStrideMap: React.FC<EcoStrideMapProps> = ({
 
   const fetchRoute = useCallback(async () => {
     const apiKey = ENV_VARIABLES.OPENROUTESERVICE_API_KEY;
-    const url = `https://api.openrouteservice.org/v2/directions/driving-car/geojson`;
+    const url = `${ENV_VARIABLES.OPEN_ROUTE_URL}`;
 
     try {
       const response = await axios.post(
@@ -77,7 +76,7 @@ const EcoStrideMap: React.FC<EcoStrideMapProps> = ({
   }, [startCoordinates, endCoordinates, fetchRoute]);
 
   const fetchPOIS = useCallback(() => {
-    const url = "https://api.openrouteservice.org/pois";
+    const url = `${ENV_VARIABLES.OPEN_ROUTE_POIS_URL}`;
     const payload = {
       request: "pois",
       geometry: {
