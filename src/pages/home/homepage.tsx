@@ -114,7 +114,9 @@ function HomePageScreen() {
             {locationMessage}
           </h3>
           {isLoadingNearbyActivities && (
-            <div>Finding Activities near {usersCity} ...</div>
+            <div className="text-text-color">
+              Finding Activities near {usersCity} ...
+            </div>
           )}
           {isLoadingAllActivities && <div>Loading all activities ...</div>}
           {(isErrorAllActivities || isErrorNearbyActivities) && (
