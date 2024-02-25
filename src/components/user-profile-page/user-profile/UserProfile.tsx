@@ -137,7 +137,7 @@ function UserProfile() {
           )}
         </div>
         {/* First Name and Last Name */}
-        <div className="w-full grid-cols-1 lg:grid-cols-2">
+        <div className="w-full grid-cols-1 lg:grid-cols-2 lg:space-y-3">
           <div className="flex items-center justify-start gap-5">
             <Label htmlFor="firstName" className="text-md min-w-36">
               {t("user-profile-page.first-name")}
@@ -168,7 +168,7 @@ function UserProfile() {
           </div>
         </div>
         {/* Email Address and Bio */}
-        <div className="w-full grid-cols-1 lg:grid-cols-2">
+        <div className="w-full grid-cols-1 lg:grid-cols-2 lg:space-y-3">
           <div className="flex items-center justify-start gap-5">
             <Label htmlFor="email" className="text-md min-w-36">
               {t("user-profile-page.email")}
@@ -199,7 +199,7 @@ function UserProfile() {
           </div>
         </div>
         {/* Ftp and Age */}
-        <div className="w-full grid-cols-1 lg:grid-cols-2">
+        <div className="w-full grid-cols-1 lg:grid-cols-2 lg:space-y-3">
           <div className="flex items-center justify-start gap-5">
             <Label htmlFor="ftp" className="text-md min-w-36">
               {t("user-profile-page.ftp")}
@@ -236,7 +236,7 @@ function UserProfile() {
           </div>
         </div>
         {/* Body and Bike Weight */}
-        <div className="w-full grid-cols-1 lg:grid-cols-2">
+        <div className="w-full grid-cols-1 lg:grid-cols-2 lg:space-y-3">
           <div className="flex items-center justify-start gap-5">
             <Label htmlFor="bodyWeight" className="text-md min-w-36">
               {t("user-profile-page.bodyWeight")}

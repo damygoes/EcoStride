@@ -9,4 +9,5 @@ export const ENV_VARIABLES = {
   BASE_URL: `${import.meta.env.VITE_BASE_URL}`,
   OPEN_ROUTE_URL: `${import.meta.env.VITE_OPEN_ROUTE_URL}`,
   OPEN_ROUTE_POIS_URL: `${import.meta.env.VITE_OPEN_ROUTE_POIS_URL}`,
+  TOKEN_REFRESH_URL: `${import.meta.env.VITE_TOKEN_REFRESH_URL}`,
 };

@@ -6,36 +6,37 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type UserStore = {
+  isAuthenticated: boolean;
   user: User | null;
   setUser: (user: User | null) => void;
-  updateUser: (user: User) => void;
+  updateUser: (user: Partial<User>) => void;
+  setIsAuthenticated: (isAuthenticated: boolean) => void;
 };
 
 export const useUserStore = create<UserStore>()(
   persist(
     (set, get) => ({
+      isAuthenticated: false,
+      setIsAuthenticated: (isAuthenticated) => set({ isAuthenticated }),
       user: null,
-      setUser: (user) => set({ user }),
-      updateUser: (user) => {
+      setUser: (user) => set({ user, isAuthenticated: !!user }), // Set isAuthenticated based on user presence
+      updateUser: (updatedUserInfo) => {
         const currentUser = get().user;
         if (currentUser) {
-          set({ user: { ...currentUser, ...user } });
+          set({ user: { ...currentUser, ...updatedUserInfo } });
         }
       },
     }),
     {
-      name: "user-store", // The name of the store
-      version: 1, // Versioning the store is useful for migrations and helps keeps the cache fresh i.e. Increment version to reset state
-      // partialize: (state) => {
-      // const { userLocation, ...rest } = state;
-      // return rest as Omit<typeof state, "userLocation">; // Ensures type safety
-      // },
+      name: "user-store",
+      version: 1,
     },
   ),
 );
 
 export const useUser = () => {
-  const { user, setUser, updateUser } = useUserStore();
+  const { user, setUser, updateUser, isAuthenticated, setIsAuthenticated } =
+    useUserStore();
   const userGeoLocation = useContext(UserLocationContext);
 
   const userGeolocationData = {
@@ -134,5 +135,7 @@ export const useUser = () => {
     removeActivityFromBucketList,
     removeActivityFromCompletedList,
     removeActivityFromLikedList,
+    isAuthenticated,
+    setIsAuthenticated,
   };
 };
