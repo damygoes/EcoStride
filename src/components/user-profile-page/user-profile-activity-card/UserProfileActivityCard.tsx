@@ -25,7 +25,7 @@ function UserProfileActivityCard({ activity }: UserProfileActivityCardProps) {
           target.onerror = null; // prevents looping
           target.src = defaultCardImage; // set the default image
         }}
-        className="absolute inset-0 object-cover w-full h-full transition-opacity rounded-lg opacity-75 group-hover:opacity-30"
+        className="absolute inset-0 object-cover w-full h-full transition-opacity rounded-lg opacity-50 group-hover:opacity-20"
       />
 
       <div className="relative p-4 bg-transparent sm:p-6 lg:p-8">

@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 function HomePageScreen() {
   const { t } = useTranslation();
-  const { userGeolocationData, fetchUser, setUser, user } = useUser();
+  const { userGeolocationData, fetchUser, user, setUser } = useUser();
   const usersCity = userGeolocationData?.city ?? "";
   const { fetchActivities } = useActivity();
   useState(false);
@@ -19,17 +19,17 @@ function HomePageScreen() {
     useState(false);
   const [locationMessage, setLocationMessage] = useState("");
 
-  const { data: userData, isSuccess } = useQuery({
+  const { data: userData } = useQuery({
     queryKey: ["authenticated-user-data"],
     queryFn: fetchUser,
     enabled: !user, // Only run query if `user` is not already set
   });
 
   useEffect(() => {
-    if (isSuccess && userData) {
-      setUser(userData.user);
+    if (userData) {
+      setUser(userData);
     }
-  }, [isSuccess, userData, setUser]);
+  }, [setUser, userData]);
 
   // First query: fetch activities based on usersCity
   const {

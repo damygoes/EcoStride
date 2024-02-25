@@ -8,11 +8,18 @@ export const axiosClient = axios.create({
 
 axiosClient.interceptors.response.use(
   (response) => response,
-  (error) => {
-    if (error.response && error.response.status === 401) {
-      console.error("Unauthorized");
-    } else {
-      console.error("An error occurred", error);
+  async (error) => {
+    if (error.response.status === 401 && !error.config._retry) {
+      error.config._retry = true; // Mark the request as retried
+      try {
+        // Attempt to refresh the token
+        await axiosClient.post(`${ENV_VARIABLES.TOKEN_REFRESH_URL}`);
+        // After successful refresh, retry the original request
+        return axiosClient(error.config);
+      } catch (refreshError) {
+        // Handle failed refresh (e.g., redirect to login)
+        return Promise.reject(refreshError);
+      }
     }
     return Promise.reject(error);
   },

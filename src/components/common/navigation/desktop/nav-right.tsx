@@ -9,8 +9,12 @@ import { Link } from "react-router-dom";
 
 function NavRight() {
   const { user } = useUser();
-  const logout = useLogout();
   const { t } = useTranslation();
+  const logout = useLogout();
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <div className="flex items-center justify-end gap-2">
@@ -24,7 +28,7 @@ function NavRight() {
           <Button size="sm">{t("navbar.login")}</Button>
         </Link>
       ) : (
-        <Button variant="error" onClick={logout}>
+        <Button variant="error" onClick={handleLogout}>
           {t("navbar.logout")}
         </Button>
       )}
